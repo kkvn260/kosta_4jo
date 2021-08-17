@@ -33,7 +33,7 @@
 			<label>이미지 미리보기</label>
 			<input type="file" name="put_file" accept="image/*" id="put_file">
 			<div class="put_img">
-				<img src="" />
+				<img src=""/>
 			</div>
 
 			<script>

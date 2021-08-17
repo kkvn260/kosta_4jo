@@ -92,7 +92,7 @@ div.search{
 
 
 #write_btn{
-
+	
 }
 
 
@@ -102,6 +102,11 @@ div.search{
 
 
 </style>
+<script>
+	${"#write_btn"}.click(function () {
+		location.href="write.do"
+	});
+</script>
 </head>
 
 <body>
