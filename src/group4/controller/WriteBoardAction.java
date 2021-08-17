@@ -35,13 +35,16 @@ public class WriteBoardAction implements Action {
 		String board_name=multi.getParameter("board_name");
 		String title=multi.getParameter("write_title");
 		String content=multi.getParameter("write_content");
+		String tempname=multi.getFilesystemName("put_file");
+		String realname=multi.getOriginalFileName("put_file");
 		
 		BoardDTO dto=new BoardDTO();
 //		dto.setId(id);
 		dto.setBoard_name(board_name);
 		dto.setTitle(title);
 		dto.setContent(content);
-
+		dto.setFilename(tempname);
+		
 		System.out.println(dto.getBoard_name());
 		System.out.println(dto.getTitle());
 		System.out.println(dto.getContent());
@@ -50,8 +53,6 @@ public class WriteBoardAction implements Action {
 //		service.writeBoard(dto);
 	
 	
-		String tempename=multi.getFilesystemName("put_file");
-		String filename=multi.getOriginalFileName("put_file");
 
 		
 		Forward f=new Forward();
