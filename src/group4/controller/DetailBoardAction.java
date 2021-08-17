@@ -22,7 +22,7 @@ public class DetailBoardAction implements Action {
 		
 		BoardService service = BoardService.getService();
 		BoardDTO boarddto = service.detail(boardno);
-		
+		 
 		request.setAttribute("Boarddto", boarddto);
 		Forward f = new Forward();
 		f.setForward(true);
