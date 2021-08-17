@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import group4.dto.BoardDTO;
+import group4.dto.FileDTO;
 
 public class BoardDAO {
 	private static BoardDAO instance=new BoardDAO();
@@ -33,7 +34,7 @@ public class BoardDAO {
 			pstmt.setString(2, "hong"); // id 
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getBoard_name());
-			pstmt.setString(4, dto.getFilename());
+			pstmt.setString(5, dto.getFilename());
 			pstmt.executeUpdate();
 
 		}catch(Exception e) {
@@ -71,6 +72,7 @@ public class BoardDAO {
 				}
 				return dto;
 		}
+<<<<<<< HEAD
 		//page
 		 public int getTotalCount(Connection conn, String search, String searchtxt) {
 				// TODO Auto-generated method stub
@@ -208,5 +210,25 @@ public class BoardDAO {
 		}
 
 		
+=======
+		public void insertFile(Connection conn, FileDTO dto2) {
+			StringBuilder sql=new StringBuilder();
+			sql.append("	insert into	file_Group4(					");
+			sql.append("							filename			");
+			sql.append("							,realname)			");
+			sql.append("			values(	?,?)						");
+			
+			try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+					){
+				pstmt.setString(1, dto2.getFilename());
+				pstmt.setString(2, dto2.getRealname()); 
+				pstmt.executeUpdate();
+
+			}catch(Exception e) {
+				System.out.println(e);
+			}
+			
+		}
+>>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 	
 }
