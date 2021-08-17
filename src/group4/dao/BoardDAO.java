@@ -2,6 +2,8 @@ package group4.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import group4.dto.BoardDTO;
@@ -37,5 +39,36 @@ public class BoardDAO {
 		}
 		
 	}
+	
+	
+	//특정게시글조회
+	/*첨부파일 어떻게 받아올지 고민*/
+		public BoardDTO detail(int boardno, Connection conn) {
+			StringBuilder sql = new StringBuilder();
+			sql.append("  select boardno, title, id, viewno, content, writedate ");
+			sql.append("  from Board_Group4  ");
+			sql.append("  where boardno= ? ");
+			ResultSet rs =null;
+			BoardDTO dto = new BoardDTO();
+			
+			try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());	
+				){
+				pstmt.setInt(1, boardno);
+				rs=pstmt.executeQuery();	
+				if(rs.next()) {
+					   dto.setBoardno(rs.getInt("boardno"));
+					   dto.setTitle(rs.getString("title"));
+					   dto.setId(rs.getString("id"));
+					   dto.setViewno(rs.getInt("viewno"));
+					   dto.setContent(rs.getString("content"));
+					   dto.setWritedate(rs.getString("writedate"));
+					   
+					}
+					
+				}catch(SQLException e) {
+					System.out.println(e);
+				}
+				return dto;
+		}
 	
 }
