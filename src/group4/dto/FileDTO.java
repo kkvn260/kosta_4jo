@@ -3,8 +3,8 @@ package group4.dto;
 public class FileDTO {
 	private int fileno;
 	private String filename;
-	private String filetype;
-	private int filesize;
+	private String realname;
+	
 	public int getFileno() {
 		return fileno;
 	}
@@ -17,24 +17,11 @@ public class FileDTO {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	public String getFiletype() {
-		return filetype;
+	public String getRealname() {
+		return realname;
 	}
-	public void setFiletype(String filetype) {
-		this.filetype = filetype;
+	public void setRealname(String realname) {
+		this.realname = realname;
 	}
-	public int getFilesize() {
-		return filesize;
-	}
-	public void setFilesize(int filesize) {
-		this.filesize = filesize;
-	}
-	public int getBoardno() {
-		return boardno;
-	}
-	public void setBoardno(int boardno) {
-		this.boardno = boardno;
-	}
-	private int boardno;
 	
 }
