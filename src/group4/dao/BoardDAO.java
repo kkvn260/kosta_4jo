@@ -72,7 +72,7 @@ public class BoardDAO {
 				}
 				return dto;
 		}
-<<<<<<< HEAD
+
 		//page
 		 public int getTotalCount(Connection conn, String search, String searchtxt) {
 				// TODO Auto-generated method stub
@@ -210,7 +210,7 @@ public class BoardDAO {
 		}
 
 		
-=======
+
 		public void insertFile(Connection conn, FileDTO dto2) {
 			StringBuilder sql=new StringBuilder();
 			sql.append("	insert into	file_Group4(					");
@@ -229,6 +229,5 @@ public class BoardDAO {
 			}
 			
 		}
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 	
 }
