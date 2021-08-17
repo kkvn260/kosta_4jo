@@ -3,7 +3,7 @@ package group4.dto;
 public class ReplyDTO {
 	
 	private int replyno;
-	private int board_id;
+	private int boardno;
 	private String id;
 	private String reply_writedate;
 	private String replycontent;
@@ -14,11 +14,11 @@ public class ReplyDTO {
 	public void setReplyno(int replyno) {
 		this.replyno = replyno;
 	}
-	public int getBoard_id() {
-		return board_id;
+	public int getBoardno() {
+		return boardno;
 	}
-	public void setBoard_id(int board_id) {
-		this.board_id = board_id;
+	public void setBoardno(int boardno) {
+		this.boardno = boardno;
 	}
 	public String getId() {
 		return id;
