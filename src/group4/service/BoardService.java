@@ -11,6 +11,7 @@ import group4.comm.DBConnection;
 import group4.dao.BoardDAO;
 import group4.dto.BoardDTO;
 import group4.dto.FileDTO;
+import group4.dto.ReplyDTO;
 
 public class BoardService {
 	private static BoardService instance=new BoardService();
@@ -108,7 +109,7 @@ public class BoardService {
 	}
 	
 	
-	   //
+	  
 		public BoardDTO detail(int boardno) {
 			DBConnection dbconn = DBConnection.getDBConn();
 			Connection conn = null;
@@ -126,6 +127,42 @@ public class BoardService {
 				if(conn!=null) try {conn.close();}catch(SQLException e) {}
 			}
 			return dto;
-		}
+		}//end detail
+		
+		
+		public List<ReplyDTO> replyList(int num) {
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn = null;
+			List<ReplyDTO> replyList = new ArrayList<>();
+			
+			try {
+				conn = dbConn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				replyList = dao.replyList(conn,num);
+				
+			}catch(Exception e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try {conn.close();}catch(SQLException e) {}
+			}
+			return replyList;
+		}//end replyList
+		
+		
+		public void addReply(ReplyDTO dto) {
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn = null;
+			
+			try {
+				conn = dbConn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.addReply(conn,dto);
+				
+			}catch(Exception e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try {conn.close();}catch(SQLException e) {}
+			}			
+		}//end addReply
 	
 }

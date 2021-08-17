@@ -18,22 +18,23 @@ public class ReplyAddAction implements Action {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
-		int boardnum =Integer.parseInt(request.getParameter("num"));
+		
+		String id = request.getParameter("id");
 		String content = request.getParameter("content");
-		String writer = request.getParameter("writer");
+		int boardno =Integer.parseInt(request.getParameter("num"));
 		
 		ReplyDTO dto = new ReplyDTO();
 		dto.setReplycontent(content);
-		dto.setId(writer);
-		dto.setBoardno(boardnum);
+		dto.setId(id);
+		dto.setBoardno(boardno);
 		
 		BoardService service = BoardService.getService();
-		//service.insertReply(dto);
+		service.addReply(dto);
 		
 
 		Forward f = new Forward();
 		f.setForward(false);
-		f.setPath("detail.do?num="+boardnum);
+		f.setPath("detail.do?boardno="+boardno);
 		
 		return f;
 		

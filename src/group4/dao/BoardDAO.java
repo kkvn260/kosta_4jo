@@ -10,6 +10,7 @@ import java.util.List;
 import group4.comm.DBConnection;
 import group4.dto.BoardDTO;
 import group4.dto.FileDTO;
+import group4.dto.ReplyDTO;
 
 public class BoardDAO {
 	private static BoardDAO instance=new BoardDAO();
@@ -236,5 +237,67 @@ public class BoardDAO {
 		}
 
 	}
-
+	
+	
+	public List<ReplyDTO> replyList(Connection conn, int num) {
+		StringBuilder sql=new StringBuilder();
+		sql.append("  select   			 		");
+		sql.append("          replyno,	 		");
+		sql.append("          id,    	 		");
+		sql.append("          reply_writedate,  ");
+		sql.append("          replycontent,     ");
+		sql.append("          boardno	 		");
+		sql.append("  from reply_Group4			");
+		sql.append("  where boardno=?			");
+		
+		ResultSet rs =null;
+		List<ReplyDTO> replyList = new ArrayList<>();
+		System.out.println(num);
+		
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+			){
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ReplyDTO dto = new ReplyDTO();
+				dto.setReplyno(rs.getInt("replyno"));
+				dto.setId(rs.getString("id"));
+				dto.setReply_writedate(rs.getString("reply_writedate"));
+				dto.setReplycontent(rs.getString("replycontent"));
+				replyList.add(dto);
+			}
+			
+		}catch(SQLException e) {
+			System.out.println(e);
+		}finally{
+			if(rs!=null) try { rs.close();} catch(SQLException e) {}
+		}
+		return replyList;
+	}//end replyList
+	
+	
+	public void addReply(Connection conn, ReplyDTO dto) {
+		StringBuilder sql=new StringBuilder();
+		sql.append(" insert into reply_Group4(	         ");
+		sql.append("          id,    	 		         ");
+		sql.append("          replycontent,              ");
+		sql.append("          reply_writedate,           ");
+		sql.append("          boardno)	 		         ");
+		sql.append("   values (?,?,sysdate(),?)          ");
+		
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString())
+				  ){
+					pstmt.setString(1, dto.getId());
+					pstmt.setString(2, dto.getReplycontent());
+					pstmt.setInt(3, dto.getBoardno());
+					pstmt.executeUpdate();
+					
+				}catch(SQLException e) {
+					System.out.println(e);
+				}
+		}//end addReply
+		
 }
+
+
