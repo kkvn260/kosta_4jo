@@ -23,7 +23,7 @@ $(document).ready(function(){
 				reply+="<td>"+list.id+"</td>";
 				reply+="<td>"+list.replycontent+"</td>";
 				reply+="<td>"+list.reply_writedate+"</td>";		
-				reply+="<input type='button' value='삭제' onclick=del("+list.replyno+")>";
+				reply+="<input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
 				reply+="</td></tr>";
 				
 				$('#result').append(reply);
