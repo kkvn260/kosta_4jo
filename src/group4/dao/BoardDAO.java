@@ -252,7 +252,6 @@ public class BoardDAO {
 		
 		ResultSet rs =null;
 		List<ReplyDTO> replyList = new ArrayList<>();
-		System.out.println(num);
 		
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
 			){
@@ -297,6 +296,8 @@ public class BoardDAO {
 					System.out.println(e);
 				}
 		}//end addReply
+	
+	
 		
 }
 
