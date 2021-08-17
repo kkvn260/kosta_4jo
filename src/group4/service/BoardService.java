@@ -34,6 +34,8 @@ public class BoardService {
 		}
 		
 	}
+	
+	//파일첨부
 	public void insertFile(FileDTO dto2) {
 		DBConnection dbconn=DBConnection.getDBConn();
 		Connection conn=null;
@@ -50,9 +52,7 @@ public class BoardService {
 			System.out.println(e);
 		}finally {
 			if(conn!=null) try {conn.close();} catch(SQLException e) {}
-		}
-		
-		
+		}		
 	}
 	
 	
@@ -75,26 +75,5 @@ public class BoardService {
 			}
 			return dto;
 		}
-	
-	
-	public void insertFile(FileDTO dto2) {
-		DBConnection dbconn=DBConnection.getDBConn();
-		Connection conn=null;
-		
-		try {
-			conn=dbconn.getConnection();
-			conn.setAutoCommit(false);
-			
-			BoardDAO dao=BoardDAO.getDAO();
-			dao.insertFile(conn,dto2);
-			
-			conn.commit();
-		}catch(Exception e) {
-			System.out.println(e);
-		}finally {
-			if(conn!=null) try {conn.close();} catch(SQLException e) {}
-		}
-		
-	}
 	
 }
