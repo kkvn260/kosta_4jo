@@ -83,7 +83,7 @@ public class BoardDAO {
 		sql.append(" select  count(*)             ");
 		sql.append("  from   Board_Group4         ");
 
-		if(!search.contentEquals("") && !searchtxt.equals(""))
+		if(!search.equals("") && !searchtxt.equals(""))
 		{
 			if(search.equals("title"))
 			{
@@ -131,47 +131,47 @@ public class BoardDAO {
 	public List<BoardDTO> getList(Connection conn,int startrow, int endrow, String search, String searchtxt) {
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
-		sql.append(" select      c.*                          	 ");
-		sql.append(" from (                                		 ");
+		sql.append(" select      c.*                          	         ");
+		sql.append(" from (                                		         ");
 		sql.append("        select @rownum:=@rownum+1 as rnum, b.* 		 ");
-		sql.append("        from (                          	 ");
-		sql.append("               select                  		 ");
-		sql.append("                      boardno         		 ");
-		sql.append("                     ,title            		 ");
-		sql.append("                     ,id               		 ");
-		sql.append("                     ,viewno            	 ");
-		sql.append("                     ,content          		 ");
-		sql.append("                     ,writedate        		 ");
-		sql.append("                     ,likeno           		 ");
-		sql.append("        from Board_Group4    ");
+		sql.append("        from (                          	         ");
+		sql.append("               select                  		         ");
+		sql.append("                      boardno         		         ");
+		sql.append("                     ,title            		         ");
+		sql.append("                     ,id               		         ");
+		sql.append("                     ,viewno            	         ");
+		sql.append("                     ,content          		         ");
+		sql.append("                     ,writedate        		         ");
+		sql.append("                     ,likeno           		         ");
+		sql.append("        from Board_Group4                            ");
 
 		if(!search.equals("")&& !searchtxt.equals(""))
 		{
 			if(search.equals("title"))
 			{
-				sql.append("               where title like  ?              ");
-				sql.append("             )b, (select @rownum:=0) R        ");
+				sql.append("               where title like  ?               ");
+				sql.append("             )b, (select @rownum:=0) R           ");
 				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?                      ");
+				sql.append(" where rnum>=? and rnum<=?                       ");
 			}
 			else if(search.equals("id"))
 			{
-				sql.append("               where  lower(id) like ?          ");
-				sql.append("             )b ,  (select @rownum:=0) R      ");
+				sql.append("               where  lower(id) like ?           ");
+				sql.append("             )b ,  (select @rownum:=0) R         ");
 				sql.append("      )   c                                      ");
-				sql.append(" where rnum>=? and rnum<=?                      ");
+				sql.append(" where rnum>=? and rnum<=?                       ");
 			}
 			else if(search.equals("content"))
 			{
-				sql.append("               where  content   like ?          ");
-				sql.append("             )b , (select @rownum:=0) R        ");
+				sql.append("               where  content   like ?           ");
+				sql.append("             )b , (select @rownum:=0) R          ");
 				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?                      ");
+				sql.append(" where rnum>=? and rnum<=?                       ");
 			}
 		}
-		sql.append("             )b  ,   (select @rownum:=0) R      ");
-		sql.append("      )    c                                     ");
-		sql.append(" where rnum>=? and rnum<=?                      ");
+		sql.append("             )b  ,   (select @rownum:=0) R               ");
+		sql.append("      )    c                                             ");
+		sql.append(" where rnum>=? and rnum<=?                               ");
 
 
 		List<BoardDTO> list=new ArrayList<BoardDTO>();
