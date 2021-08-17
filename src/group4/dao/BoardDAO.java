@@ -33,7 +33,7 @@ public class BoardDAO {
 			pstmt.setString(2, "hong"); // id 임시로 써줌
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getBoard_name());
-			pstmt.setString(4, dto.getFilename());
+			pstmt.setString(5, dto.getFilename());
 			pstmt.executeUpdate();
 
 		}catch(Exception e) {
@@ -74,7 +74,7 @@ public class BoardDAO {
 		}
 		public void insertFile(Connection conn, FileDTO dto2) {
 			StringBuilder sql=new StringBuilder();
-			sql.append("	insert into	Board_Group4(					");
+			sql.append("	insert into	file_Group4(					");
 			sql.append("							filename			");
 			sql.append("							,realname)			");
 			sql.append("			values(	?,?)						");
@@ -88,7 +88,6 @@ public class BoardDAO {
 			}catch(Exception e) {
 				System.out.println(e);
 			}
-			
 			
 		}
 	
