@@ -4,6 +4,7 @@ public class FileDTO {
 	private int fileno;
 	private String filename;
 	private String realname;
+	
 	public int getFileno() {
 		return fileno;
 	}
