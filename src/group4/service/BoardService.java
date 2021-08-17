@@ -66,11 +66,7 @@ public class BoardService {
 
 	
 	//list
-	
-	
-	
-	
-	
+
 	public void writeBoard(BoardDTO dto) {
 		DBConnection dbconn=DBConnection.getDBConn();
 		Connection conn=null;

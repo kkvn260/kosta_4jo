@@ -56,12 +56,12 @@ public class WriteBoardAction implements Action {
 		System.out.println(dto.getContent());
 		
 		BoardService service=BoardService.getService();
-		service.writeBoard(dto);
-		service.insertFile(dto2);
+//		service.writeBoard(dto);
+//		service.insertFile(dto2);
 
 		Forward f=new Forward();
 		f.setForward(true);
-		f.setPath("main.jsp?page=write.jsp"); // list가 없어서 write로 임시 대체
+		f.setPath("main.jsp?page=list.jsp");
 		return f;
 	}
 

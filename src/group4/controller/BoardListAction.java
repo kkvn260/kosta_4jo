@@ -14,7 +14,7 @@ import group4.service.BoardService;
 
 
 
-public class BoardLIstAction implements Action {
+public class BoardListAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
@@ -33,11 +33,11 @@ public class BoardLIstAction implements Action {
 		if(search==null) search="";
 		if(searchtxt==null) searchtxt="";
 		
-		//ÀüÃ¼ ÀÚ·á¼ö
+		//ï¿½ï¿½Ã¼ ï¿½Ú·ï¿½ï¿½
 		
 		BoardService service=BoardService.getService();
 		int totalcount=service.getTotalCount(search, searchtxt);
-		int pagepercount=5; //1page¿¡ º¸¿©ÁÙ ÀÚ·á¼ö
+		int pagepercount=5; 
 		
 		int totalpage=(int) Math.ceil((float)totalcount/pagepercount);
 		
@@ -56,6 +56,7 @@ public class BoardLIstAction implements Action {
 			endblock=totalpage;
 		}
 		List<BoardDTO> list= service.getlist(startrow, endrow, search, searchtxt);
+
 		request.setAttribute("list", list);
 		request.setAttribute("currpage", currpage);
 		request.setAttribute("datacount",list.size());
@@ -65,7 +66,7 @@ public class BoardLIstAction implements Action {
 		request.setAttribute("search", search);
 		request.setAttribute("searchtxt", searchtxt);
 		
-		 
+
 		 Forward forward=new Forward();
 		 forward.setForward(true);
 		 forward.setPath("/list.jsp");
@@ -73,5 +74,4 @@ public class BoardLIstAction implements Action {
 		return forward;
 		
 	}
-
 }
