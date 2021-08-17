@@ -18,7 +18,7 @@
 				<option value="여행">여행</option>
 				<option value="영화">영화</option>
 			</select>
-			 <input type="file" name="put_file">
+			 <input type="file" name="put_file" accept="image/*">
 		</div>
 		<div>
 			<input type="text" name="write_title" placeholder="제목을 입력해주세요">

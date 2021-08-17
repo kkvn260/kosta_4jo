@@ -8,6 +8,13 @@ public class BoardDTO {
 	private String content;
 	private String writedate;
 	private String board_name;
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	private String filename;
 	
 	public int getBoardno() {
 		return boardno;
