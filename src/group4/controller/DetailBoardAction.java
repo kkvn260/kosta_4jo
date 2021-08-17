@@ -28,7 +28,7 @@ public class DetailBoardAction implements Action {
 		f.setForward(true);
 		f.setPath("WEB-INF/board/detail.jsp");
 		
-		return f;
+		return f;  
 	}
 
 }
