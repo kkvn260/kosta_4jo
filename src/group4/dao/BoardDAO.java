@@ -22,8 +22,8 @@ public class BoardDAO {
 		sql.append("							,content				");
 		sql.append("							,writedate				");
 		sql.append("							,board_name				");
-		sql.append("							,likeno)				");
-		sql.append("			values(	?,?,0,?,sysdate(),?,0)			");
+		sql.append("							,likeno,filename)				");
+		sql.append("			values(	?,?,0,?,sysdate(),?,0,?)			");
 		
 	
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
@@ -32,6 +32,7 @@ public class BoardDAO {
 			pstmt.setString(2, "hong"); // id 임시로 써줌
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getBoard_name());
+			pstmt.setString(4, dto.getFilename());
 			pstmt.executeUpdate();
 
 		}catch(Exception e) {
