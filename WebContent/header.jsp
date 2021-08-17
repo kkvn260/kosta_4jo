@@ -10,6 +10,13 @@
 <body>
 <div>
 <h2>talk together</h2>
+<c:if test="${sessionScope.id==null}">
+           <a href="login.do">로그인</a>
+           <a href="join.do">회원가입</a>
+    </c:if>
+    <c:if test="${sessionScope.id!=null }">
+           <a href="logout.do">로그아웃</a>
+    </c:if>
 </div>
 	
 </body>
