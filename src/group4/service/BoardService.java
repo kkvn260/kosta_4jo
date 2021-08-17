@@ -68,7 +68,7 @@ public class BoardService {
 				BoardDAO dao = new BoardDAO();
 				dto=dao.detail(boardno,conn);
 				
-			}catch(SQLException |NamingException e) {
+			}catch(Exception e) {
 				System.out.println(e);
 			}finally {
 				if(conn!=null) try {conn.close();}catch(SQLException e) {}
@@ -94,27 +94,6 @@ public class BoardService {
 		}finally {
 			if(conn!=null) try {conn.close();} catch(SQLException e) {}
 		}
-		
-		
-	}
-	public void insertFile(FileDTO dto2) {
-		DBConnection dbconn=DBConnection.getDBConn();
-		Connection conn=null;
-		
-		try {
-			conn=dbconn.getConnection();
-			conn.setAutoCommit(false);
-			
-			BoardDAO dao=BoardDAO.getDAO();
-			dao.insertFile(conn,dto2);
-			
-			conn.commit();
-		}catch(Exception e) {
-			System.out.println(e);
-		}finally {
-			if(conn!=null) try {conn.close();} catch(SQLException e) {}
-		}
-		
 		
 	}
 	

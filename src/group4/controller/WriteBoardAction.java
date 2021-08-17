@@ -14,6 +14,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import group4.comm.Action;
 import group4.comm.Forward;
 import group4.dto.BoardDTO;
+import group4.dto.FileDTO;
 import group4.service.BoardService;
 
 public class WriteBoardAction implements Action {
@@ -25,17 +26,17 @@ public class WriteBoardAction implements Action {
 		String savePath=request.getServletContext().getRealPath("file");
 		System.out.println("파일 저장 경로"+savePath);
 		File dir=new File(savePath);
-		if(!dir.exists()) dir.mkdir();
+		if(!dir.exists()) dir.mkdir(); //폴더 없으면 만들기
 		int limitSize=1024*1024*10; //10MB limit
 		MultipartRequest multi=new MultipartRequest(request, savePath, limitSize, "utf-8",new DefaultFileRenamePolicy());
 		//multi로 받아줘서 request 불필요
 		
-//		HttpSession session=request.getSession();
-//		String id=(String)session.getAttribute("id"); // id로 세션 잡아준다고 가정하에 가져오기
+		HttpSession session=request.getSession();
+		String id=(String)session.getAttribute("id"); // id로 세션 잡아준다고 가정하에 가져오기
 		String board_name=multi.getParameter("board_name");
 		String title=multi.getParameter("write_title");
 		String content=multi.getParameter("write_content");
-		String tempname=multi.getFilesystemName("put_file");
+		String filename=multi.getFilesystemName("put_file");
 		String realname=multi.getOriginalFileName("put_file");
 		
 		BoardDTO dto=new BoardDTO();
@@ -43,15 +44,21 @@ public class WriteBoardAction implements Action {
 		dto.setBoard_name(board_name);
 		dto.setTitle(title);
 		dto.setContent(content);
-		dto.setFilename(tempname);
+		dto.setFilename(filename);
 		
+		FileDTO dto2=new FileDTO();
+		dto2.setFilename(filename);
+		dto2.setRealname(realname);
+		
+		System.out.println(id);
 		System.out.println(dto.getBoard_name());
 		System.out.println(dto.getTitle());
 		System.out.println(dto.getContent());
+		System.out.println();
 		
 		BoardService service=BoardService.getService();
-//		service.writeBoard(dto);
-	
+		service.writeBoard(dto);
+		service.insertFile(dto2);
 	
 
 		
