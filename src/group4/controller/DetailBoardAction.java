@@ -23,7 +23,7 @@ public class DetailBoardAction implements Action {
 		BoardService service = BoardService.getService();
 		BoardDTO boarddto = service.detail(boardno);
 		 
-		request.setAttribute("Boarddto", boarddto);
+		request.setAttribute("boarddto", boarddto);
 		Forward f = new Forward();
 		f.setForward(true);
 		f.setPath("WEB-INF/board/detail.jsp");
