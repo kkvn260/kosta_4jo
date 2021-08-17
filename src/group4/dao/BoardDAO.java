@@ -225,7 +225,7 @@ public class BoardDAO {
 				pstmt.executeUpdate();
 
 			}catch(Exception e) {
-				System.out.println(e);
+				System.out.println(e); 
 			}
 			
 		}
