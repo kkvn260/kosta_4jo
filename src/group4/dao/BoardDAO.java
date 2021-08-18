@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import group4.comm.DBConnection;
 import group4.dto.BoardDTO;
 import group4.dto.FileDTO;
 import group4.dto.ReplyDTO;
@@ -127,12 +128,7 @@ public class BoardDAO {
 
 	}
 
-
-<<<<<<< HEAD
 	public List<BoardDTO> getList(Connection conn,int startrow, int endrow, String search, String searchtxt,String category) {
-=======
-	public List<BoardDTO> getList(Connection conn,String boardname,int startrow, int endrow, String search, String searchtxt) {
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
 		sql.append(" select      c.*                          	         ");
@@ -147,51 +143,19 @@ public class BoardDAO {
 		sql.append("                     ,content          		         ");
 		sql.append("                     ,writedate        		         ");
 		sql.append("                     ,likeno           		         ");
-		sql.append("                     ,board_name           		     ");
 		sql.append("        from Board_Group4                            ");
 
 		if(!search.equals("")&& !searchtxt.equals(""))
-<<<<<<< HEAD
 		{
 			sql.append("where "+search+" like ?");
 			if(!category.equals("")) {
 				sql.append("and board_name like ?");
-=======
-		{	
-			if(search.equals("title"))
-			{
-				sql.append("               where title like  ?               ");
-				sql.append("              	order by writedate    desc       ");
-				sql.append("             )b, (select @rownum:=0) R           ");
-				sql.append("     where board_name=? ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?      and board_name=?                  ");
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 			}
-<<<<<<< HEAD
 			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
 			sql.append("      )    c                                            					 ");
 			sql.append(" where rnum>=? and rnum<=?                               					");
 			
-=======
-			else if(search.equals("id"))
-			{
-				sql.append("               where  lower(id) like ?           ");
-				sql.append("              	order by writedate  desc         ");
-				sql.append("             )b ,  (select @rownum:=0) R         ");
-				sql.append("      )   c                                      ");
-				sql.append(" where rnum>=? and rnum<=?  and board_name=?                      ");
-			}
-			else if(search.equals("content"))
-			{
-				sql.append("               where  content   like ?           ");
-				sql.append("              	order by writedate    desc       ");
-				sql.append("             )b , (select @rownum:=0) R          ");
-				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?   and board_name=?                     ");
-			}
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 		}else {
-<<<<<<< HEAD
 			if(!category.equals("")) {
 				sql.append("where board_name like ?");
 			}
@@ -199,12 +163,6 @@ public class BoardDAO {
 			sql.append("      )    c                                            					 ");
 			sql.append(" where rnum>=? and rnum<=?                               					");
 			
-=======
-		sql.append("              	order by writedate desc           		 ");
-		sql.append("             )b  ,   (select @rownum:=0) R               ");
-		sql.append("     )    c                                              ");
-		sql.append(" where rnum>=? and rnum<=?   and board_name=?            ");
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 		}
 
 		List<BoardDTO> list=new ArrayList<BoardDTO>();
@@ -228,7 +186,6 @@ public class BoardDAO {
 				
 
 			}else
-<<<<<<< HEAD
 			{
 
 				if(!category.equals("")) {
@@ -240,12 +197,6 @@ public class BoardDAO {
 					pstmt.setInt(1, startrow);
 					pstmt.setInt(2, endrow);
 				}
-=======
-			{	
-				pstmt.setInt(1, startrow);
-				pstmt.setInt(2, endrow);
-				pstmt.setString(3, boardname);
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 			}
 			rs=pstmt.executeQuery();
 			while(rs.next())
