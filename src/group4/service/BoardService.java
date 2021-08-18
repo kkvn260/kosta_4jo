@@ -181,6 +181,21 @@ public class BoardService {
 				if(conn!=null) try{conn.close();}catch(SQLException e) {}
 			}
 		}//end replyDelete
+		public List<BoardDTO> topViewList() {
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn=null;
+			List<BoardDTO> list=new ArrayList<BoardDTO>();
+			try {
+				conn=dbConn.getConnection();
+				BoardDAO dao=BoardDAO.getDAO();
+				list=dao.topViewList(conn);
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			return list;
+		}
 		public List<BoardDTO> topLikeList() {
 			DBConnection dbConn = DBConnection.getDBConn();
 			Connection conn=null;

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +10,12 @@
 <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<c:set var="list" value="${requestScope.list}"></c:set>
-<c:set var="startrow" value="${requestScope.startrow }"></c:set>
+	<c:set var="list" value="${requestScope.list}"></c:set>
+	<c:set var="list2" value="${requestScope.list2}"></c:set>
+	<c:set var="startrow" value="${requestScope.startrow }"></c:set>
 
+	<!-- 조회수 높은 게시물 탑10-->
+	<h3>조회수 TOP10</h3>
 	<div style="width: 30%; height: 200px; overflow: auto">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<thead>
@@ -38,12 +41,24 @@
 						<td><c:out value="${item.writedate }"></c:out></td>
 						<td><c:out value="${item.likeno }"></c:out></td>
 					</tr>
-
 				</c:forEach>
-
 			</tbody>
 		</table>
 	</div>
 
+	<!-- 좋아요 높은 게시물 탑5 -->
+	<h3>좋아요 TOP5</h3>
+	<div style="width: 70%; height: 200px; overflow: auto">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<c:forEach var="item" items="${list2}">
+					<td><a href="detail.do?boardno=${item.boardno }">
+					    <img src="file/${item.filename }" alt="${item.title }" 
+					    	 width="300px" height="200px"/>
+					</a></td>
+				</c:forEach>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

@@ -349,7 +349,7 @@ public class BoardDAO {
 				}
 		
 	}//end replyDelete
-	public List<BoardDTO> topLikeList(Connection conn) {
+	public List<BoardDTO> topViewList(Connection conn) {
 		StringBuilder sql=new StringBuilder();
 		sql.append("	select 											 ");
 		sql.append("                      boardno         		         ");
@@ -382,9 +382,37 @@ public class BoardDAO {
 		}
 		return list;
 	}
-	
-	
+	public List<BoardDTO> topLikeList(Connection conn) {
+		StringBuilder sql=new StringBuilder();
+		sql.append("	select 											 ");
+		sql.append("                      filename            	         ");
+		sql.append("                     ,likeno            	         ");
+		sql.append("                     ,boardno            	         ");
+		sql.append("                     ,title            	         ");
+		sql.append("     from Board_Group4                   	         ");
+		sql.append("     order by likeno desc		limit 5          	 ");
 		
+		
+		List<BoardDTO> list=new ArrayList<BoardDTO>();
+		ResultSet rs=null;
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				BoardDTO dto=new BoardDTO();
+				dto.setBoardno(rs.getInt("boardno"));
+				dto.setLikeno(rs.getInt("likeno"));
+				dto.setFilename(rs.getString("filename"));
+				dto.setTitle(rs.getString("title"));
+				list.add(dto);
+			}
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return list;
+	}
+	
+
 }
 
 

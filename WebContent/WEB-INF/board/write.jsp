@@ -40,7 +40,7 @@
 								var reader = new FileReader;
 								reader.onload = function(data) {
 									$(".put_img img").attr("src",
-											data.target.result).width(400);
+											data.target.result).width(200);
 								}
 								reader.readAsDataURL(this.files[0]);
 							}

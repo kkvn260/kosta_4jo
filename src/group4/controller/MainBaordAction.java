@@ -20,9 +20,11 @@ public class MainBaordAction implements Action {
 		// TODO Auto-generated method stub
 		
 		BoardService service=BoardService.getService();
-		List<BoardDTO> list=service.topLikeList();
+		List<BoardDTO> list=service.topViewList();
+		List<BoardDTO> list2=service.topLikeList();
 		
 		request.setAttribute("list", list);
+		request.setAttribute("list2", list2);
 		
 		
 		 Forward forward=new Forward();
