@@ -155,7 +155,7 @@ public class BoardService {
 			
 			try {
 				conn = dbConn.getConnection();
-				BoardDAO dao = new BoardDAO();
+				BoardDAO dao =BoardDAO.getDAO();
 				dao.addReply(conn,dto);
 				
 			}catch(Exception e) {
