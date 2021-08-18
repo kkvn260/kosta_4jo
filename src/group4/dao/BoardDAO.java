@@ -98,6 +98,8 @@ public class BoardDAO {
 				sql.append(" where content like ?  and board_name like ?  ");
 
 			}
+		}else {
+			sql.append("	where	board_name	like ? 	");
 		}
 
 		int totalcount=0;
@@ -110,6 +112,8 @@ public class BoardDAO {
 			{
 				pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
 				pstmt.setString(2, "%"+category+"%");
+			}else {
+				pstmt.setString(1, "%"+category+"%");
 			}
 			rs=pstmt.executeQuery();
 			if(rs.next())
