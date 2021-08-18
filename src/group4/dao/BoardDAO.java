@@ -412,6 +412,20 @@ public class BoardDAO {
 		return list;
 	}
 	
+	public void deleteBoard(Connection conn, int bno) {
+		// TODO Auto-generated method stub
+		StringBuilder sql=new StringBuilder();
+		sql.append("  delete from Board_Group4	 ");
+		sql.append("         where replyno= ?    ");
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+		   ){
+					pstmt.setInt(1, bno);
+					pstmt.executeUpdate();
+			}catch(SQLException e) {
+				System.out.println(e);
+			}
+	}//end deleteBoard
+	
 
 }
 

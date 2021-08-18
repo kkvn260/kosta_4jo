@@ -128,6 +128,28 @@ public class BoardService {
 			return dto;
 		}//end detail
 		
+		public int deleteBoard(int bno) {
+			// TODO Auto-generated method stub
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			int result=0;
+			
+			try {
+				conn=dbconn.getConnection();
+				
+				BoardDAO dao = new BoardDAO();
+				dao.deleteBoard(conn,bno);
+				dao.replyDelete(conn, bno);
+				
+			}catch(Exception e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try {conn.close();}catch(SQLException e) {}
+			}
+			return result;
+			
+		}
+		
 		
 		public List<ReplyDTO> replyList(int num) {
 			DBConnection dbConn = DBConnection.getDBConn();
@@ -181,6 +203,7 @@ public class BoardService {
 				if(conn!=null) try{conn.close();}catch(SQLException e) {}
 			}
 		}//end replyDelete
+
 		public List<BoardDTO> topViewList() {
 			DBConnection dbConn = DBConnection.getDBConn();
 			Connection conn=null;
@@ -211,5 +234,6 @@ public class BoardService {
 			}
 			return list;
 		}
+		
 	
 }

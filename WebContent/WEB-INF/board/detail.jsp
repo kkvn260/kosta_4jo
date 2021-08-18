@@ -9,11 +9,55 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 
+/* 댓글삭제 */
 function del(rno, bno){
 	 console.log(rno,bno);
 	 location.href="replydel.do?rno="+rno+"&bno="+bno;
 }
 
+/* 게시글삭제 */
+function delBoard(boardno){
+	console.log(boardno);
+	$.ajax({
+		url:'del.do?boardno='+boardno
+		,method:'post'
+		,dataType:'json'
+		,success:function(result){
+			if(result=='1'){
+				alert("삭제가 완료되었습니다.");
+			}else{
+				alert("삭제가 실패하였습니다.")
+			}
+		}
+		,error:function(xhr){
+			console.log('error'+xhr);
+		}
+	});
+}
+
+/* 게시글수정  */
+function modiBoard(boardno){
+	console.log(boardno);
+	$.ajax({
+		url:'modify.do?boardno='+boardno
+		,method:'post'
+		,dataType:'json'
+		,success:function(result){
+			if(result=='1'){
+				alert("수정완료.");
+			}else{
+				alert("수정실패.")
+			}
+		}
+		,error:function(xhr){
+			console.log('error'+xhr);
+		}
+	});
+}
+
+
+
+/* 댓글조회 */
 $(document).ready(function(){
 	 let no = ${boarddto.boardno};
 	 $.ajax({
@@ -30,7 +74,7 @@ $(document).ready(function(){
 				reply+="<td>"+list.reply_writedate+"</td>";
 
 			    /*if(list.id=="세션으로 받을 id"){   /*  세션으로 받아오는 id가 없어서 임시id로 테스트  */
-			    if(list.id == ${sessionScope.id}){  
+			    if(list.id == "${sessionScope.id}"){  
 
 				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
 				} 
@@ -76,6 +120,12 @@ $(document).ready(function(){
 	</form>
 	<br>
 	<a href="list.do">목록으로</a>
+	
+	<%-- <c:if test="${sessionScope.id==boarddto.id"> --%>
+	<c:if test="${boarddto.id=='hong'}">
+	  <button onclick="delBoard(${boarddto.boardno})" class="btn">삭제</button>
+	  <button onclick="modiBoard(${boarddto.boardno})" class="btn">수정</button>
+	</c:if>
 	
 	
 
