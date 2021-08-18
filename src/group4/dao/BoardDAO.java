@@ -283,6 +283,7 @@ public class BoardDAO {
 				dto.setId(rs.getString("id"));
 				dto.setReply_writedate(rs.getString("reply_writedate"));
 				dto.setReplycontent(rs.getString("replycontent"));
+				dto.setBoardno(rs.getInt("boardno"));
 				replyList.add(dto);
 			}
 			
