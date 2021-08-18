@@ -139,7 +139,7 @@ div.search{
   <tbody>
     <c:forEach var="item" items="${list }">
       <tr><td><c:out value="${item.boardno}"></c:out></td>
-      <td><a href="detail.do?num=${item.boardno }"><c:out value="${item.title }"/></a></td>
+      <td><a href="detail.do?boardno=${item.boardno }"><c:out value="${item.title }"/></a></td>
       <td><c:out value="${item.content }"></c:out></td>
       <td><c:out value="${item.id }"></c:out></td>
       <td><c:out value="${item.viewno }"></c:out></td>
