@@ -55,7 +55,7 @@ public class ReplyDetailAction extends HttpServlet {
 			int num = Integer.parseInt(request.getParameter("num"));
 			BoardService service = BoardService.getService();
 			List<ReplyDTO> replyList = service.replyList(num);
-	
+	  
 		    JSONArray arr= new JSONArray();
 		    
 		    for(ReplyDTO dto: replyList) {
