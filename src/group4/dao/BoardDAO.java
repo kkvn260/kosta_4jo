@@ -152,18 +152,20 @@ public class BoardDAO {
 				sql.append("	and board_name like ?	");
 			}
 			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
+			sql.append("	order by writedate desc	");
 			sql.append("      )    c                                            					 ");
 			sql.append(" where rnum>=? and rnum<=?        	");
-			sql.append("	order by writedate desc	");
 			
 		}else {
 			if(!category.equals("")) {
 				sql.append("where board_name like ?");
+				
 			}
 			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
+			sql.append("	order by writedate desc	");
 			sql.append("      )    c                                            					 ");
 			sql.append(" where rnum>=? and rnum<=?                              ");
-			sql.append("	order by writedate desc	");
+
 			
 		}
 

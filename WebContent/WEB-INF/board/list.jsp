@@ -128,7 +128,7 @@ div.search{
   </thead>
   <tbody>
   	<c:set var="no" value="${startrow-1 }"></c:set>
-    <c:forEach var="item" items="${list}" begin="${startrow-1}" end="${endrow}" step="1">
+    <c:forEach var="item" items="${list}">
 		<c:set var="no" value="${no+1 }" />
       <tr><td><c:out value="${no }" /></td>
       <td><a href="detail.do?boardno=${item.boardno }"><c:out value="${item.title }"/></a></td>
