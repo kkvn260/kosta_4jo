@@ -48,13 +48,13 @@
 
 	<!-- 좋아요 높은 게시물 탑5 -->
 	<h3>좋아요 TOP5</h3>
-	<div style="width: 70%; height: 200px; overflow: auto">
+	<div style="width: 70%; height: 200px; overflow: auto" id="preview">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<c:forEach var="item" items="${list2}">
 					<td><a href="detail.do?boardno=${item.boardno }">
 					    <img src="file/${item.filename }" alt="${item.title }" 
-					    	 width="300px" height="200px"/>
+					    	 width="300px" height="175px"/>
 					</a></td>
 				</c:forEach>
 			</tr>
