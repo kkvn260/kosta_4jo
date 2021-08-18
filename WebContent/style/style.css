@@ -71,3 +71,7 @@ div.search {
 	margin-top: 10px;
 	display: inline-block;
 }
+#main a{
+	text-decoration: none;
+	color: black;
+}
