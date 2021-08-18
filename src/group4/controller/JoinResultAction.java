@@ -20,7 +20,7 @@ public class JoinResultAction implements Action {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String id=request.getParameter("name");
+		String id=request.getParameter("id");
 		String pwd=request.getParameter("pwd");
 		String name=request.getParameter("name");
 		String email=request.getParameter("email");
