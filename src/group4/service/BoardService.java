@@ -21,7 +21,7 @@ public class BoardService {
 	private BoardService () {}
 	
 	
-	public int getTotalCount(String search, String searchtxt) {
+	public int getTotalCount(String search, String searchtxt,String category) {
 		// TODO Auto-generated method stub
 		DBConnection dbconn=DBConnection.getDBConn();
 		Connection conn=null;
@@ -30,7 +30,7 @@ public class BoardService {
 			conn=dbconn.getConnection();
 			conn.setAutoCommit(false);
 			BoardDAO dao=BoardDAO.getDAO();
-			totalcount=dao.getTotalCount(conn,search,searchtxt);
+			totalcount=dao.getTotalCount(conn,search,searchtxt,category);
 			System.out.println("totalcount!!!:"+totalcount);
 			
 			conn.commit();
@@ -43,8 +43,8 @@ public class BoardService {
 		return totalcount;
 	}
 	
-	
-	public List<BoardDTO> getlist(String boardname,int startrow,int endrow, String search , String searchtxt) {
+
+	public List<BoardDTO> getlist(int startrow,int endrow, String search , String searchtxt,String category) {
 		// TODO Auto-generated method stub
 		
 		DBConnection dbconn=DBConnection.getDBConn();
@@ -54,7 +54,7 @@ public class BoardService {
 				conn=dbconn.getConnection();
 				BoardDAO dao=BoardDAO.getDAO();
 				
-				list=dao.getList(conn,boardname,startrow,endrow,search,searchtxt);
+				list=dao.getList(conn,startrow,endrow,search,searchtxt,category);
 		}catch(SQLException|NamingException e)
 		{
 			System.out.println(e);
