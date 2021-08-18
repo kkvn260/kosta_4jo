@@ -33,7 +33,7 @@ public class BoardListAction implements Action {
 		if(search==null) search="";
 		if(searchtxt==null) searchtxt="";
 		
-		//��ü �ڷ��
+		//
 		
 		BoardService service=BoardService.getService();
 		int totalcount=service.getTotalCount(search, searchtxt);
@@ -69,7 +69,7 @@ public class BoardListAction implements Action {
 
 		 Forward forward=new Forward();
 		 forward.setForward(true);
-		 forward.setPath("/list.jsp");
+		 forward.setPath("main.jsp?page=list.do");
 		
 		return forward;
 		
