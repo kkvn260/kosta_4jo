@@ -21,6 +21,7 @@ public class BoardListAction implements Action {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
+		String boardname=request.getParameter("cat");
 		String curr=request.getParameter("curr");
 		int currpage=1;
 		if(curr!=null)
@@ -58,7 +59,11 @@ public class BoardListAction implements Action {
 		{
 			endblock=totalpage;
 		}
+<<<<<<< HEAD
 		List<BoardDTO> list= service.getlist(startrow, endrow, search, searchtxt,category);
+=======
+		List<BoardDTO> list= service.getlist(boardname,startrow, endrow, search, searchtxt);
+>>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 
 		request.setAttribute("list", list);
 		request.setAttribute("currpage", currpage);

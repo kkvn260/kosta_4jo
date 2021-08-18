@@ -13,7 +13,7 @@
 <c:if test="${result==1 }">
       <script type="text/javascript">
               alert("<%=session.getAttribute("id")%>님 로그인 되셨습니다");
-              location.href="main.jsp";
+              location.href="list.do";
       </script>
 </c:if>
 <c:if test="${result==0 }">

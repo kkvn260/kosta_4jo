@@ -9,8 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import group4.comm.Action;
 import group4.comm.Forward;
-import group4.dao.MemberDAO;
-import group4.dto.MemberDTO;
 import group4.service.MemberService;
 
 

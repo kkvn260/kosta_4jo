@@ -44,7 +44,11 @@ public class BoardService {
 	}
 	
 	
+<<<<<<< HEAD
 	public List<BoardDTO> getlist(int startrow,int endrow, String search , String searchtxt,String category) {
+=======
+	public List<BoardDTO> getlist(String boardname,int startrow,int endrow, String search , String searchtxt) {
+>>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 		// TODO Auto-generated method stub
 		
 		DBConnection dbconn=DBConnection.getDBConn();
@@ -54,7 +58,11 @@ public class BoardService {
 				conn=dbconn.getConnection();
 				BoardDAO dao=BoardDAO.getDAO();
 				
+<<<<<<< HEAD
 				list=dao.getList(conn,startrow,endrow,search,searchtxt,category);
+=======
+				list=dao.getList(conn,boardname,startrow,endrow,search,searchtxt);
+>>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 		}catch(SQLException|NamingException e)
 		{
 			System.out.println(e);
