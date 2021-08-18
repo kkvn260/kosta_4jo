@@ -17,9 +17,9 @@ public class LogoutAction implements Action {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-//		HttpSession session=request.getSession();
-//		session.invalidate(); // 세션끝
-//		
+		HttpSession session=request.getSession();
+		session.invalidate(); // 세션끝
+		
 		Forward forward=new Forward();
 		forward.setForward(true);
 		forward.setPath("WEB-INF/board/logout.jsp");
