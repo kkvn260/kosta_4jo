@@ -41,7 +41,7 @@ public class LoginResultAction implements Action {
 		}
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/main.jsp?page=loginsuccess.jsp");
+		forward.setPath("list.do");
 		return forward;
 	}
 
