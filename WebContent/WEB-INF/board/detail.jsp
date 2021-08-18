@@ -17,9 +17,9 @@ $(document).ready(function(){
 		,method:'post'
 		,dataType:'json'
 		,success:function(data){
-			let reply="";
+			
 			$.each(data,function(index,list){
-				reply+="<tr>";
+				reply="<tr>";
 				reply+="<td>"+list.id+"</td>";
 				reply+="<td>"+list.replycontent+"</td>";
 				reply+="<td>"+list.reply_writedate;		
