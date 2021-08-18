@@ -155,8 +155,11 @@ public class BoardDAO {
 				sql.append("               where title like  ?               ");
 				sql.append("              	order by writedate    desc       ");
 				sql.append("             )b, (select @rownum:=0) R           ");
-				sql.append("     where board_name=? ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?      and board_name=?                  ");
+				sql.append("     where board_name=? ) c                      ");
+				sql.append(" where rnum>=? and rnum<=?                       ");
+				if(boardname!=null) {
+					sql.append("   and board_name=?			");
+				}
 			}
 			else if(search.equals("id"))
 			{
@@ -164,7 +167,10 @@ public class BoardDAO {
 				sql.append("              	order by writedate  desc         ");
 				sql.append("             )b ,  (select @rownum:=0) R         ");
 				sql.append("      )   c                                      ");
-				sql.append(" where rnum>=? and rnum<=?  and board_name=?                      ");
+				sql.append(" where rnum>=? and rnum<=?                       ");
+				if(boardname!=null) {
+					sql.append("   and board_name=?			");
+				}
 			}
 			else if(search.equals("content"))
 			{
@@ -172,13 +178,19 @@ public class BoardDAO {
 				sql.append("              	order by writedate    desc       ");
 				sql.append("             )b , (select @rownum:=0) R          ");
 				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?   and board_name=?                     ");
+				sql.append(" where rnum>=? and rnum<=?                       ");
+				if(boardname!=null) {
+					sql.append("   and board_name=?			");
+				}
 			}
 		}else {
 		sql.append("              	order by writedate desc           		 ");
 		sql.append("             )b  ,   (select @rownum:=0) R               ");
 		sql.append("     )    c                                              ");
-		sql.append(" where rnum>=? and rnum<=?   and board_name=?            ");
+		sql.append(" where rnum>=? and rnum<=?  					         ");
+		if(boardname!=null) {
+			sql.append("   and board_name=?			");
+		}
 		}
 
 		List<BoardDTO> list=new ArrayList<BoardDTO>();
@@ -192,11 +204,14 @@ public class BoardDAO {
 				pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
 				pstmt.setInt(2, startrow);
 				pstmt.setInt(3, endrow);
+				if(boardname!=null)
+					pstmt.setString(4, boardname);
 
 			}else
 			{	
 				pstmt.setInt(1, startrow);
 				pstmt.setInt(2, endrow);
+				if(boardname!=null)
 				pstmt.setString(3, boardname);
 			}
 			rs=pstmt.executeQuery();
