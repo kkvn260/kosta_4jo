@@ -28,13 +28,10 @@ $(document).ready(function(){
 				reply+="<td>"+list.id+"</td>";
 				reply+="<td>"+list.replycontent+"</td>";
 				reply+="<td>"+list.reply_writedate+"</td>";
-				console.log(list.boardno)
-			    /* if(list.id=="세션으로 받을 id"){  세션으로 받아오는 id가 없어서 임시id로 테스트  */
 			    if(list.id == ${sessionScope.id}){ 
 				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
 				} 
 				reply+="</td></tr>";
-				
 				$('#result').append(reply);
 			});
 		}

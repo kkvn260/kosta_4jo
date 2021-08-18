@@ -26,7 +26,7 @@ public class DetailBoardAction implements Action {
 		request.setAttribute("boarddto", boarddto);
 		Forward f = new Forward();
 		f.setForward(true);
-		f.setPath("WEB-INF/board/detail.jsp");
+		f.setPath("WEB-INF/board/main.jsp?page=detail.jsp");
 		
 		return f;  
 	}

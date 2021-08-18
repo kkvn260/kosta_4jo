@@ -10,16 +10,21 @@ import javax.servlet.http.HttpSession;
 import group4.comm.Action;
 import group4.comm.Forward;
 
-public class WriteFormAction implements Action {
+public class WriteIdExistAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
+		String id=(String)session.getAttribute("id");
 
 		Forward f=new Forward();
 		f.setForward(true);
-		f.setPath("WEB-INF/board/main.jsp?page=write.jsp");
+		if(id!=null) {
+			f.setPath("writeform.do");
+		}else {
+			f.setPath("WEB-INF/board/main.jsp?page=fail.jsp");
+		}
 		return f;
 	}
 

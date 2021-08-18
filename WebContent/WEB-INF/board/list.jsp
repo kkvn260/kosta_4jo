@@ -156,9 +156,7 @@ div.search{
 </c:if>
 </div>
 
-<a href="writeform.do">글쓰기</a>
-
-
+<a href="writecheck.do">글쓰기</a>
 
 </body>
 </html>
