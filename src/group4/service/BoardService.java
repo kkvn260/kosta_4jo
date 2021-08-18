@@ -13,6 +13,7 @@ import group4.dto.BoardDTO;
 import group4.dto.FileDTO;
 import group4.dto.ReplyDTO;
 
+
 public class BoardService {
 	private static BoardService instance=new BoardService();
 	public static BoardService getService() {
@@ -155,7 +156,7 @@ public class BoardService {
 			
 			try {
 				conn = dbConn.getConnection();
-				BoardDAO dao = new BoardDAO();
+				BoardDAO dao =BoardDAO.getDAO();
 				dao.addReply(conn,dto);
 				
 			}catch(Exception e) {
@@ -164,5 +165,23 @@ public class BoardService {
 				if(conn!=null) try {conn.close();}catch(SQLException e) {}
 			}			
 		}//end addReply
+		
+		
+		public void replyDelete(int rno) {
+			// TODO Auto-generated method stub
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn=null;
+			
+			try {
+				conn= dbConn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.replyDelete(conn,rno);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+		}//end replyDelete
 	
 }
