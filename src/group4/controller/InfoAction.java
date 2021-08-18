@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import group4.comm.Action;
 import group4.comm.Forward;
 
-public class JoinAction implements Action {
+public class InfoAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
@@ -18,8 +18,9 @@ public class JoinAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/main.jsp?page=join.jsp"); 
+		forward.setPath("WEB-INF/board/myinfo.jsp");
 		return forward;
+
 	}
 
 }

@@ -2,6 +2,8 @@ package group4.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.NamingException;
 
@@ -52,6 +54,44 @@ public class MemberService {
 		}
 		return result;
 	}
+	public String idcheckData(String id) {
+		// TODO Auto-generated method stub
+
+		DBConnection dbconn=DBConnection.getDBConn();
+		Connection conn=null;
+		String result = "";
+
+		try {
+			conn=dbconn.getConnection();
+			
+			MemberDAO dao=MemberDAO.getDAO();
+			result=dao.idcheck(conn, id);
+
+		}catch(SQLException | NamingException e) {
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();} catch(SQLException e) {}
+		}
+		return result;
+	}
+	public MemberDTO info(String id) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn=DBConnection.getDBConn();
+		Connection conn=null;
+		MemberDTO dto=new MemberDTO();
+		
+		try {
+			conn=dbconn.getConnection();
+			MemberDAO dao=MemberDAO.getDAO();
+			dto=dao.myInfo(conn,id);
+		}catch(SQLException | NamingException e) {
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();} catch(SQLException e) {}
+		}
+		return dto;
+	}
+
 
 	
 }

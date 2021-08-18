@@ -8,8 +8,8 @@
 </head>
 <body>
 <script>
-     alert('로그아웃 되셨습니다');
-     location.href="list.do";
+     alert("로그아웃 되셨습니다");
+     location.href="main.jsp";
 </script>
 </body>
 </html>
