@@ -76,10 +76,10 @@ public class BoardDAO {
 	}
 
 	//page
-	public int getTotalCount(Connection conn, String search, String searchtxt) {
+	public int getTotalCount(Connection conn, String search, String searchtxt,String category) {
 		// TODO Auto-generated method stub
 
-		StringBuilder sql=new StringBuilder();
+		StringBuilder sql = new StringBuilder();
 		sql.append(" select  count(*)             ");
 		sql.append("  from   Board_Group4         ");
 
@@ -87,15 +87,15 @@ public class BoardDAO {
 		{
 			if(search.equals("title"))
 			{
-				sql.append(" where title like ?      ");
+				sql.append(" where title like ?  and board_name like ?           ");
 			}
 			else if(search.equals("id"))
 			{
-				sql.append(" where lower(id) like ?  ");
+				sql.append(" where lower(id) like ? and board_name like ? ");
 			}
 			else if(search.equals("content"))
 			{
-				sql.append(" where content like ?    ");
+				sql.append(" where content like ?  and board_name like ?  ");
 
 			}
 		}
@@ -109,6 +109,7 @@ public class BoardDAO {
 			if(!search.equals("") && !searchtxt.equals(""))
 			{
 				pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
+				pstmt.setString(2, "%"+category+"%");
 			}
 			rs=pstmt.executeQuery();
 			if(rs.next())
@@ -128,7 +129,7 @@ public class BoardDAO {
 	}
 
 
-	public List<BoardDTO> getList(Connection conn,int startrow, int endrow, String search, String searchtxt) {
+	public List<BoardDTO> getList(Connection conn,int startrow, int endrow, String search, String searchtxt,String category) {
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
 		sql.append(" select      c.*                          	         ");
@@ -145,36 +146,24 @@ public class BoardDAO {
 		sql.append("                     ,likeno           		         ");
 		sql.append("        from Board_Group4                            ");
 
-//		if(!board_name.equals("")) {
-//			
-//		}
 		if(!search.equals("")&& !searchtxt.equals(""))
 		{
-			if(search.equals("title"))
-			{
-				sql.append("               where title like  ?               ");
-				sql.append("             )b, (select @rownum:=0) R           ");
-				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?                       ");
+			sql.append("where "+search+" like ?");
+			if(!category.equals("")) {
+				sql.append("and board_name like ?");
 			}
-			else if(search.equals("id"))
-			{
-				sql.append("               where  lower(id) like ?           ");
-				sql.append("             )b ,  (select @rownum:=0) R         ");
-				sql.append("      )   c                                      ");
-				sql.append(" where rnum>=? and rnum<=?                       ");
-			}
-			else if(search.equals("content"))
-			{
-				sql.append("               where  content   like ?           ");
-				sql.append("             )b , (select @rownum:=0) R          ");
-				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?                       ");
-			}
+			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
+			sql.append("      )    c                                            					 ");
+			sql.append(" where rnum>=? and rnum<=?                               					");
+			
 		}else {
-		sql.append("             )b  ,   (select @rownum:=0) R               ");
-		sql.append("      )    c                                             ");
-		sql.append(" where rnum>=? and rnum<=?                               ");
+			if(!category.equals("")) {
+				sql.append("where board_name like ?");
+			}
+			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
+			sql.append("      )    c                                            					 ");
+			sql.append(" where rnum>=? and rnum<=?                               					");
+			
 		}
 
 		List<BoardDTO> list=new ArrayList<BoardDTO>();
@@ -185,14 +174,30 @@ public class BoardDAO {
 				) {
 			if(!search.equals("") && !searchtxt.equals(""))
 			{
-				pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
-				pstmt.setInt(2, startrow);
-				pstmt.setInt(3, endrow);
+				if(!category.equals("")) {
+					pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
+					pstmt.setString(2, "%"+category+"%");
+					pstmt.setInt(3, startrow);
+					pstmt.setInt(4, endrow);
+				}else {
+					pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
+					pstmt.setInt(2, startrow);
+					pstmt.setInt(3, endrow);
+				}
+				
 
 			}else
 			{
-				pstmt.setInt(1, startrow);
-				pstmt.setInt(2, endrow);
+
+				if(!category.equals("")) {
+					pstmt.setString(1, category);
+					pstmt.setInt(2, startrow);
+					pstmt.setInt(3, endrow);
+				}
+				else {
+					pstmt.setInt(1, startrow);
+					pstmt.setInt(2, endrow);
+				}
 			}
 			rs=pstmt.executeQuery();
 			while(rs.next())

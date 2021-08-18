@@ -29,15 +29,17 @@ public class BoardListAction implements Action {
 		}
 		String search=request.getParameter("search");
 		String searchtxt=request.getParameter("searchtxt");
+		String category=request.getParameter("cat");
 		System.out.println(search);
 		System.out.println(searchtxt);
 		if(search==null) search="";
 		if(searchtxt==null) searchtxt="";
+		if(category==null) category="";
 		
 		//��ü �ڷ��
 		
 		BoardService service=BoardService.getService();
-		int totalcount=service.getTotalCount(search, searchtxt);
+		int totalcount=service.getTotalCount(search, searchtxt,category);
 		int pagepercount=5; 
 		
 		int totalpage=(int) Math.ceil((float)totalcount/pagepercount);
@@ -56,7 +58,7 @@ public class BoardListAction implements Action {
 		{
 			endblock=totalpage;
 		}
-		List<BoardDTO> list= service.getlist(startrow, endrow, search, searchtxt);
+		List<BoardDTO> list= service.getlist(startrow, endrow, search, searchtxt,category);
 
 		request.setAttribute("list", list);
 		request.setAttribute("currpage", currpage);
