@@ -144,7 +144,7 @@ div.search{
 </table>
 <div class="page1">
 <c:if test="${startblock>1 }">
-	<a href="list.do?curr=${currpage-1 }&search=${search}&searchtxt=${searchtxt}">이전</a>
+	<a href="list.do?curr=${currpage-1 }&search=${search}&searchtxt=${searchtxt}&cat=${category}">이전</a>
 </c:if>
 </div>
 <div class="page2">
@@ -153,13 +153,13 @@ div.search{
 	<c:out value="${index }"></c:out>
 </c:if>
 <c:if test="${currpage!=index }">
-	<a href="list.do?curr=${index}&search=${search}&searchtxt=${searchtxt }">${index}</a>
+	<a href="list.do?curr=${index}&search=${search}&searchtxt=${searchtxt }&cat=${category}">${index}</a>
 </c:if>
 </c:forEach>
 </div>
 <div class="page3">
 <c:if test="${endblock<totalpage }">
-	<a href="list.do?curr=${currpage+1}&search=${search}&searchtxt=${searchtxt}">다음</a>
+	<a href="list.do?curr=${currpage+1}&search=${search}&searchtxt=${searchtxt}&cat=${category}">다음</a>
 </c:if>
 </div>
 
