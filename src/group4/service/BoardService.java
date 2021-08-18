@@ -235,5 +235,10 @@ public class BoardService {
 			return list;
 		}
 		
+		public BoardDTO modifyBoard(int no) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
 	
 }
