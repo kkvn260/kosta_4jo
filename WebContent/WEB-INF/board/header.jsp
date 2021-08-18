@@ -6,18 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title> 
-<style>
-#all,#book,#travel,#movie,#notice{
-	margin-top:20px;
-	width: 250px;
-	height:50px;
-	border: none;
-	font-weight: bold;
-	font-size: 20px;
-	color:gray;
-
-}
-</style>
+<link rel="stylesheet" href="style/style.css">
 
 </head>
 <body>

@@ -69,11 +69,9 @@ public class BoardListAction implements Action {
 		request.setAttribute("startrow", startrow);
 		request.setAttribute("category", category);
 
-		
-		
-		 Forward forward=new Forward();
-		 forward.setForward(true);
-		 forward.setPath("WEB-INF/board/main.jsp?page=list.jsp");
+		Forward forward=new Forward();
+		forward.setForward(true);
+		forward.setPath("WEB-INF/board/main.jsp?page=list.jsp");
 
 		return forward;
 		

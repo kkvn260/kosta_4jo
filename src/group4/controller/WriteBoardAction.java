@@ -52,6 +52,7 @@ public class WriteBoardAction implements Action {
 		
 		BoardService service=BoardService.getService();
 		service.writeBoard(dto);
+		if(realname!=null)
 		service.insertFile(dto2);
 
 		Forward f=new Forward();
