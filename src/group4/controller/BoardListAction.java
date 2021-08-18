@@ -50,7 +50,7 @@ public class BoardListAction implements Action {
 		
 		
 		int blockcount=5;
-		int startblock=(currpage-1)/blockcount*blockcount+1;
+		int startblock=((currpage-1)/blockcount)*blockcount+1;
 		int endblock=startblock+blockcount-1;
 		if(endblock>totalpage)
 		{
@@ -67,6 +67,7 @@ public class BoardListAction implements Action {
 		request.setAttribute("search", search);
 		request.setAttribute("searchtxt", searchtxt);
 		request.setAttribute("startrow", startrow);
+		request.setAttribute("category", category);
 
 		
 		

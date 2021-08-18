@@ -104,11 +104,13 @@ div.search{
 <c:set var="search" value="${requestScope.search }"></c:set>
 <c:set var="searchtxt" value="${requestScope.searchtxt }"></c:set>
 <c:set var="startrow" value="${requestScope.startrow }"></c:set>
+<c:set var="category" value="${requestScope.category }"></c:set>
 
 
 
 <div class="search">
 <form method="get"  action="list.do" >
+	<input type="hidden" name="cat" value="${category }">
      <select name="search">
        <option value="title">제목</option>
        <option value="content">내용</option>
