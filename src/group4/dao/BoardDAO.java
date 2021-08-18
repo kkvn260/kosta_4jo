@@ -145,6 +145,9 @@ public class BoardDAO {
 		sql.append("                     ,likeno           		         ");
 		sql.append("        from Board_Group4                            ");
 
+//		if(!board_name.equals("")) {
+//			
+//		}
 		if(!search.equals("")&& !searchtxt.equals(""))
 		{
 			if(search.equals("title"))

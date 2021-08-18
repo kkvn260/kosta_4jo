@@ -66,7 +66,6 @@ public class BoardListAction implements Action {
 		request.setAttribute("totalpage", totalpage);
 		request.setAttribute("search", search);
 		request.setAttribute("searchtxt", searchtxt);
-		
 
 		 Forward forward=new Forward();
 		 forward.setForward(true);

@@ -31,10 +31,10 @@
            <a href="logout.do">로그아웃</a>
     </c:if>
 </div>
-<input type="button" id="all" value="전체">
-<input type="button" id="book" value="도서">
-<input type="button" id="travel" value="여행">
-<input type="button" id="movie" value="영화">
-<input type="button" id="notice" value="공지사항">
+<input type="button" id="all" value="전체" onclick="location.href='/kosta_4jo/list.do'">
+<input type="button" id="book" value="도서" onclick="location.href='/kosta_4jo/list.do?cat=도서'" >
+<input type="button" id="travel" value="여행" onclick="location.href='/kosta_4jo/list.do?cat=여행'">
+<input type="button" id="movie" value="영화" onclick="location.href='/kosta_4jo/list.do?cat=영화'">
+<input type="button" id="notice" value="공지사항" onclick="location.href='/kosta_4jo/list.do?cat=공지사항'">
 </body>
 </html>
