@@ -13,7 +13,6 @@ import group4.dto.BoardDTO;
 import group4.dto.FileDTO;
 import group4.dto.ReplyDTO;
 
-
 public class BoardService {
 	private static BoardService instance=new BoardService();
 	public static BoardService getService() {

@@ -9,9 +9,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 
-function del(sno, bno){
-	 console.log(sno,bno);
-	 location.href="replydelete.do?rno="+replyno+"&bno="+boardno;
+function del(rno, bno){
+	 console.log(rno,bno);
+	 location.href="replydel.do?rno="+rno+"&bno="+bno;
 }
 
 $(document).ready(function(){
@@ -24,16 +24,11 @@ $(document).ready(function(){
 		,success:function(data){
 			
 			$.each(data,function(index,list){
-				reply="<tr>";
+	           reply="<tr>";  
 				reply+="<td>"+list.id+"</td>";
 				reply+="<td>"+list.replycontent+"</td>";
-				reply+="<td>"+list.reply_writedate+"</td>";
-						
-			    if(list.id=="hong"){ /* 세션값으로 받아오는 id값이 없어서 임시id인 "hong"으로 테스트  */
-			    /* if(list.id == ${sessionScope.id}){ */
-				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
-				} 
-				reply+="<td>"+list.reply_writedate;		
+		        reply+="<td>"+list.reply_writedate;		
+				reply+="<input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
 				reply+="</td></tr>";
 				
 				$('#result').append(reply);

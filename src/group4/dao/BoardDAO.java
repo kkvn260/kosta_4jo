@@ -321,7 +321,7 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
 		sql.append("  delete from reply_Group4	 ");
-		sql.append("         where replyno= ?    ");
+		sql.append("         where replyno= ?    ");  
 		
 		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString())
 				  ){
