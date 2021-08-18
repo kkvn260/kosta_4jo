@@ -12,13 +12,13 @@
 
 <c:if test="${result==1 }">
       <script type="text/javascript">
-              alert("로그인 성공하셨습니다");
-              location.href="list.do";
+              alert("<%=session.getAttribute("id")%>님 로그인 되셨습니다");
+              location.href="main.jsp";
       </script>
 </c:if>
 <c:if test="${result==0 }">
        <script type="text/javascript">
-               alert("비밀번호를 다시 확인해주세요")
+               alert("비밀번호가 틀렸습니다")
                history.go(-1);
        </script>
 </c:if>

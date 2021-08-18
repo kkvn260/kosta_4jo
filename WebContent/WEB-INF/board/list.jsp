@@ -158,7 +158,5 @@ div.search{
 
 <a href="writeform.do">글쓰기</a>
 
-
-
 </body>
 </html>

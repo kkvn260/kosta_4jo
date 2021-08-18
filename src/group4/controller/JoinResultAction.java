@@ -37,7 +37,7 @@ public class JoinResultAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/main.jsp?page=reok.jsp");
+		forward.setPath("WEB-INF/board/main.jsp?page=reok.jsp"); 
 		return forward;
 	}
 

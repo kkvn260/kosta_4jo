@@ -32,7 +32,7 @@ public class WriteBoardAction implements Action {
 		//multi로 받아줘서 request 불필요
 		
 		HttpSession session=request.getSession();
-		String id=(String)session.getAttribute("id"); // id로 세션 잡아준다고 가정하에 가져오기
+		String id=(String)session.getAttribute("id");
 		String board_name=multi.getParameter("board_name");
 		String title=multi.getParameter("write_title");
 		String content=multi.getParameter("write_content");
@@ -61,7 +61,7 @@ public class WriteBoardAction implements Action {
 
 		Forward f=new Forward();
 		f.setForward(true);
-		f.setPath("main.jsp?page=list.jsp");
+		f.setPath("WEB-INF/board/main.jsp?page=list.jsp");
 		return f;
 	}
 

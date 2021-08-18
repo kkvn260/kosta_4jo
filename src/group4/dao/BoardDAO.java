@@ -206,7 +206,6 @@ public class BoardDAO {
 				dto.setWritedate(rs.getString("writedate"));
 				dto.setLikeno(rs.getInt("likeno")); 
 				list.add(dto);
-				System.out.println(dto.getTitle());
 			}
 		}catch(SQLException e)
 		{

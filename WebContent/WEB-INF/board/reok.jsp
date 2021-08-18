@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <script type="text/javascript">
-alert("회원가입 되었습니다");
-location.href="list.do";
+              alert("회원가입 되었습니다. 환영합니다");
+              location.href="main.jsp";
 </script>
 </body>
 </html>
