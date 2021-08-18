@@ -69,7 +69,7 @@ public class BoardListAction implements Action {
 		request.setAttribute("search", search);
 		request.setAttribute("searchtxt", searchtxt);
 		request.setAttribute("startrow", startrow);
-		request.setAttribute("endrow", endrow);
+
 		
 		
 		 Forward forward=new Forward();
