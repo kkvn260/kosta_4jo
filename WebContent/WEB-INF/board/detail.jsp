@@ -30,7 +30,7 @@ $(document).ready(function(){
 		        reply+="<td>"+list.reply_writedate;		
 				reply+="<td>"+list.reply_writedate+"</td>";
 				
-			    if(list.id=="세션으로 받을 id"){ /* 세션값으로 받아오는 id값이 없어서 임시id인 "hong"으로 테스트  */
+			    if(list.id=="세션으로 받을 id"){ /* 세션값으로 받아오는 id값이 없어서 임시id로 테스트  */
 			    /* if(list.id == ${sessionScope.id}){ */
 				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
 				} 
