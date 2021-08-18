@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.cj.Session;
 
@@ -40,6 +42,8 @@ public class MemberDAO {
 			System.out.println(e);
 		}
 	}
+	
+	//로그인
 	public int  logindata(Connection conn, String id, String pwd) {
 		// TODO Auto-generated method stub
 		int result=-1;
@@ -70,29 +74,73 @@ public class MemberDAO {
 	
 	}
 	//아이디 중복체크
-/*
-	public int idCheck(Connection conn,String id) {
-		int value=0;
-	
+	public String  idcheck(Connection conn,String id) {
+
+
+		//System.out.println(dto.getId());
+		String result = "OK";
+		
 		StringBuilder sql=new StringBuilder();
-		sql.append(" select id                                              ");
-		sql.append(" from SignUP_Group4                        ");
+		sql.append(" select id                                            ");
+		sql.append(" from SignUp_Group4                        ");
 		sql.append(" where id=?                                         ");
 		
 		ResultSet rs=null;
-		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());){
+		try(
+				PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
 		     pstmt.setString(1, id);
 		     rs=pstmt.executeQuery();
 		     
-		     if(rs.next()) {
-		    	 value=1;
-		     }
+		  //  System.out.println(rs.next());
+		     
+		     //true일 때 , 동작
+		     while (rs.next()) {
+					result = "NotOK";
+				}
+		  
 		}catch(SQLException e) {
 			System.out.println(e);
 		}finally {
 			if(rs!=null) try {rs.close();} catch(SQLException e) {}
 		}
-		return value;
+		
+		return  result;
 	}
-	*/
+	
+	//내정보확인
+	public MemberDTO myInfo(Connection conn, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql=new StringBuilder();
+		MemberDTO dto=new MemberDTO();
+		sql.append(" select                                                      ");
+		sql.append("            id                                                 ");
+		sql.append("            , name                                         ");
+		sql.append("            , email                                         ");
+		sql.append(" from SignUp_Group4                           ");
+		sql.append(" where                                                    ");
+		sql.append("                id=?                                         ");
+		
+	
+		ResultSet rs=null;
+		
+		
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());){
+			pstmt.setString(1,id);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setEmail(rs.getString("email"));
+			}
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+	
+		return dto;
+	}
+
+
 }

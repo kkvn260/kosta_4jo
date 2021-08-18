@@ -5,27 +5,29 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import group4.comm.Action;
 import group4.comm.Forward;
+import group4.service.BoardService;
 
-public class WriteIdExistAction implements Action {
+public class ReplyDeleteAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		String id=(String)session.getAttribute("id");
-
-		Forward f=new Forward();
-		f.setForward(true);
-		if(id!=null) {
-			f.setPath("writeform.do");
-		}else {
-			f.setPath("WEB-INF/board/main.jsp?page=fail.jsp");
-		}
+		
+		int rno = Integer.parseInt(request.getParameter("rno"));
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		
+		BoardService service = BoardService.getService();
+		service.replyDelete(rno);
+		
+		Forward f = new Forward();
+		f.setForward(false);
+		f.setPath("detail.do?boardno="+bno);
+			
 		return f;
+
 	}
 
 }

@@ -18,7 +18,7 @@ public class LoginAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/main.jsp?page=login.jsp");
+		forward.setPath("WEB-INF/board/main.jsp?page=login.jsp");  //login action
 		return forward;
 	}
 
