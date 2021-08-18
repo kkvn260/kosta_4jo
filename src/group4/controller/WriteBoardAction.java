@@ -24,7 +24,6 @@ public class WriteBoardAction implements Action {
 			throws ServletException, IOException {
 		
 		String savePath=request.getServletContext().getRealPath("file");
-		System.out.println("파일 저장 경로"+savePath);
 		File dir=new File(savePath);
 		if(!dir.exists()) dir.mkdir(); //폴더 없으면 만들기
 		int limitSize=1024*1024*10; //10MB limit
@@ -49,11 +48,7 @@ public class WriteBoardAction implements Action {
 		FileDTO dto2=new FileDTO();
 		dto2.setFilename(filename);
 		dto2.setRealname(realname);
-		
-		System.out.println(id);
-		System.out.println(dto.getBoard_name());
-		System.out.println(dto.getTitle());
-		System.out.println(dto.getContent());
+
 		
 		BoardService service=BoardService.getService();
 		service.writeBoard(dto);

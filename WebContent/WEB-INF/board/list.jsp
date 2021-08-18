@@ -122,7 +122,7 @@ div.search{
  
 <table>
 
-  <thead><tr><th>번호</th><th>제목</th><th>내용</th><th>작성자</th><th>조회수</th><th>작성일</th>
+  <thead><tr><th>번호</th><th>제목</th><th>작성자</th><th>조회수</th><th>작성일</th>
   <th>좋아요</th></tr>
   </thead>
   <tbody>
@@ -131,7 +131,6 @@ div.search{
 		<c:set var="no" value="${no+1 }" />
       <tr><td><c:out value="${no }" /></td>
       <td><a href="detail.do?boardno=${item.boardno }"><c:out value="${item.title }"/></a></td>
-      <td><c:out value="${item.content }"></c:out></td>
       <td><c:out value="${item.id }"></c:out></td>
       <td><c:out value="${item.viewno }"></c:out></td>
       <td><c:out value="${item.writedate }"></c:out></td>
