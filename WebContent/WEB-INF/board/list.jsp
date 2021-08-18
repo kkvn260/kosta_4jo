@@ -88,18 +88,10 @@ div.search{
 	
 }
 
-#write_btn{
-	
-}
 
 
 </style>
 
-<script>
-	$("#write_btn").click(function () {
-		location.href="write.do"
-	});
-</script>
 
 </head>
 <body>
@@ -119,7 +111,7 @@ div.search{
 <c:set var="searchtxt" value="${requestScope.searchtxt }"></c:set>
 
 <div class="search">
-<form method="get"  action="list.jsp" >
+<form method="get"  action="/WEB-INF/board/list.jsp" >
      <select name="search">
        <option value="title">제목</option>
        <option value="content">내용</option>
@@ -170,7 +162,7 @@ div.search{
 </c:if>
 </div>
 
-<input type="button" id="write_btn" value="글쓰기">
+<a href="writeform.do">글쓰기</a>
 
 
 

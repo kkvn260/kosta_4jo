@@ -23,7 +23,7 @@ public class LogoutAction implements Action {
 	
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("main.jsp?page=logout.jsp");
+		forward.setPath("WEB-INF/board/main.jsp?page=logout.jsp");
 		return forward;
 	}
 
