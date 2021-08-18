@@ -168,11 +168,11 @@ public class BoardDAO {
 				sql.append("      ) c                                        ");
 				sql.append(" where rnum>=? and rnum<=?                       ");
 			}
-		}
+		}else {
 		sql.append("             )b  ,   (select @rownum:=0) R               ");
 		sql.append("      )    c                                             ");
 		sql.append(" where rnum>=? and rnum<=?                               ");
-
+		}
 
 		List<BoardDTO> list=new ArrayList<BoardDTO>();
 		ResultSet rs=null;
@@ -203,6 +203,7 @@ public class BoardDAO {
 				dto.setWritedate(rs.getString("writedate"));
 				dto.setLikeno(rs.getInt("likeno")); 
 				list.add(dto);
+				System.out.println(dto.getTitle());
 			}
 		}catch(SQLException e)
 		{

@@ -105,7 +105,7 @@ div.search{
 <c:set var="searchtxt" value="${requestScope.searchtxt }"></c:set>
 
 <div class="search">
-<form method="get"  action="/WEB-INF/board/list.jsp" >
+<form method="get"  action="list.do" >
      <select name="search">
        <option value="title">제목</option>
        <option value="content">내용</option>
