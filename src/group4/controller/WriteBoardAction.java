@@ -40,7 +40,7 @@ public class WriteBoardAction implements Action {
 		String realname=multi.getOriginalFileName("put_file");
 		
 		BoardDTO dto=new BoardDTO();
-//		dto.setId(id);
+		dto.setId(id);
 		dto.setBoard_name(board_name);
 		dto.setTitle(title);
 		dto.setContent(content);

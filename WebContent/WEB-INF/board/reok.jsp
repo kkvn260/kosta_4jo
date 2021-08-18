@@ -8,6 +8,9 @@
 </head>
 <body>
 
-<p>회원가입 되었습니다</p>
+<script type="text/javascript">
+alert("회원가입 되었습니다");
+location.href="list.do";
+</script>
 </body>
 </html>
