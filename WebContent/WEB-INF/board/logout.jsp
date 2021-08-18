@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
      alert("로그아웃 되셨습니다");
-     location.href="list.do";
+     location.href="main.do";
 </script>
 </body>
 </html>
