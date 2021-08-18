@@ -31,7 +31,6 @@ public class BoardService {
 			conn.setAutoCommit(false);
 			BoardDAO dao=BoardDAO.getDAO();
 			totalcount=dao.getTotalCount(conn,search,searchtxt,category);
-			System.out.println("totalcount!!!:"+totalcount);
 			
 			conn.commit();
 		}catch(SQLException|NamingException e)

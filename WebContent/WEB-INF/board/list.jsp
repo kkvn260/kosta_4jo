@@ -103,6 +103,10 @@ div.search{
 <c:set var="totalpage" value="${requestScope.totalpage }"></c:set>
 <c:set var="search" value="${requestScope.search }"></c:set>
 <c:set var="searchtxt" value="${requestScope.searchtxt }"></c:set>
+<c:set var="startrow" value="${requestScope.startrow }"></c:set>
+<c:set var="endrow" value="${requestScope.endrow }"></c:set>
+<c:out value="${startrow-1 }"></c:out>
+<c:out value="${endrow }"></c:out>
 
 <div class="search">
 <form method="get"  action="list.do" >
@@ -123,8 +127,9 @@ div.search{
   <th>좋아요</th></tr>
   </thead>
   <tbody>
-    <c:forEach var="item" items="${list}" begin="0" end="${list.size() }" step="1">
-		<c:set var="no" value="${no+1 }"/>
+  	<c:set var="no" value="${startrow-1 }"></c:set>
+    <c:forEach var="item" items="${list}" begin="${startrow-1}" end="${endrow}" step="1">
+		<c:set var="no" value="${no+1 }" />
       <tr><td><c:out value="${no }" /></td>
       <td><a href="detail.do?boardno=${item.boardno }"><c:out value="${item.title }"/></a></td>
       <td><c:out value="${item.content }"></c:out></td>

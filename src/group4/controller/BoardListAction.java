@@ -45,7 +45,7 @@ public class BoardListAction implements Action {
 		int totalpage=(int) Math.ceil((float)totalcount/pagepercount);
 		
 		int startrow=(currpage-1)*pagepercount+1;
-		int endrow=startrow+pagepercount+1;
+		int endrow=startrow+pagepercount-1;
 		
 		if(endrow>totalcount)
 			endrow=totalcount;
@@ -68,7 +68,10 @@ public class BoardListAction implements Action {
 		request.setAttribute("totalpage", totalpage);
 		request.setAttribute("search", search);
 		request.setAttribute("searchtxt", searchtxt);
-
+		request.setAttribute("startrow", startrow);
+		request.setAttribute("endrow", endrow);
+		
+		
 		 Forward forward=new Forward();
 		 forward.setForward(true);
 		 forward.setPath("WEB-INF/board/main.jsp?page=list.jsp");

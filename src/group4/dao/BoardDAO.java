@@ -33,7 +33,7 @@ public class BoardDAO {
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
 				){
 			pstmt.setString(1, dto.getTitle());
-			pstmt.setString(2, "hong"); // id 
+			pstmt.setString(2, dto.getId()); 
 			pstmt.setString(3, dto.getContent());
 			pstmt.setString(4, dto.getBoard_name());
 			pstmt.setString(5, dto.getFilename());
@@ -149,11 +149,12 @@ public class BoardDAO {
 		{
 			sql.append("where "+search+" like ?");
 			if(!category.equals("")) {
-				sql.append("and board_name like ?");
+				sql.append("	and board_name like ?	");
 			}
 			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
 			sql.append("      )    c                                            					 ");
-			sql.append(" where rnum>=? and rnum<=?                               					");
+			sql.append(" where rnum>=? and rnum<=?        	");
+			sql.append("	order by writedate desc	");
 			
 		}else {
 			if(!category.equals("")) {
@@ -161,7 +162,8 @@ public class BoardDAO {
 			}
 			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
 			sql.append("      )    c                                            					 ");
-			sql.append(" where rnum>=? and rnum<=?                               					");
+			sql.append(" where rnum>=? and rnum<=?                              ");
+			sql.append("	order by writedate desc	");
 			
 		}
 
