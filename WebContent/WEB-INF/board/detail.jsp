@@ -9,6 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 
+function del(rno, bno){
+	 console.log(rno,bno);
+	 location.href="replydel.do?rno="+rno+"&bno="+bno;
+}
+
 $(document).ready(function(){
 	 let no = ${boarddto.boardno};
 	 $.ajax({
@@ -19,15 +24,18 @@ $(document).ready(function(){
 		,success:function(data){
 			
 			$.each(data,function(index,list){
-				reply="<tr>";
+                reply="<tr>";  
 				reply+="<td>"+list.id+"</td>";
 				reply+="<td>"+list.replycontent+"</td>";
-				reply+="<td>"+list.reply_writedate;		
-				reply+="<input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
+				reply+="<td>"+list.reply_writedate+"</td>";
+				console.log(list.boardno)
+			    if(list.id=="세션으로 받을 id"){ /* 세션으로 받아오는 id가 없어서 임시id로 테스트  */
+			    /* if(list.id == ${sessionScope.id}){ */
+				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
+				} 
 				reply+="</td></tr>";
 				
 				$('#result').append(reply);
-				
 			});
 		}
 		,error:function(xhr){
@@ -63,7 +71,7 @@ $(document).ready(function(){
 	<form method="post" action="replyadd.do">
 	<input type="hidden" name="num" value="${boarddto.boardno }">
 	<textarea rows="3" cols="20" name="content" required="required" ></textarea><br>
-	<input type="text" name="id" value="세션으로 받을id" required="required"><br>
+	<input type="text" name="id" value="${sessionScope.id}" required="required"><br>
 	<input type="submit" value="추가">
 	</form>
 	<br>

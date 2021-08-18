@@ -28,6 +28,7 @@
     </c:if>
     <c:if test="${sessionScope.id!=null }">
            <a href="logout.do">로그아웃</a>
+           <a href="myinfo.do"><%=session.getAttribute("id") %>님</a>
     </c:if>
 </div>
 <input type="button" id="all" value="전체">

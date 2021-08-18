@@ -283,6 +283,7 @@ public class BoardDAO {
 				dto.setId(rs.getString("id"));
 				dto.setReply_writedate(rs.getString("reply_writedate"));
 				dto.setReplycontent(rs.getString("replycontent"));
+				dto.setBoardno(rs.getInt("boardno"));
 				replyList.add(dto);
 			}
 			
@@ -315,6 +316,24 @@ public class BoardDAO {
 					System.out.println(e);
 				}
 		}//end addReply
+	
+	
+	public void replyDelete(Connection conn, int rno) {
+		// TODO Auto-generated method stub
+		StringBuilder sql=new StringBuilder();
+		sql.append("  delete from reply_Group4	 ");
+		sql.append("         where replyno= ?    ");  
+		
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString())
+				  ){
+					pstmt.setInt(1, rno);
+					pstmt.executeUpdate();
+					
+				}catch(SQLException e) {
+					System.out.println(e);
+				}
+		
+	}//end replyDelete
 	
 	
 		

@@ -22,7 +22,8 @@ public class WriteBoardAction implements Action {
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String savePath=request.getServletContext().getRealPath("/WEB-INF/file");
+		
+		String savePath=request.getServletContext().getRealPath("file");
 		System.out.println("파일 저장 경로"+savePath);
 		File dir=new File(savePath);
 		if(!dir.exists()) dir.mkdir(); //폴더 없으면 만들기
@@ -59,8 +60,8 @@ public class WriteBoardAction implements Action {
 		service.insertFile(dto2);
 
 		Forward f=new Forward();
-		f.setForward(false);
-		f.setPath("list.do");
+		f.setForward(true);
+		f.setPath("main.jsp?page=list.jsp");
 		return f;
 	}
 
