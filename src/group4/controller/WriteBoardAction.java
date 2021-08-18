@@ -61,7 +61,7 @@ public class WriteBoardAction implements Action {
 
 		Forward f=new Forward();
 		f.setForward(true);
-		f.setPath("WEB-INF/board/main.jsp?page=list.jsp");
+		f.setPath("list.do");
 		return f;
 	}
 

@@ -44,7 +44,7 @@ public class BoardService {
 	}
 	
 	
-	public List<BoardDTO> getlist(int startrow,int endrow, String search , String searchtxt) {
+	public List<BoardDTO> getlist(String boardname,int startrow,int endrow, String search , String searchtxt) {
 		// TODO Auto-generated method stub
 		
 		DBConnection dbconn=DBConnection.getDBConn();
@@ -54,7 +54,7 @@ public class BoardService {
 				conn=dbconn.getConnection();
 				BoardDAO dao=BoardDAO.getDAO();
 				
-				list=dao.getList(conn,startrow,endrow,search,searchtxt);
+				list=dao.getList(conn,boardname,startrow,endrow,search,searchtxt);
 		}catch(SQLException|NamingException e)
 		{
 			System.out.println(e);

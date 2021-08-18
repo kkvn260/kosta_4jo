@@ -127,7 +127,7 @@ public class BoardDAO {
 	}
 
 
-	public List<BoardDTO> getList(Connection conn,int startrow, int endrow, String search, String searchtxt) {
+	public List<BoardDTO> getList(Connection conn,String boardname,int startrow, int endrow, String search, String searchtxt) {
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
 		sql.append(" select      c.*                          	         ");
@@ -142,38 +142,43 @@ public class BoardDAO {
 		sql.append("                     ,content          		         ");
 		sql.append("                     ,writedate        		         ");
 		sql.append("                     ,likeno           		         ");
+		sql.append("                     ,board_name           		     ");
 		sql.append("        from Board_Group4                            ");
 
 //		if(!board_name.equals("")) {
 //			
 //		}
 		if(!search.equals("")&& !searchtxt.equals(""))
-		{
+		{	
 			if(search.equals("title"))
 			{
 				sql.append("               where title like  ?               ");
+				sql.append("              	order by writedate    desc       ");
 				sql.append("             )b, (select @rownum:=0) R           ");
-				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?                       ");
+				sql.append("     where board_name=? ) c                                        ");
+				sql.append(" where rnum>=? and rnum<=?      and board_name=?                  ");
 			}
 			else if(search.equals("id"))
 			{
 				sql.append("               where  lower(id) like ?           ");
+				sql.append("              	order by writedate  desc         ");
 				sql.append("             )b ,  (select @rownum:=0) R         ");
 				sql.append("      )   c                                      ");
-				sql.append(" where rnum>=? and rnum<=?                       ");
+				sql.append(" where rnum>=? and rnum<=?  and board_name=?                      ");
 			}
 			else if(search.equals("content"))
 			{
 				sql.append("               where  content   like ?           ");
+				sql.append("              	order by writedate    desc       ");
 				sql.append("             )b , (select @rownum:=0) R          ");
 				sql.append("      ) c                                        ");
-				sql.append(" where rnum>=? and rnum<=?                       ");
+				sql.append(" where rnum>=? and rnum<=?   and board_name=?                     ");
 			}
 		}else {
+		sql.append("              	order by writedate desc           		 ");
 		sql.append("             )b  ,   (select @rownum:=0) R               ");
-		sql.append("      )    c                                             ");
-		sql.append(" where rnum>=? and rnum<=?                               ");
+		sql.append("     )    c                                              ");
+		sql.append(" where rnum>=? and rnum<=?   and board_name=?            ");
 		}
 
 		List<BoardDTO> list=new ArrayList<BoardDTO>();
@@ -189,9 +194,10 @@ public class BoardDAO {
 				pstmt.setInt(3, endrow);
 
 			}else
-			{
+			{	
 				pstmt.setInt(1, startrow);
 				pstmt.setInt(2, endrow);
+				pstmt.setString(3, boardname);
 			}
 			rs=pstmt.executeQuery();
 			while(rs.next())
