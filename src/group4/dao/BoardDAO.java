@@ -182,7 +182,7 @@ public class BoardDAO {
 				) {
 			if(!search.equals("") && !searchtxt.equals(""))
 			{
-				pstmt.setString(1, "%"+searchtxt.equals(""));
+				pstmt.setString(1, "%"+searchtxt.toLowerCase()+"%");
 				pstmt.setInt(2, startrow);
 				pstmt.setInt(3, endrow);
 
@@ -217,7 +217,26 @@ public class BoardDAO {
 
 	}
 
-
+	public void viewnocount(Connection conn, int boardno) {
+		StringBuilder sql=new StringBuilder();
+		sql.append("  update from Board_Group4        ");
+		sql.append("  set                             ");
+		sql.append("         viewno=nvl(viewno,0) +1  ");
+		sql.append("  where                           ");
+		sql.append("         boardno=?                ");
+		
+		try(
+				PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
+				
+				pstmt.setInt(1, boardno);
+				pstmt.executeUpdate();
+		}catch(SQLException e) {
+			
+			System.out.println(e);
+		}
+		
+	}
 
 	public void insertFile(Connection conn, FileDTO dto2) {
 		StringBuilder sql=new StringBuilder();
