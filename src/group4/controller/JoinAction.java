@@ -18,7 +18,7 @@ public class JoinAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/join.jsp");
+		forward.setPath("WEB-INF/board/main.jsp?page=join.jsp");
 		return forward;
 	}
 

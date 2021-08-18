@@ -66,6 +66,8 @@ $(document).ready(function(){
 	<input type="text" name="id" value="세션으로 받을id" required="required"><br>
 	<input type="submit" value="추가">
 	</form>
+	<br>
+	<a href="list.do">목록으로</a>
 	
 	
 

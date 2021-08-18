@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>Talk together</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/list.js"></script>
 <style>
 #all,#book,#travel,#movie,#notice{
 	margin-top:20px;
@@ -95,11 +94,6 @@ div.search{
 
 </head>
 <body>
-<input type="button" id="all" value="전체">
-<input type="button" id="book" value="도서">
-<input type="button" id="travel" value="여행">
-<input type="button" id="movie" value="영화">
-<input type="button" id="notice" value="공지사항">
 
 <c:set var="list" value="${requestScope.list}"></c:set>
 <c:set var="currpage" value="${requestScope.currpage }"></c:set>

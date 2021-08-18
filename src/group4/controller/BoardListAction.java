@@ -69,7 +69,7 @@ public class BoardListAction implements Action {
 
 		 Forward forward=new Forward();
 		 forward.setForward(true);
-		 forward.setPath("WEB-INF/board/list.jsp");
+		 forward.setPath("WEB-INF/board/main.jsp?page=list.jsp");
 		
 		return forward;
 		

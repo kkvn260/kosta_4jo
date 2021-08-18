@@ -7,6 +7,7 @@
 <title>Insert title here</title> 
 </head>
 <body>
+<br>
 콜센터 : 1234-5678  , Fax : 123-1212
 상담시간 : 10:00 ~ 18:00
 </body>
