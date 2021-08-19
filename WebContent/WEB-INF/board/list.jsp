@@ -64,7 +64,6 @@
 					<td><c:out value="${item.writedate }"></c:out></td>
 					<td><c:out value="${item.likeno }"></c:out></td>
 				</tr>
-
 			</c:forEach>
 		</tbody>
 	</table>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#all, #book, #travel, #movie, #notice {
+ #book, #travel, #movie, #notice {
 	margin-top: 20px;
 	width: 250px;
 	height: 50px;
@@ -8,6 +8,25 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: gray;
+	
+}
+#all{
+	
+	margin-top: 20px;
+	width: 250px;
+	height: 50px;
+	border: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: gray;
+	
+	
+	margin-left: 80px;
+}
+
+#all:hover,#book:hover, #travel:hover, #movie:hover, #notice:hover{
+	background-color: #c2ff86;
+	color:black
 }
 
 }
@@ -30,26 +49,33 @@ div.page1 a {
 	display: inline-block;
 	float: left;
 	margin-left: 10px;
+	
+	
 }
 
 div.page1 a:hover {
-	background-color: skyblue;
+	background-color:none;
 }
 
 div.page2 {
 	margin-top: 20px;
 	float: left;
 	margin-left: 5px;
+	background-color: skyblue;
+	display: inline-block;
 }
 
 div.page2 a {
+
 	display: inline-block;
-	background-color: skyblue;
-	color: white;
+	background-color: white;
 	text-decoration: none;
 	width: 20px;
+	
 }
-
+div.page2 a:hover{
+	background-color: skyblue;
+}
 div.page3 a {
 	margin-top: 20px;
 	margin-top: 20px;
@@ -57,9 +83,11 @@ div.page3 a {
 	display: inline-block;
 	float: left;
 	margin-left: 10px;
+	background-color: skyblue;
 }
 
 div.page3 a:hover {
+	
 	background-color: skyblue;
 }
 
@@ -78,4 +106,45 @@ div.search {
 #preview td{
 	padding-right: 10px;
 	border: none;
+}
+p.p{
+	position:absolute;
+    left:310px;
+    bottom:0;
+    height:80px;
+    width:66%;
+    background-color:#ffffcc;
+}
+h1{
+	margin-left:20px;
+	}
+ div.header{
+ margin-left:20px;
+ }
+div.button{
+	margin-left:-60px;
+}
+div#main{
+	padding-right:290px;
+	padding-left:290px;
+}
+#content{
+	padding-left:30px;
+}
+h2{
+      margin-top:50px;
+       margin-left:500px;
+   }
+ul li{
+        list-style:none;
+        margin-left: 450px; 
+    }
+.bg-info{margin-left:-20px;}
+p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
+ul li p.id{margin-left:13px;}
+ul li div.login{margin-left:70px; margin-bottom:30px;}
+    
+#main a:hover{
+	text-decoration: none;
+	color: blue;
 }

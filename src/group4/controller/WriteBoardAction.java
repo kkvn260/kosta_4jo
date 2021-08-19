@@ -32,8 +32,6 @@ public class WriteBoardAction implements Action {
 		
 		HttpSession session=request.getSession();
 		String id=(String)session.getAttribute("id");
-		String category=request.getParameter("cat");
-		request.setAttribute("category", category);
 		request.setAttribute("id", id);
 		String board_name=multi.getParameter("board_name");
 		String title=multi.getParameter("write_title");
