@@ -31,7 +31,7 @@
 	<div id="wrap1">
 		<h3>조회수 TOP10</h3>
 		<div style="width: 400px; height: 200px; overflow: auto">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table style="width:100%; border:0; cellspacing:0; cellpadding:0;">
 				<thead>
 					<tr>
 						<th>번호</th>
