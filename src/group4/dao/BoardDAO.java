@@ -49,7 +49,7 @@ public class BoardDAO {
 	//
 	public BoardDTO detail(int boardno, Connection conn) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("  select boardno, title, id, viewno, content, writedate ");
+		sql.append("  select boardno, title, id, viewno, content, writedate,board_name ");
 		sql.append("  from Board_Group4  ");
 		sql.append("  where boardno= ? ");
 		ResultSet rs =null;
@@ -66,7 +66,7 @@ public class BoardDAO {
 				dto.setViewno(rs.getInt("viewno"));
 				dto.setContent(rs.getString("content"));
 				dto.setWritedate(rs.getString("writedate"));
-
+				dto.setBoard_name(rs.getString("board_name"));
 			}
 
 		}catch(SQLException e) {
@@ -418,7 +418,7 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
 		sql.append("  delete from Board_Group4	 ");
-		sql.append("         where replyno= ?    ");
+		sql.append("         where boardno= ?    ");
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
 		   ){
 					pstmt.setInt(1, bno);
@@ -427,6 +427,7 @@ public class BoardDAO {
 				System.out.println(e);
 			}
 	}//end deleteBoard
+	
 	public List<BoardDTO> noticeList(Connection conn) {
 		StringBuilder sql=new StringBuilder();
 		sql.append("	select 											 ");
@@ -460,6 +461,26 @@ public class BoardDAO {
 			System.out.println(e);
 		}
 		return list;
+	}
+	
+	
+	public void modifyBoard(Connection conn, BoardDTO dto) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("  update Board_Group4      ");
+	    sql.append(" set  title=?, content=?  ");
+		sql.append("  where boardno= ?         ");
+
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());	
+				){
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setInt(3, dto.getBoardno());
+			pstmt.executeUpdate();	
+
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		
 	}
 	
 

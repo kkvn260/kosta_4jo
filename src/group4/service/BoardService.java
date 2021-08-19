@@ -136,10 +136,8 @@ public class BoardService {
 			
 			try {
 				conn=dbconn.getConnection();
-				
 				BoardDAO dao = new BoardDAO();
-				dao.deleteBoard(conn,bno);
-				dao.replyDelete(conn, bno);
+				dao.deleteBoard(conn,bno);	
 				
 			}catch(Exception e) {
 				System.out.println(e);
@@ -235,10 +233,6 @@ public class BoardService {
 			return list;
 		}
 		
-		public BoardDTO modifyBoard(int no) {
-			// TODO Auto-generated method stub
-			return null;
-		}
 		public List<BoardDTO> noticeList() {
 			DBConnection dbConn = DBConnection.getDBConn();
 			Connection conn=null;
@@ -253,6 +247,22 @@ public class BoardService {
 				if(conn!=null) try{conn.close();}catch(SQLException e) {}
 			}
 			return list;
+		}
+		
+		public void modifyBoard(BoardDTO dto) {
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn=null;
+			
+			try {
+				conn= dbConn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.modifyBoard(conn,dto);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
 		}
 		
 	
