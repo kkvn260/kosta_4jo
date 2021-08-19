@@ -52,10 +52,19 @@
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<c:forEach var="item" items="${list2}">
+					<c:choose>
+						<c:when test="${not empty item.filename }">
 					<td><a href="detail.do?boardno=${item.boardno }">
 					    <img src="file/${item.filename }" alt="${item.title }" 
 					    	 width="300px" height="175px"/>
 					</a></td>
+						</c:when>
+						<c:otherwise>
+							<td><a href="detail.do?boardno=${item.boardno }">
+								<c:out value="${item.title }"></c:out>
+							</a></td>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
 			</tr>
 		</table>
