@@ -87,6 +87,16 @@ div.search {
 	margin-left:600px;
 	display: inline-block;
 }
+div.write {
+	margin-top:20px;
+	margin-left:800px;
+	text-align: center;
+	font-weight:bold;
+	font-size:18px;
+	color:black;
+	background-color: white;
+	
+}
 #main a{
 	text-decoration: none;
 	color: black;
