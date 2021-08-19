@@ -18,15 +18,16 @@
     }
     .a{color:blue;}
     .b{color:red;}
-    
+    .id2{margin-left:-70px;}
+    .join{margin-top:30px; margin-bottom:50px; margin-left:15px;}
 </style>
 </head>
 <body>
-	<form name="join" method="post" action="idcheck.do">
+	<form method="post" action="idcheck.do">
 	<ul>
-	   <li>
+	   <li><br>
 	   <h1>회원가입</h1><br>
-	    <label>아이디 중복확인</label>
+	    <label class="id2">아이디 중복확인</label>
 		      <input type="text" placeholder="UserID"  name="id"> 
 		      <input type="submit" value="중복확인">
 		<span class="a">
@@ -37,7 +38,7 @@
 	</ul>
 	</form>
 
-	<form name="join"  method="post" action="joinresult.do">
+	<form method="post" action="joinresult.do">
 		<ul>
 			<li><label for="id">아이디</label><br> <%-- <input type="text" name="id" id="id" required="required">--%>
 				<c:if test='${param.msg == "OK"}'>
@@ -50,10 +51,11 @@
 			<li><label for="email">이메일</label><br> 
 			       <input type="text" placeholder="Email" name="email" id="email" required="required"><br><br></li>
 			
-			<li><input type="submit" value="회원가입" onclick="checkpwd()">
-			       <input type="reset" value="취소"></li> 
+			<li><div class="join">
+			      <input type="submit" value="회원가입" class="btn btn-primary">
+			       <input type="reset" value="취소" class="btn btn-default"></div></li> 
 			<li>
-                   <label>이미 아이디가 있으신가요?</label>
+                   <span class="bg-info"><label>이미 아이디가 있으신가요?</label></span>
                    <a href="login.do">로그인</a>
             </li>      
 		</ul>
