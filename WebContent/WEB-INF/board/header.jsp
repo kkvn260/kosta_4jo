@@ -9,7 +9,12 @@
 
 <link rel="stylesheet" href="style/style.css">
 
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
 	$('div #all').click(function(){
@@ -34,6 +39,7 @@ $('div #travel').click(function(){
 	
 });
 
+
 $('div #movie').click(function(){
 	
 	$('div #movie').css('backgroundColor','#c2ff86')
@@ -55,6 +61,9 @@ $('div #notice').click(function(){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+
 
 
 
