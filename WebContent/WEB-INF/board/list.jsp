@@ -34,7 +34,7 @@
 				<option value="content">내용</option>
 				<option value="id">작성자</option>
 			</select> <input type="text" name="searchtxt"> <input type="submit"
-				value="검색">
+			id="searchbtn"	value="검색">
 		</form>
 
 	</div>

@@ -12,16 +12,24 @@
 <style>
 	#mainjsp{
 		width: 1200px;
-		height: 800px;
+		height: 1000px;
 		margin: 0 auto;
 		padding: 0 0;
 	}
 	#content{
 		width:900px;
-		margin: auto; 
+		height:auto;
+		margin: auto;
 	}
 	body{
 		background-image: url("https://i.pinimg.com/564x/b5/46/39/b546396b5256a3fcc3cd3d6bef742da3.jpg");
+	}
+	html{
+		position: relative;
+	}
+	#footer{
+		position: absolute;
+		bottom: 0;
 	}
 </style>
 </head>
@@ -35,7 +43,7 @@
 		<jsp:include page="${page }"></jsp:include>
 	</section>
 	
-	<footer>
+	<footer id="footer">
 		<%@include file="footer.jsp"%>
 	</footer>
 </div>

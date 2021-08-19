@@ -29,12 +29,10 @@
 				</c:otherwise>
 				</c:choose>
 			</select>
+			<input type="text" name="write_title" placeholder="제목을 입력해주세요" style="width: 100%;">
 		</div>
 		<div>
-			<input type="text" name="write_title" placeholder="제목을 입력해주세요">
-		</div>
-		<div>
-			<textarea rows="10" cols="30" name="write_content" placeholder="내용을 입력해주세요"></textarea>
+			<textarea rows="15" cols="125" name="write_content" placeholder="내용을 입력해주세요"></textarea>
 		</div>
 		<div>
 			<label>이미지 미리보기</label>
