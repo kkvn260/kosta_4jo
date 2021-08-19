@@ -7,35 +7,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/detail.js"></script>
 <script>
-
-/* 댓글삭제 */
-function del(rno, bno){
-	 console.log(rno,bno);
-	 location.href="replydel.do?rno="+rno+"&bno="+bno;
-}
-
-
 
 /* 댓글조회 */
 $(document).ready(function(){
 	 let no = ${boarddto.boardno};
+    console.log(no);
 	 $.ajax({
 		url:'replydetail.do'
 		,data:{'num':no}
 		,method:'post'
 		,dataType:'json'
 		,success:function(data){
-			   
+		
 			$.each(data,function(index,list){
                 reply="<tr>";  
 				reply+="<td>"+list.id+"</td>";
 				reply+="<td>"+list.replycontent+"</td>";
 				reply+="<td>"+list.reply_writedate+"</td>";
-
-			    /*if(list.id=="세션으로 받을 id"){   /*  세션으로 받아오는 id가 없어서 임시id로 테스트  */
+				
 			    if(list.id == "${sessionScope.id}"){  
-
 				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
 				} 
 				reply+="</td></tr>";
@@ -48,16 +40,16 @@ $(document).ready(function(){
 		 
 	 });
 });
-
-
-
 </script>
+
+
+<c:set var="boarddto" value="${requestScope.boarddto }"></c:set>
 </head>
 <body>
 
-<c:set var="boarddto" value="${requestScope.boarddto }"></c:set>
- 	 <c:out value="${boarddto.filename }"></c:out>
- 	 
+
+<c:out value="${boarddto.filename }"></c:out>
+ 
  	 
  <ul>
  
@@ -84,7 +76,9 @@ $(document).ready(function(){
    <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
    <li>
    <label for="writedate">작성일</label>
-   <input type="text" name="writedate" value="${boarddto.writedate }" readonly="readonly">
+   <input type="text" name="writedate" value=""${boarddto.writedate }" readonly="readonly">
+    <br>
+    <label>댓글 내용</label><br>
    </li>
 
      <!-- 댓글 -->
@@ -112,6 +106,5 @@ $(document).ready(function(){
 	  </c:if>
 	
 
-<!--<script src="js/detail.js"></script>-->
 </body>
 </html>
