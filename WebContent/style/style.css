@@ -134,3 +134,8 @@ div#main{
     p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
     ul li p.id{margin-left:13px;}
     ul li div.login{margin-left:70px; margin-bottom:30px;}
+    
+   #main a:hover{
+	text-decoration: none;
+	color: blue;
+}
