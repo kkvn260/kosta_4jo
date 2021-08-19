@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title> 
+<link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <br>
-<div>
-<p>콜센터 : 1234-5678  , Fax : 123-1212</p>
-<p>상담시간 : 10:00 ~ 18:00 </p>
-</div>
+
+<p class="p">콜센터 : 1234-5678  , Fax : 123-1212<br>
+       상담시간 : 10:00 ~ 18:00 </p>
+
 </body>
 </html>

@@ -22,9 +22,11 @@ public class MainBaordAction implements Action {
 		BoardService service=BoardService.getService();
 		List<BoardDTO> list=service.topViewList();
 		List<BoardDTO> list2=service.topLikeList();
+		List<BoardDTO> list3=service.noticeList();
 		
 		request.setAttribute("list", list);
 		request.setAttribute("list2", list2);
+		request.setAttribute("list3", list3);
 		
 		
 		 Forward forward=new Forward();

@@ -54,7 +54,6 @@
 		<tbody>
 			<c:set var="no" value="${startrow-1 }"></c:set>
 			<c:forEach var="item" items="${list}">
-				<c:if test="${ item.board_name ne '공지사항' }">
 				<c:set var="no" value="${no+1 }" />
 				<tr>
 					<td><c:out value="${no }" /></td>
@@ -65,7 +64,6 @@
 					<td><c:out value="${item.writedate }"></c:out></td>
 					<td><c:out value="${item.likeno }"></c:out></td>
 				</tr>
-				</c:if>
 			</c:forEach>
 		</tbody>
 	</table>

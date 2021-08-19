@@ -8,19 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<style>
-   h2{
-      margin-top:50px;
-       margin-left:500px;
-   }
-    ul li{
-        list-style:none;
-        margin-left: 450px; 
-    }
-    p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
-    ul li p.id{margin-left:13px;}
-    ul li div.login{margin-left:60px; margin-bottom:30px;}
-</style>
+<link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
 

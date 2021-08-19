@@ -39,16 +39,16 @@ public class BoardListAction implements Action {
 		
 		BoardService service=BoardService.getService();
 		int totalcount=service.getTotalCount(search, searchtxt,category);
-		int pagepercount=5; 
+		int pagepercount=10; 
 		
 		int totalpage=(int) Math.ceil((float)totalcount/pagepercount);
 		
 		int startrow=(currpage-1)*pagepercount+1;
 		int endrow=startrow+pagepercount-1;
-		
+
 		if(endrow>totalcount)
 			endrow=totalcount;
-		
+
 		
 		int blockcount=5;
 		int startblock=((currpage-1)/blockcount)*blockcount+1;
@@ -69,6 +69,7 @@ public class BoardListAction implements Action {
 		request.setAttribute("searchtxt", searchtxt);
 		request.setAttribute("startrow", startrow);
 		request.setAttribute("category", category);
+		request.setAttribute("endrow", endrow);
 		HttpSession session=request.getSession();
 		String id=(String)session.getAttribute("id");
 		request.setAttribute("id", id);

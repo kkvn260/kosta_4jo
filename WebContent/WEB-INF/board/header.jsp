@@ -8,6 +8,7 @@
 <title>Insert title here</title> 
 
 <link rel="stylesheet" href="style/style.css">
+<<<<<<< HEAD
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -18,6 +19,11 @@ $(document).ready(function(){
 	});
 });
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+>>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
+
 
 
 
@@ -25,8 +31,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div>
+
 <h1 id="main"><a href="main.do">Talk together!</a></h1>
+<div class="header">
 <c:if test="${sessionScope.id==null}">
            <a href="login.do">로그인</a>
            <a href="join.do">회원가입</a>
@@ -38,11 +45,13 @@ $(document).ready(function(){
     </c:if>
 </div>
 <!-- <<<<<<< HEAD -->
+<div class="button">
 <input type="button" id="all" value="전체" onclick="location.href='/kosta_4jo/list.do'">
 <input type="button" id="book" value="도서" onclick="location.href='/kosta_4jo/list.do?cat=도서'" >
 <input type="button" id="travel" value="여행" onclick="location.href='/kosta_4jo/list.do?cat=여행'">
 <input type="button" id="movie" value="영화" onclick="location.href='/kosta_4jo/list.do?cat=영화'">
 <input type="button" id="notice" value="공지사항" onclick="location.href='/kosta_4jo/list.do?cat=공지사항'">
+</div>
 <!-- =======
 	
 >>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git -->
