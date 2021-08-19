@@ -506,9 +506,9 @@ public class BoardDAO {
 	
 	public int likeCount(Connection conn, int bno) {
 		StringBuilder sql = new StringBuilder();
-		sql.append(" select count(*)   ");
-		sql.append(" from like_Group4  ");
-		sql.append(" where bno = ?     ");
+		sql.append(" select likeno   ");
+		sql.append(" from Board_Group4  ");
+		sql.append(" where board = ?     ");
 		
 		int count=0;
 		ResultSet rs= null;
@@ -517,7 +517,7 @@ public class BoardDAO {
 			pstmt.setInt(1, bno);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-			count=rs.getInt("count(*)");
+			count=rs.getInt("likeno");
 			}
 			
 		}catch(SQLException e){
@@ -525,9 +525,9 @@ public class BoardDAO {
 		}finally{
 			if(rs!=null)try{rs.close();}catch(SQLException e){}
 		}
-		
 		return count;
 	}//end likeCount
+	
 	
 	public int likeCheck(Connection conn, int bno, String id) {
 		StringBuilder sql = new StringBuilder();

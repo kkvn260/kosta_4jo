@@ -18,8 +18,7 @@ public class LikeUpdateAction implements Action {
 		
 		int num = Integer.parseInt(request.getParameter("no"));
 		String id = (String)request.getSession().getAttribute("id");
-		
-		
+				
 		BoardService service = BoardService.getService();
 	
 		int totalLike = service.likeCount(num);	
