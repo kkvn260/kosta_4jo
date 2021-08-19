@@ -20,7 +20,7 @@ public class LikeUpdateAction implements Action {
 		String id = (String)request.getSession().getAttribute("id");
 		
 		BoardService service = BoardService.getService();
-		service.likeUpdate(no);
+		//service.likeUpdate(no);
 		
 		
 		
