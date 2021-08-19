@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#all, #book, #travel, #movie, #notice {
+ #book, #travel, #movie, #notice {
 	margin-top: 20px;
 	width: 250px;
 	height: 50px;
@@ -8,6 +8,25 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: gray;
+	
+}
+#all{
+	
+	margin-top: 20px;
+	width: 250px;
+	height: 50px;
+	border: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: gray;
+	
+	
+	margin-left: 80px;
+}
+
+#all:hover,#book:hover, #travel:hover, #movie:hover, #notice:hover{
+	background-color: #c2ff86;
+	color:black
 }
 
 }
