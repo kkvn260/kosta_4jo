@@ -147,6 +147,7 @@ public class BoardDAO {
 		sql.append("                     ,content          		         ");
 		sql.append("                     ,writedate        		         ");
 		sql.append("                     ,likeno           		         ");
+		sql.append("                     ,board_name           		     ");
 		sql.append("        from Board_Group4                            ");
 
 		if(!search.equals("")&& !searchtxt.equals(""))
@@ -217,6 +218,7 @@ public class BoardDAO {
 				dto.setViewno(rs.getInt("viewno"));
 				dto.setWritedate(rs.getString("writedate"));
 				dto.setLikeno(rs.getInt("likeno")); 
+				dto.setBoard_name(rs.getString("board_name"));
 				list.add(dto);
 			}
 		}catch(SQLException e)
