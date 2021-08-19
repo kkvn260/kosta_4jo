@@ -12,7 +12,7 @@
 <style>
 	#mainjsp{
 		width: 1200px;
-		height: 800px;
+		height: 1000px;
 		margin: 0 auto;
 		padding: 0 0;
 	}
