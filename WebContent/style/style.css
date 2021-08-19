@@ -106,10 +106,9 @@ h2{
    }
 ul li{
         list-style:none;
-        margin-left: 450px; 
+        margin-left:280px; 
     }
-.bg-info{margin-left:-20px;}
-p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
+.bg-info{margin-left:-18px;}
 ul li div.id{margin-left:13px;}
 ul li div.login{margin-left:70px; margin-bottom:30px;}
     

@@ -13,9 +13,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
-    ul li{
-        list-style:none;
-    }
     .a{color:blue;}
     .b{color:red;}
     .id2{margin-left:-70px;}
@@ -53,7 +50,7 @@
 			       <input type="text" placeholder="Email" name="email" id="email" required="required"><br><br></li>
 			
 			<li><div class="join">
-			      <input type="submit" value="회원가입" class="btn btn-primary">
+			      <input type="submit" value="회원가입" class="btn btn-info">
 			       <input type="reset" value="취소" class="btn btn-default"></div></li> 
 			<li>
                    <span class="bg-info"><label>이미 아이디가 있으신가요?</label></span>
