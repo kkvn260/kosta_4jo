@@ -2,7 +2,7 @@
 
 #all, #book, #travel, #movie, #notice {
 	margin-top: 20px;
-	width: 230px;
+	width: 236px;
 	height: 50px;
 	border: none;
 	font-weight: bold;
@@ -10,9 +10,6 @@
 	color: gray;
 	
 }
-
-
-
 }
 table {
 	border-collapse: collapse;
@@ -103,7 +100,8 @@ h1{
 	margin-left:20px;
 	}
  div.header{
- margin-left:20px;
+   text-align:right;
+   margin-right:20px;
  }
 
 #content{
