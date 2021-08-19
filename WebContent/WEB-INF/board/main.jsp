@@ -20,6 +20,9 @@
 		width:900px;
 		margin: auto; 
 	}
+	body{
+		background-image: url("https://i.pinimg.com/564x/b5/46/39/b546396b5256a3fcc3cd3d6bef742da3.jpg");
+	}
 </style>
 </head>
 <body> 
