@@ -147,8 +147,9 @@ public class BoardDAO {
 		sql.append("                     ,id               		         ");
 		sql.append("                     ,viewno            	         ");
 		sql.append("                     ,content          		         ");
-		sql.append("                     ,date_format(writedate,'%y-%m-%d')as writedate        		         ");
+		sql.append("                     ,date_format(writedate,'%y-%m-%d')as writedate1        		         ");
 		sql.append("                     ,likeno           		         ");
+		sql.append("                     ,writedate           		         ");
 		sql.append("                     ,board_name           		     ");
 		sql.append("        from Board_Group4                            ");
 
@@ -218,7 +219,7 @@ public class BoardDAO {
 				dto.setId(rs.getString("id"));
 				dto.setContent(rs.getString("content"));
 				dto.setViewno(rs.getInt("viewno"));
-				dto.setWritedate(rs.getString("writedate"));
+				dto.setWritedate(rs.getString("writedate1"));
 				dto.setLikeno(rs.getInt("likeno")); 
 				dto.setBoard_name(rs.getString("board_name"));
 				list.add(dto);
@@ -478,6 +479,23 @@ public class BoardDAO {
 			pstmt.setString(2, dto.getContent());
 			pstmt.setInt(3, dto.getBoardno());
 			pstmt.executeUpdate();	
+
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		
+	}
+	public void viewUp(Connection conn, int boardno) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("  update Board_Group4      ");
+	    sql.append(" set  viewno=viewno+1  ");
+		sql.append("  where boardno= ?         ");
+
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());	
+				){
+			pstmt.setInt(1, boardno);
+			pstmt.executeUpdate();
+			
 
 		}catch(SQLException e) {
 			System.out.println(e);

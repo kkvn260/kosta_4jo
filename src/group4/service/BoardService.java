@@ -264,6 +264,22 @@ public class BoardService {
 				if(conn!=null) try{conn.close();}catch(SQLException e) {}
 			}
 		}
+		public void viewUp(int boardno) {
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn=null;
+			
+			try {
+				conn= dbConn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.viewUp(conn,boardno);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			
+		}
 		
 	
 }
