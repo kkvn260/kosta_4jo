@@ -84,7 +84,7 @@ $(document).ready(function(){
    <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
    <li>
    <label for="writedate">작성일</label>
-   <input type="text" name="writedate" value=""${boarddto.writedate }" readonly="readonly">
+   <input type="text" name="writedate" value="${boarddto.writedate }" readonly="readonly">
    </li>
 
      <!-- 댓글 -->
