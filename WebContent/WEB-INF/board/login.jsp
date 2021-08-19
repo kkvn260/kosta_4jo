@@ -9,12 +9,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="style/style.css">
-
+<style>
+      h2.meet{margin-left:340px;}
+      p.text-info{margin-left:300px; margin-top:20px; margin-bottom:50px;}
+</style>
 </head>
 <body>
 
 <form method="post" action="loginresult.do">
-<h2>방문을 환영합니다</h2>
+<h2 class="meet">방문을 환영합니다</h2>
 <p class="text-info"><strong>로그인을 하시면 다양한 서비스를 이용하실 수 있습니다.</strong></p>
    <ul>
    
@@ -27,7 +30,7 @@
             <input type="password" name="pwd" id="pwd"><br><br>
       </li>
       <li><div class="login">
-            <input type="submit" value="로그인" class="btn btn-primary">
+            <input type="submit" value="로그인" class="btn btn-info">
             <input type="reset" value="취소" class="btn btn-default"><br><br>
       </div></li>
       <li>
