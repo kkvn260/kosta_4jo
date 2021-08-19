@@ -12,7 +12,7 @@
 <style>
 	#mainjsp{
 		width: 1200px;
-		height: 1000px;
+		height: 1300px;
 		margin: 0 auto;
 		padding: 0 0;
 	}
@@ -27,6 +27,7 @@
 	html{
 		position: relative;
 	}
+	
 	#footer{
 		position: absolute;
 		bottom: 0;

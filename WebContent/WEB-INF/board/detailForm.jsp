@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="style/style.css">
 
 </head>
 <body>
@@ -28,7 +29,7 @@
    </li>
    <li>
    <label for="content">글내용</label>
-   <textarea rows="3" cols="20" name="content" id="content">${boarddto.content }</textarea>
+   <textarea rows="15" cols="125" name="content" id="content">${boarddto.content }</textarea>
    </li>
    <li> 작성일 : ${boarddto.writedate } </li>
  
