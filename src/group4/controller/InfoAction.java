@@ -18,7 +18,7 @@ public class InfoAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/myinfo.jsp");
+		forward.setPath("WEB-INF/board/main.jsp?page=myinfo.jsp");
 		return forward;
 
 	}
