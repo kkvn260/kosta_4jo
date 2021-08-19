@@ -56,28 +56,52 @@ $(document).ready(function(){
 <body>
 
 <c:set var="boarddto" value="${requestScope.boarddto }"></c:set>
+ 	 <c:out value="${boarddto.filename }"></c:out>
+ 	 
+ 	 
+ <ul>
+ 
+   <li>
+   <label for="bno">글번호</label>
+   <input type="text" name="bno" value="${boarddto.boardno }"  readonly="readonly">
+   </li>
+   <li>
+   <label for="title">제목</label>
+   <input type="text" name="title" value="${boarddto.title}"  readonly="readonly">
+   </li>
+   <li>
+   <label for="id">아이디</label>
+   <input type="text" name="id" value="${boarddto.id }" readonly="readonly">
+   </li>
+   <li>
+   <label for="viewno">조회수</label>
+   <input type="text" name="viewno" value="${boarddto.viewno }" readonly="readonly">
+   </li>
+   <li>
+   <label for="content">내용</label>
+   <input type="text" name="content" value="${boarddto.content }" readonly="readonly">
+   </li>
+   <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
+   <li>
+   <label for="writedate">작성일</label>
+   <input type="text" name="writedate" value=""${boarddto.writedate }" readonly="readonly">
+   </li>
 
-<table>
-   <thead>
-   	<tr><td>글번호</td><td><c:out value="${boarddto.boardno }"></c:out></td></tr>
-   	<tr><td>제목</td><td><c:out value="${boarddto.title }"></c:out></td></tr>
-   	<tr><td>아이디</td><td><c:out value="${boarddto.id }"></c:out></td></tr>
-   	<tr><td>조회수</td><td><c:out value="${boarddto.viewno }"></c:out></td></tr>
-   	<tr><td>내용</td><td><c:out value="${boarddto.content }"></c:out></td></tr>
-   	<tr><td>작성일</td> <td><c:out value="${boarddto.writedate }"></c:out></td></tr>
-   </thead>
- 	
-</table>
-
-	<!-- 댓글 -->
-   <table id="result"></table>
-   
+     <!-- 댓글 -->
+    <li id="result"></li>
+    
+    <li>
 	<form method="post" action="replyadd.do">
 	<input type="hidden" name="num" value="${boarddto.boardno }">
 	<textarea rows="3" cols="20" name="content" required="required" ></textarea><br>
 	<input type="text" name="id" value="${sessionScope.id}" required="required"><br>
 	<input type="submit" value="댓글쓰기">
 	</form>
+	</li>
+	
+ </ul>
+
+	
 	<br>
 	<a href="list.do?cat=${boarddto.board_name}">목록으로</a>
 	
