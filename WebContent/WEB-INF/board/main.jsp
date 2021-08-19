@@ -15,7 +15,11 @@
 		height: 800px;
 		margin: 0 auto;
 		padding: 0 0;
-	}	
+	}
+	#content{
+		width:900px;
+		margin: auto; 
+	}
 </style>
 </head>
 <body> 
