@@ -47,7 +47,7 @@ $(document).ready(function(){
 <body>
 
 
- 	<div>
+ 	<div><br>
  		<span>[${boarddto.board_name }]</span><span>   ${boarddto.title }</span>
  	</div>
  	<div>
