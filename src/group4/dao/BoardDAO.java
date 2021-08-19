@@ -49,7 +49,7 @@ public class BoardDAO {
 	//
 	public BoardDTO detail(int boardno, Connection conn) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("  select boardno, title, id, viewno, content, writedate,board_name ");
+		sql.append("  select boardno, title, id, viewno, content, date_format(writedate,'%y-%m-%d')as writedate  ,board_name ");
 		sql.append("  from Board_Group4  ");
 		sql.append("  where boardno= ? ");
 		ResultSet rs =null;
@@ -145,7 +145,7 @@ public class BoardDAO {
 		sql.append("                     ,id               		         ");
 		sql.append("                     ,viewno            	         ");
 		sql.append("                     ,content          		         ");
-		sql.append("                     ,writedate        		         ");
+		sql.append("                     ,date_format(writedate,'%y-%m-%d')as writedate        		         ");
 		sql.append("                     ,likeno           		         ");
 		sql.append("                     ,board_name           		     ");
 		sql.append("        from Board_Group4                            ");
@@ -280,7 +280,7 @@ public class BoardDAO {
 		sql.append("  select   			 		");
 		sql.append("          replyno,	 		");
 		sql.append("          id,    	 		");
-		sql.append("          reply_writedate,  ");
+		sql.append("          date_format(reply_writedate,'%y-%m-%d')as reply_writedate  ,  ");
 		sql.append("          replycontent,     ");
 		sql.append("          boardno	 		");
 		sql.append("  from reply_Group4			");
@@ -358,7 +358,7 @@ public class BoardDAO {
 		sql.append("                     ,title            		         ");
 		sql.append("                     ,id               		         ");
 		sql.append("                     ,viewno            	         ");
-		sql.append("                     ,writedate            	         ");
+		sql.append("                     ,date_format(writedate,'%y-%m-%d')as writedate              	         ");
 		sql.append("                     ,likeno            	         ");
 		sql.append("     from Board_Group4                   	         ");
 		sql.append("     order by viewno desc		limit 10          	         ");
@@ -435,7 +435,7 @@ public class BoardDAO {
 		sql.append("                     ,title            		         ");
 		sql.append("                     ,id               		         ");
 		sql.append("                     ,viewno            	         ");
-		sql.append("                     ,writedate            	         ");
+		sql.append("                     ,date_format(writedate,'%y-%m-%d')as writedate             	         ");
 		sql.append("                     ,likeno            	         ");
 		sql.append("     from Board_Group4                   	         ");
 		sql.append("     where board_name='공지사항'             	         ");
