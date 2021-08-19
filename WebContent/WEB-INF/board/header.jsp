@@ -8,7 +8,21 @@
 <title>Insert title here</title> 
 
 <link rel="stylesheet" href="style/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#all').click(function(){
+		
+		$('#all').css('backgroundColor','brown');
+		
+	});
+});
 
+
+
+
+
+</script>
 </head>
 <body>
 <div>

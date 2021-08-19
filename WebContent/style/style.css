@@ -49,26 +49,33 @@ div.page1 a {
 	display: inline-block;
 	float: left;
 	margin-left: 10px;
+	
+	
 }
 
 div.page1 a:hover {
-	background-color: skyblue;
+	background-color:none;
 }
 
 div.page2 {
 	margin-top: 20px;
 	float: left;
 	margin-left: 5px;
+	background-color: skyblue;
+	display: inline-block;
 }
 
 div.page2 a {
+
 	display: inline-block;
-	background-color: skyblue;
-	color: white;
+	background-color: white;
 	text-decoration: none;
 	width: 20px;
+	
 }
-
+div.page2 a:hover{
+	background-color: skyblue;
+}
 div.page3 a {
 	margin-top: 20px;
 	margin-top: 20px;
@@ -76,9 +83,11 @@ div.page3 a {
 	display: inline-block;
 	float: left;
 	margin-left: 10px;
+	background-color: skyblue;
 }
 
 div.page3 a:hover {
+	
 	background-color: skyblue;
 }
 
