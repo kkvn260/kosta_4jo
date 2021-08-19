@@ -20,17 +20,16 @@ $(document).ready(function(){
 		,method:'post'
 		,dataType:'json'
 		,success:function(data){
-		
+			
 			$.each(data,function(index,list){
-                reply="<tr>";  
-				reply+="<td>"+list.id+"</td>";
-				reply+="<td>"+list.replycontent+"</td>";
-				reply+="<td>"+list.reply_writedate+"</td>";
+                reply="<span>";  
+				reply+=list.id+"</span><br>";
+				reply+="<span>"+list.reply_writedate+"</span><br>";
+				reply+="<span>"+list.replycontent+"</span>";
 				
 			    if(list.id == "${sessionScope.id}"){  
-				reply+="<td><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")>";
+				reply+="<span><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")></span><br>";
 				} 
-				reply+="</td></tr>";
 				$('#result').append(reply);
 			});
 		}
@@ -48,50 +47,38 @@ $(document).ready(function(){
 <body>
 
 
- 	 
- <ul>
- 
-   <li>
-   <label for="bno">글번호</label>
-   <input type="text" name="bno" value="${boarddto.boardno }"  readonly="readonly">
-   </li>
-   <li>
-   <label for="title">제목</label>
-   <input type="text" name="title" value="${boarddto.title}"  readonly="readonly">
-   </li>
-   <li>
-   <label for="id">아이디</label>
-   <input type="text" name="id" value="${boarddto.id }" readonly="readonly">
-   </li>
-   <li>
-   <label for="viewno">조회수</label>
-   <input type="text" name="viewno" value="${boarddto.viewno }" readonly="readonly">
-   </li>
-   <li>
-   <label for="content">내용</label>
-   <input type="text" name="content" value="${boarddto.content }" readonly="readonly">
-   </li>
+ 	<div>
+ 		<span>[${boarddto.board_name }]</span><span>   ${boarddto.title }</span>
+ 	</div>
+ 	<div>
+ 		<span>${boarddto.id }  |</span><span>  ${boarddto.writedate }</span>
+ 	</div>
+ 	<div>
+ 		<span>조회수 : ${boarddto.viewno }</span>
+ 		<span>좋아요수 : ${boarddto.likeno }</span>
+ 	</div>
+ 	
+   <label for="content">내용</label><br>
+   <textarea rows="15" cols="125" readonly="readonly">${boarddto.content }</textarea>
+   	<c:if test="${not empty boarddto.filename}">
    <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
-   <li>
-   <label for="writedate">작성일</label>
-   <input type="text" name="writedate" value=""${boarddto.writedate }" readonly="readonly">
+   	</c:if>
     <br>
     <label>댓글 내용</label><br>
-   </li>
+
 
      <!-- 댓글 -->
-    <li id="result"></li>
-    
-    <li>
+
+    <div id="result"></div>
+
 	<form method="post" action="replyadd.do">
 	<input type="hidden" name="num" value="${boarddto.boardno }">
 	<textarea rows="3" cols="20" name="content" required="required" ></textarea><br>
+	<label>작성자</label><br>
 	<input type="text" name="id" value="${sessionScope.id}" required="required"><br>
 	<input type="submit" value="댓글쓰기">
 	</form>
-	</li>
-	
- </ul>
+
 
 	
 	<br>

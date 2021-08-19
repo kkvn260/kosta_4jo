@@ -25,7 +25,7 @@ public class ModifyBoardAction implements Action {
 				
 		Forward forward = new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/detailForm.jsp");
+		forward.setPath("WEB-INF/board/main.jsp?page=detailForm.jsp");
 		return forward;	
 	}
 
