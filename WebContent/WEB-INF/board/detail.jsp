@@ -26,7 +26,7 @@ $(document).ready(function(){
 		,method:'post'
 		,dataType:'json'
 		,success:function(data){
-			   
+		
 			$.each(data,function(index,list){
                 reply="<tr>";  
 				reply+="<td>"+list.id+"</td>";
@@ -85,6 +85,8 @@ $(document).ready(function(){
    <li>
    <label for="writedate">작성일</label>
    <input type="text" name="writedate" value=""${boarddto.writedate }" readonly="readonly">
+    <br>
+    <label>댓글 내용</label><br>
    </li>
 
      <!-- 댓글 -->
