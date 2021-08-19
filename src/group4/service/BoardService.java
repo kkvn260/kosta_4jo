@@ -239,6 +239,21 @@ public class BoardService {
 			// TODO Auto-generated method stub
 			return null;
 		}
+		public List<BoardDTO> noticeList() {
+			DBConnection dbConn = DBConnection.getDBConn();
+			Connection conn=null;
+			List<BoardDTO> list=new ArrayList<BoardDTO>();
+			try {
+				conn=dbConn.getConnection();
+				BoardDAO dao=BoardDAO.getDAO();
+				list=dao.noticeList(conn);
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			return list;
+		}
 		
 	
 }
