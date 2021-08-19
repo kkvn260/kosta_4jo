@@ -100,7 +100,7 @@ div.search {
 }
 p.p{
 	position:absolute;
-    left:20px;
+    left:330px;
     bottom:0;
     height:80px;
     width:66%;
@@ -115,4 +115,10 @@ h1{
 div.button{
 	margin-left:-60px;
 }
-
+div#main{
+	padding-right:310px;
+	padding-left:310px;
+}
+#content{
+	padding-left:30px;
+}
