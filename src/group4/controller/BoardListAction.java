@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import group4.comm.Action;
 import group4.comm.Forward;
@@ -68,7 +69,10 @@ public class BoardListAction implements Action {
 		request.setAttribute("searchtxt", searchtxt);
 		request.setAttribute("startrow", startrow);
 		request.setAttribute("category", category);
-
+		HttpSession session=request.getSession();
+		String id=(String)session.getAttribute("id");
+		request.setAttribute("id", id);
+		
 		Forward forward=new Forward();
 		forward.setForward(true);
 		forward.setPath("WEB-INF/board/main.jsp?page=list.jsp");

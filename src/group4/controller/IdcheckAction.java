@@ -30,7 +30,7 @@ public class IdcheckAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/board/join.jsp?id="+id+"&msg="+result);
+		forward.setPath("WEB-INF/board/main.jsp?page=join.jsp&id="+id+"&msg="+result);
 		return forward;
 	}
 
