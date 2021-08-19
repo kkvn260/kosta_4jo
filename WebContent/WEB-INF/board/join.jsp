@@ -8,11 +8,13 @@
 <meta charset="utf-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
     ul li{
         list-style:none;
-        text-align:center;
     }
     .a{color:blue;}
     .b{color:red;}
@@ -23,14 +25,14 @@
 	<form name="join" method="post" action="idcheck.do">
 	<ul>
 	   <li>
-	   <h1>회원가입</h1>
+	   <h1>회원가입</h1><br>
 	    <label>아이디 중복확인</label>
 		      <input type="text" placeholder="UserID"  name="id"> 
 		      <input type="submit" value="중복확인">
 		<span class="a">
 			<c:if test='${param.msg =="OK"}'>&nbsp;&nbsp;사용가능한 아이디</c:if></span>
 	    <span class="b">
-			<c:if test='${param.msg=="NotOK" }'>&nbsp;&nbsp;이미 존재하는 아이디</c:if></span>   
+			<c:if test='${param.msg=="NotOK" }'>&nbsp;&nbsp;이미 존재하는 아이디</c:if></span><br>
 	    </li>
 	</ul>
 	</form>

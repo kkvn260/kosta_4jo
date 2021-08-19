@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
- #book, #travel, #movie, #notice {
+#all, #book, #travel, #movie, #notice {
 	margin-top: 20px;
 	width: 250px;
 	height: 50px;
@@ -9,25 +9,9 @@
 	font-size: 20px;
 	color: gray;
 	
-}
-#all{
-	
-	margin-top: 20px;
-	width: 250px;
-	height: 50px;
-	border: none;
-	font-weight: bold;
-	font-size: 20px;
-	color: gray;
-	
-	
-	margin-left: 80px;
 }
 
-#all:hover,#book:hover, #travel:hover, #movie:hover, #notice:hover{
-	background-color: #c2ff86;
-	color:black
-}
+
 
 }
 table {
@@ -121,9 +105,6 @@ h1{
  div.header{
  margin-left:20px;
  }
-div.button{
-	margin-left:-60px;
-}
 div#mainjsp{
 	padding-right:290px;
 	padding-left:290px;
