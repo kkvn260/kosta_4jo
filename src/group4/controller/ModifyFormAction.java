@@ -8,24 +8,36 @@ import javax.servlet.http.HttpServletResponse;
 
 import group4.comm.Action;
 import group4.comm.Forward;
+import group4.dao.BoardDAO;
+import group4.dto.BoardDTO;
 import group4.service.BoardService;
 
-public class DeleteBoardAction implements Action {
+
+public class ModifyFormAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int bno = Integer.parseInt(request.getParameter("boardno"));
+		request.setCharacterEncoding("utf-8");
+		int bno = Integer.parseInt(request.getParameter("bno"));
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
 		String cat = request.getParameter("cat");
+		
+		BoardDTO dto = new BoardDTO();
+		dto.setBoardno(bno);
+		dto.setTitle(title);
+		dto.setContent(content);
+		
 		BoardService service = BoardService.getService();
-		int result = service.deleteBoard(bno);
-				
+		service.modifyBoard(dto);
+		
 		Forward forward = new Forward();
-		forward.setForward(true);
+		forward.setForward(false);
 		forward.setPath("list.do?cat="+cat);
 		
-	return forward;
+		return forward;
 	}
 
 }

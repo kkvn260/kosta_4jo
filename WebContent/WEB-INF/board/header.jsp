@@ -15,49 +15,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-	$('div #all').click(function(){
-		
-		$('div #all').css('backgroundColor','#c2ff86')
-					 .css('color','black');
-		
-	});
-	
-$('div #book').click(function(){
-		
-		$('div #book').css('backgroundColor','#c2ff86')
-		 			  .css('color','black');
-		
-	});
-	
-	
-$('div #travel').click(function(){
-	
-	$('div #travel').css('backgroundColor','#c2ff86')
-	 				.css('color','black');
-	
-});
-
-
-$('div #movie').click(function(){
-	
-	$('div #movie').css('backgroundColor','#c2ff86')
-	 			   .css('color','black');
-	
-});
-
-$('div #notice').click(function(){
-	
-	$('div #notice').css('backgroundColor','#c2ff86')
-				    .css('color','black');
-	
-});
-	
-	
-	
-});
-</script>
 
 </head>
 <body>

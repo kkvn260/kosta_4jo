@@ -15,46 +15,6 @@ function del(rno, bno){
 	 location.href="replydel.do?rno="+rno+"&bno="+bno;
 }
 
-/* 게시글삭제 */
-function delBoard(boardno){
-	console.log(boardno);
-	$.ajax({
-		url:'del.do?boardno='+boardno
-		,method:'post'
-		,dataType:'json'
-		,success:function(result){
-			if(result=='1'){
-				alert("삭제가 완료되었습니다.");
-			}else{
-				alert("삭제가 실패하였습니다.")
-			}
-		}
-		,error:function(xhr){
-			console.log('error'+xhr);
-		}
-	});
-}
-
-/* 게시글수정  */
-function modiBoard(boardno){
-	console.log(boardno);
-	$.ajax({
-		url:'modify.do?boardno='+boardno
-		,method:'post'
-		,dataType:'json'
-		,success:function(result){
-			if(result=='1'){
-				alert("수정완료.");
-			}else{
-				alert("수정실패.")
-			}
-		}
-		,error:function(xhr){
-			console.log('error'+xhr);
-		}
-	});
-}
-
 
 
 /* 댓글조회 */
@@ -116,17 +76,16 @@ $(document).ready(function(){
 	<input type="hidden" name="num" value="${boarddto.boardno }">
 	<textarea rows="3" cols="20" name="content" required="required" ></textarea><br>
 	<input type="text" name="id" value="${sessionScope.id}" required="required"><br>
-	<input type="submit" value="추가">
+	<input type="submit" value="댓글쓰기">
 	</form>
 	<br>
-	<a href="list.do">목록으로</a>
+	<a href="list.do?cat=${boarddto.board_name}">목록으로</a>
 	
-	<%-- <c:if test="${sessionScope.id==boarddto.id"> --%>
-	<c:if test="${boarddto.id=='hong'}">
-	  <button onclick="delBoard(${boarddto.boardno})" class="btn">삭제</button>
-	  <button onclick="modiBoard(${boarddto.boardno})" class="btn">수정</button>
-	</c:if>
-	
+
+	  <c:if test="${sessionScope.id==boarddto.id}">
+	     <a href="del.do?boardno=${boarddto.boardno}&cat=${boarddto.board_name}">삭제</a>
+	     <a href="modify.do?boardno=${boarddto.boardno}&cat=${boarddto.board_name}">수정</a>
+	  </c:if>
 	
 
 <!--<script src="js/detail.js"></script>-->
