@@ -95,11 +95,12 @@
 			</table>
 		</div>
 	</div>
-
+	
 	<!-- 좋아요 높은 게시물 탑5 -->
 	<div id="wrap2">
+	<br>
 		<h3>좋아요 TOP5 미리보기</h3>
-		<div style="width: 60%; height: 200px; overflow: auto" id="preview">
+		<div style="width: 100%; height: 200px; overflow: auto" id="preview">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<c:forEach var="item" items="${list2}">
