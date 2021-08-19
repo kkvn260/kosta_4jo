@@ -17,14 +17,13 @@ table,tr,td {
 }
 
 th{
-	
+	border : 0;
 	background-color: white;
 	text-align: center;
 	height: 30px;
 }
 
 td {
-
 	background-color: white;
 	text-align: center;
 	height: 30px;
