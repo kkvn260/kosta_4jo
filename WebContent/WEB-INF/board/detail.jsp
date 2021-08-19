@@ -48,8 +48,6 @@ $(document).ready(function(){
 <body>
 
 
-<c:out value="${boarddto.filename }"></c:out>
- 
  	 
  <ul>
  
