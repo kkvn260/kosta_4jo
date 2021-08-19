@@ -16,7 +16,14 @@ table {
 	width: 750px;
 }
 
-th, td {
+th{
+	
+	background-color: white;
+	text-align: center;
+	height: 30px;
+}
+
+td {
 	border: 1px solid silver;
 	background-color: white;
 	text-align: center;
@@ -24,9 +31,11 @@ th, td {
 }
 
 thead th {
-	background-color: silver;
+	background-color: #faf4b8;
 	width: 800px;
 	text-align: center;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
 div.page1 a {
@@ -84,8 +93,13 @@ div.clear {
 div.search {
 	
 	margin-top: 50px;
+	margin-bottom:10px;
 	margin-left:600px;
 	display: inline-block;
+}
+#searchbtn {
+	background-color: #faf4b8;
+	
 }
 div.write {
 	margin-top:20px;
