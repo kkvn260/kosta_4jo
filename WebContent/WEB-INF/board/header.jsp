@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-<h1 id="main"><a href="main.do">together</a></h1>
+<h1 id="main"><a href="main.do">Talk together!</a></h1>
 <c:if test="${sessionScope.id==null}">
            <a href="login.do">로그인</a>
            <a href="join.do">회원가입</a>

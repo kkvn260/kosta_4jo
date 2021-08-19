@@ -22,7 +22,7 @@ public class DeleteBoardAction implements Action {
 		
 		Forward forward = new Forward();
 		forward.setForward(true);
-		forward.setPath("list.do");
+		forward.setPath("main.do");
 		
 		return null;
 	}

@@ -18,6 +18,8 @@ public class WriteFormAction implements Action {
 		// TODO Auto-generated method stub
 		HttpSession session=request.getSession();
 		String id=(String)session.getAttribute("id");
+		String category=request.getParameter("cat");
+		request.setAttribute("category", category);
 		
 		Forward f=new Forward();
 		f.setForward(true);

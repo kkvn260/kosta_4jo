@@ -16,7 +16,7 @@
 
 	<!-- 조회수 높은 게시물 탑10-->
 	<h3>조회수 TOP10</h3>
-	<div style="width: 30%; height: 200px; overflow: auto">
+	<div style="width: 35%; height: 200px; overflow: auto">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
@@ -47,8 +47,8 @@
 	</div>
 
 	<!-- 좋아요 높은 게시물 탑5 -->
-	<h3>좋아요 TOP5</h3>
-	<div style="width: 70%; height: 200px; overflow: auto" id="preview">
+	<h3>좋아요 TOP5 미리보기</h3>
+	<div style="width: 60%; height: 200px; overflow: auto" id="preview">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<c:forEach var="item" items="${list2}">
