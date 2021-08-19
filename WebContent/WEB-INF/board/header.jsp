@@ -69,7 +69,7 @@ $('div #notice').click(function(){
     </c:if>
     <c:if test="${sessionScope.id!=null }">
        
-           <a href="myinfo.do"><%=session.getAttribute("id") %>님</a>
+           <a href="myinfo.do"><%=session.getAttribute("id") %>님 | </a>
            <a href="logout.do">로그아웃</a>
     </c:if>
 </div>
