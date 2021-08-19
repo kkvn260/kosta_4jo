@@ -88,11 +88,11 @@ div.search {
 	padding-right: 10px;
 	border: none;
 }
-p.p{
+div.p{
 	position:absolute;
     bottom:0;
     height:80px;
-    width:64%;
+    width:100%;
     background-color:#F0F0F0;
 }
  div.header{
