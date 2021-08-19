@@ -11,7 +11,7 @@
 	
 }
 }
-table {
+table,tr,td {
 	border-collapse: collapse;
 	width: 750px;
 }
@@ -24,7 +24,7 @@ th{
 }
 
 td {
-	border: 1px solid silver;
+
 	background-color: white;
 	text-align: center;
 	height: 30px;

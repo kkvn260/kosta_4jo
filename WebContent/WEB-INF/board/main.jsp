@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
+	body{
+		background-image: url("https://i.pinimg.com/564x/b5/46/39/b546396b5256a3fcc3cd3d6bef742da3.jpg");
+	}
+	html{
+		position: relative;
+	}
+
 	#mainjsp{
 		width: 1200px;
 		height: 1300px;
@@ -21,13 +28,6 @@
 		height:auto;
 		margin: auto;
 	}
-	body{
-		background-image: url("https://i.pinimg.com/564x/b5/46/39/b546396b5256a3fcc3cd3d6bef742da3.jpg");
-	}
-	html{
-		position: relative;
-	}
-	
 	#footer{
 		position: absolute;
 		bottom: 0;
