@@ -116,3 +116,11 @@ ul li div.login{margin-left:70px; margin-bottom:30px;}
 	text-decoration: none;
 	color: blue;
 }
+div #all:hover{background-color:#ceff86; color:black;}
+div #book:hover{background-color:#ceff86; color:black;}
+div #travel:hover{background-color:#ceff86; color:black;}
+div #movie:hover{background-color:#ceff86; color:black;}
+div #notice:hover{background-color:#ceff86; color:black;}
+
+
+	
