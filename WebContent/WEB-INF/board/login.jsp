@@ -18,10 +18,10 @@
 <p class="text-info"><strong>로그인을 하시면 다양한 서비스를 이용하실 수 있습니다.</strong></p>
    <ul>
    
-        <li ><p class="id">
+        <li ><div class="id">
              <label for="id" >아이디</label>
              <input type="text" name="id" id="id">
-       </p></li>
+       </div></li>
        <li>
             <label for="pwd">패스워드</label>
             <input type="password" name="pwd" id="pwd"><br><br>

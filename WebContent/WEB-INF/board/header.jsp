@@ -62,7 +62,7 @@ $('div #notice').click(function(){
 </head>
 <body>
 
-<h1 id="main"><a href="main.do">Talk together!</a></h1>
+<h1 id="main"><strong><a href="main.do">Talk together!</a></strong></h1>
 <div class="header">
 <c:if test="${sessionScope.id==null}">
            <a href="login.do">로그인</a>

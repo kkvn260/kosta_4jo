@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<style>
+	#mainjsp{
+		width: 1200px;
+		height: 800px;
+		margin: 0 auto;
+		padding: 0 0;
+	}	
+</style>
 </head>
 <body> 
 <div id="mainjsp">
