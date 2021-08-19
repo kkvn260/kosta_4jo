@@ -53,6 +53,7 @@ $(document).ready(function(){
 					url:'likeUpdate.do'
 				   ,data:{'no':${boarddto.boardno}}
 				   ,type:'post'
+				   ,dataType:'json'
 				   ,success: function(){
 					   likeCount();
 				   },
@@ -66,6 +67,7 @@ $(document).ready(function(){
 		 $.ajax({
 			 url:"likeCount.do"
 			,data:{'no':${boarddto.boardno}}
+			,dataType:'json'
 		    ,type:'post'
 		    ,success:function(data){
 		   

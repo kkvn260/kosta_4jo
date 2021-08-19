@@ -22,22 +22,23 @@ public class LikeUpdateAction implements Action {
 		
 		BoardService service = BoardService.getService();
 	
-		int totalLike = service.likeCount(num);
-				
+		int totalLike = service.likeCount(num);	
+		int one = 1;
+		
 		if(service.likeCheck(num,id)==0) {
 			service.likeUpdate(num,id);
-			service.modifyLike(totalLike+1,num);
+			service.modifyLike(totalLike+one,num);
 			
 		}else {
 			service.likeCancel(num,id);
-			service.modifyLike(totalLike-1,num);
+			service.modifyLike(totalLike-one,num);
 		}	
 		
-		Forward forward = new Forward();
-		forward.isForward();
-		forward.getPath();
+		Forward f = new Forward();
+		f.setForward(false);
+		f.setPath("detail.do?boardno="+num);
 		
-		return forward;
+		return f;
 	}
 
 }
