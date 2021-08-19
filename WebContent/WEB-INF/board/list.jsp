@@ -95,11 +95,11 @@
 	<c:choose>
 		<c:when test="${category eq '공지사항' }">
 			<c:if test="${id eq 'admin' }">
-				<a href="writeform.do">글쓰기</a>
+				<a href="writeform.do?cat=${category }">글쓰기</a>
 			</c:if>
 		</c:when>
 		<c:otherwise>
-			<a href="writeform.do">글쓰기</a>
+			<a href="writeform.do?cat=${category }">글쓰기</a>
 		</c:otherwise>
 	</c:choose>
 
