@@ -100,7 +100,7 @@ div.search {
 }
 p.p{
 	position:absolute;
-    left:330px;
+    left:310px;
     bottom:0;
     height:80px;
     width:66%;
@@ -122,20 +122,20 @@ div#main{
 #content{
 	padding-left:30px;
 }
- h2{
+h2{
       margin-top:50px;
        margin-left:500px;
    }
-  ul li{
+ul li{
         list-style:none;
         margin-left: 450px; 
     }
-    .bg-info{margin-left:-20px;}
-    p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
-    ul li p.id{margin-left:13px;}
-    ul li div.login{margin-left:70px; margin-bottom:30px;}
+.bg-info{margin-left:-20px;}
+p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
+ul li p.id{margin-left:13px;}
+ul li div.login{margin-left:70px; margin-bottom:30px;}
     
-   #main a:hover{
+#main a:hover{
 	text-decoration: none;
 	color: blue;
 }
