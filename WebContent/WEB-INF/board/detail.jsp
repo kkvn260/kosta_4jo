@@ -62,21 +62,7 @@ $(document).ready(function(){
 		});
 	});
 	 
-	 
-	 function likeTotal(){
-		 $.ajax({
-			 url:"likeCount.do"
-			,data:{'no':${boarddto.boardno}}
-			,dataType:'json'
-		    ,type:'post'
-		    ,success:function(data){
-		   
-		    }
-		    
-		 })
-		 
-	 }
-	 
+
 	 
 	 
 });
@@ -107,9 +93,9 @@ $(document).ready(function(){
    	
    	<!-- 좋아요! 기능 -->
 
-     	<div class="likeCount">
+     	<div>
      		<button class="likeUpdate" id="likeUpdate">
-     		   <span class="likeTotal">${boarddto.likeno }</span>
+     		   <span>${boarddto.likeno }</span>
      		</button>
      	</div>
 
