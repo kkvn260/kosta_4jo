@@ -286,11 +286,15 @@ public class BoardService {
 			// TODO Auto-generated method stub
 			DBConnection dbconn = DBConnection.getDBConn();
 			Connection conn = null;
+			BoardDTO dto = new BoardDTO();
 			int likecount=0;
+	
 			try {
 				conn=dbconn.getConnection();
 				BoardDAO dao = new BoardDAO();
-				likecount = dao.likeCount(conn, num);
+				dto = dao.likeCount(conn, num);
+				likecount = dto.getLikeno();
+				System.out.println(likecount);
 				
 			}catch(SQLException| NamingException e) {
 				System.out.println(e);

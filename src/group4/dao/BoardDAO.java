@@ -504,20 +504,21 @@ public class BoardDAO {
 	
 	
 	
-	public int likeCount(Connection conn, int bno) {
+	public BoardDTO likeCount(Connection conn, int bno) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select likeno   ");
 		sql.append(" from Board_Group4  ");
-		sql.append(" where board = ?     ");
+		sql.append(" where boardno = ?     ");
 		
-		int count=0;
 		ResultSet rs= null;
+		BoardDTO dto = new BoardDTO();
+		
 		try(PreparedStatement pstmt= conn.prepareStatement(sql.toString());
 		) { 
 			pstmt.setInt(1, bno);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-			count=rs.getInt("likeno");
+			  dto.setLikeno(rs.getInt("likeno"));
 			}
 			
 		}catch(SQLException e){
@@ -525,7 +526,7 @@ public class BoardDAO {
 		}finally{
 			if(rs!=null)try{rs.close();}catch(SQLException e){}
 		}
-		return count;
+		return dto;
 	}//end likeCount
 	
 	
