@@ -98,3 +98,21 @@ div.search {
 	padding-right: 10px;
 	border: none;
 }
+p.p{
+	position:absolute;
+    left:20px;
+    bottom:0;
+    height:80px;
+    width:66%;
+    background-color:#ffffcc;
+}
+h1{
+	margin-left:20px;
+	}
+ div.header{
+ margin-left:20px;
+ }
+div.button{
+	margin-left:-60px;
+}
+
