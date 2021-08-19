@@ -1,23 +1,28 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 #all, #book, #travel, #movie, #notice {
 	margin-top: 20px;
-	width: 236.5px;
+	width: 235px;
 	height: 50px;
 	border: none;
 	font-weight: bold;
 	font-size: 20px;
 	color: gray;
-	
+	font-family: 'Jua', sans-serif;
 }
+table,div,a,h1,h2,h3,span,p{
+	font-family: 'Jua', sans-serif;
 }
-table,tr,td {
+
+table, tr, td {
 	border-collapse: collapse;
 	width: 750px;
 }
 
-th{
-	border : 0;
+th {
+	border: 0;
 	background-color: white;
 	text-align: center;
 	height: 30px;
@@ -44,11 +49,10 @@ div.page1 a {
 	float: left;
 	margin-left: 10px;
 	margin-left: auto;
-	
 }
 
 div.page1 a:hover {
-	background-color:none;
+	background-color: none;
 }
 
 div.page2 {
@@ -60,16 +64,16 @@ div.page2 {
 }
 
 div.page2 a {
-
 	display: inline-block;
 	background-color: white;
 	text-decoration: none;
 	width: 20px;
-	
 }
-div.page2 a:hover{
+
+div.page2 a:hover {
 	background-color: skyblue;
 }
+
 div.page3 a {
 	margin-top: 20px;
 	margin-top: 20px;
@@ -81,7 +85,6 @@ div.page3 a {
 }
 
 div.page3 a:hover {
-	
 	background-color: skyblue;
 }
 
@@ -90,67 +93,98 @@ div.clear {
 }
 
 div.search {
-	
 	margin-top: 50px;
-	margin-bottom:10px;
-	margin-left:600px;
+	margin-bottom: 10px;
+	margin-left: 600px;
 	display: inline-block;
 }
+
 #searchbtn {
 	background-color: #faf4b8;
-	
 }
+
 div.write {
-	margin-top:20px;
-	margin-left:800px;
+	margin-top: 20px;
+	margin-left: 800px;
 	text-align: center;
-	font-weight:bold;
-	font-size:18px;
-	color:black;
+	font-weight: bold;
+	font-size: 18px;
+	color: black;
 	background-color: white;
-	
 }
-#main a{
+
+#main a {
 	text-decoration: none;
 	color: black;
 }
-#preview td{
+
+#preview td {
 	padding-right: 10px;
 	border: none;
 }
-div.p{
-	position:absolute;
-    bottom:0;
-    height:80px;
-    width:1200px;
-    background-color:#F0F0F0;
-}
- div.header{
-   text-align:right;
-   margin-right:20px;
- }
 
-h2{
-      margin-top:50px;
-       margin-left:500px;
-   }
-ul li{
-        list-style:none;
-        margin-left:280px; 
-    }
-.bg-info{margin-left:-18px;}
-ul li div.id{margin-left:13px;}
-ul li div.login{margin-left:70px; margin-bottom:30px;}
-    
-#main a:hover{
+div.p {
+	position: absolute;
+	bottom: 0;
+	height: 80px;
+	width: 1200px;
+	background-color: #F0F0F0;
+}
+
+div.header {
+	text-align: right;
+	margin-right: 20px;
+}
+
+h2 {
+	margin-top: 50px;
+	margin-left: 500px;
+}
+
+ul li {
+	list-style: none;
+	margin-left: 280px;
+}
+
+.bg-info {
+	margin-left: -18px;
+}
+
+ul li div.id {
+	margin-left: 13px;
+}
+
+ul li div.login {
+	margin-left: 70px;
+	margin-bottom: 30px;
+}
+
+#main a:hover {
 	text-decoration: none;
 	color: blue;
 }
-div #all:hover{background-color:#ceff86; color:black;}
-div #book:hover{background-color:#ceff86; color:black;}
-div #travel:hover{background-color:#ceff86; color:black;}
-div #movie:hover{background-color:#ceff86; color:black;}
-div #notice:hover{background-color:#ceff86; color:black;}
 
+div #all:hover {
+	background-color: #ceff86;
+	color: black;
+}
 
-	
+div #book:hover {
+	background-color: #ceff86;
+	color: black;
+}
+
+div #travel:hover {
+	background-color: #ceff86;
+	color: black;
+}
+
+div #movie:hover {
+	background-color: #ceff86;
+	color: black;
+}
+
+div #notice:hover {
+	background-color: #ceff86;
+	color: black;
+}

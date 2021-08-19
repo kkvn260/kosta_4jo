@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import group4.comm.DBConnection;
 import group4.dto.BoardDTO;
 import group4.dto.FileDTO;
 import group4.dto.ReplyDTO;

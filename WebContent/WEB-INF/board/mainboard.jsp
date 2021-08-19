@@ -19,7 +19,9 @@
 	#wrap2{
 		clear: both;
 	}
-
+h3{
+	color: teal;
+}
 </style>
 </head>
 <body>
@@ -67,7 +69,7 @@
 	<div id="wrap3">
 		<h3>최근 공지사항</h3>
 		<div style="width: 400px; height: 200px; overflow: auto">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table style="width:100%; border:0; cellspacing:0;cellpadding:0; ">
 				<thead>
 					<tr>
 						<th>번호</th>
@@ -102,7 +104,7 @@
 	<br>
 		<h3>좋아요 TOP5 미리보기</h3>
 		<div style="width: 100%; height: 200px; overflow: auto" id="preview">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table style="width:100%; border:0; cellspacing:0;cellpadding:0;">
 				<tr>
 					<c:forEach var="item" items="${list2}">
 						<c:choose>
