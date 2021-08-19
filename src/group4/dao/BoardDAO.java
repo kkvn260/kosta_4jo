@@ -147,6 +147,7 @@ public class BoardDAO {
 		sql.append("                     ,content          		         ");
 		sql.append("                     ,writedate        		         ");
 		sql.append("                     ,likeno           		         ");
+		sql.append("                     ,board_name           		     ");
 		sql.append("        from Board_Group4                            ");
 
 		if(!search.equals("")&& !searchtxt.equals(""))
@@ -217,6 +218,7 @@ public class BoardDAO {
 				dto.setViewno(rs.getInt("viewno"));
 				dto.setWritedate(rs.getString("writedate"));
 				dto.setLikeno(rs.getInt("likeno")); 
+				dto.setBoard_name(rs.getString("board_name"));
 				list.add(dto);
 			}
 		}catch(SQLException e)
@@ -425,6 +427,40 @@ public class BoardDAO {
 				System.out.println(e);
 			}
 	}//end deleteBoard
+	public List<BoardDTO> noticeList(Connection conn) {
+		StringBuilder sql=new StringBuilder();
+		sql.append("	select 											 ");
+		sql.append("                      boardno         		         ");
+		sql.append("                     ,title            		         ");
+		sql.append("                     ,id               		         ");
+		sql.append("                     ,viewno            	         ");
+		sql.append("                     ,writedate            	         ");
+		sql.append("                     ,likeno            	         ");
+		sql.append("     from Board_Group4                   	         ");
+		sql.append("     where board_name='공지사항'             	         ");
+		sql.append("     order by viewno desc		limit 10          	 ");
+		
+		
+		List<BoardDTO> list=new ArrayList<BoardDTO>();
+		ResultSet rs=null;
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				BoardDTO dto=new BoardDTO();
+				dto.setBoardno(rs.getInt("boardno"));
+				dto.setTitle(rs.getString("title"));
+				dto.setId(rs.getString("id"));
+				dto.setViewno(rs.getInt("viewno"));
+				dto.setWritedate(rs.getString("writedate"));
+				dto.setLikeno(rs.getInt("likeno")); 
+				list.add(dto);
+			}
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return list;
+	}
 	
 
 }
