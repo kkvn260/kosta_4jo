@@ -49,7 +49,7 @@ public class BoardDAO {
 	//
 	public BoardDTO detail(int boardno, Connection conn) {
 		StringBuilder sql = new StringBuilder();
-		sql.append("  select boardno, title, id, viewno, content, date_format(writedate,'%y-%m-%d')as writedate  ,board_name ");
+		sql.append("  select boardno, title, id, viewno, content, date_format(writedate,'%y-%m-%d')as writedate  ,board_name, likeno, filename");
 		sql.append("  from Board_Group4  ");
 		sql.append("  where boardno= ? ");
 		ResultSet rs =null;
@@ -67,6 +67,8 @@ public class BoardDAO {
 				dto.setContent(rs.getString("content"));
 				dto.setWritedate(rs.getString("writedate"));
 				dto.setBoard_name(rs.getString("board_name"));
+				dto.setLikeno(rs.getInt("likeno"));
+				dto.setFilename(rs.getString("filename"));
 			}
 
 		}catch(SQLException e) {
