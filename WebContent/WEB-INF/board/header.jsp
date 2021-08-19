@@ -8,27 +8,60 @@
 <title>Insert title here</title> 
 
 <link rel="stylesheet" href="style/style.css">
-<<<<<<< HEAD
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$('#all').click(function(){
+	$('div #all').click(function(){
 		
-		$('#all').css('backgroundColor','brown');
+		$('div #all').css('backgroundColor','#c2ff86')
+					 .css('color','black');
 		
 	});
+	
+$('div #book').click(function(){
+		
+		$('div #book').css('backgroundColor','#c2ff86')
+		 			  .css('color','black');
+		
+	});
+	
+	
+$('div #travel').click(function(){
+	
+	$('div #travel').css('backgroundColor','#c2ff86')
+	 				.css('color','black');
+	
 });
 
+$('div #movie').click(function(){
+	
+	$('div #movie').css('backgroundColor','#c2ff86')
+	 			   .css('color','black');
+	
+});
+
+$('div #notice').click(function(){
+	
+	$('div #notice').css('backgroundColor','#c2ff86')
+				    .css('color','black');
+	
+});
+	
+	
+	
+});
+</script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
->>>>>>> branch 'master' of https://github.com/kkvn260/kosta_4jo.git
 
 
 
 
 
-</script>
+
+
 </head>
 <body>
 
