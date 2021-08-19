@@ -9,6 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="style/style.css">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 	#wrap1{
 		float: left;
 	}
@@ -30,7 +31,7 @@
 	<!-- 조회수 높은 게시물 탑10-->
 	<div id="wrap1">
 		<h3>조회수 TOP10</h3>
-		<div style="width: 400px; height: 200px; overflow: auto">
+		<div style="width: 450px; height: 200px; overflow: auto">
 			<table style="width:100%; border:0; cellspacing:0; cellpadding:0;">
 				<thead>
 					<tr>

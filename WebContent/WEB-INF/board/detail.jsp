@@ -111,7 +111,7 @@ $(document).ready(function(){
 
 	<form method="post" action="replyadd.do">
 	<input type="hidden" name="num" value="${boarddto.boardno }">
-	<textarea rows="3" cols="20" name="content" required="required" ></textarea><br>
+	<textarea rows="3" cols="60" name="content" required="required" ></textarea><br>
 	<label>작성자</label><br>
 	<input type="text" name="id" value="${sessionScope.id}" required="required"><br>
 	<input type="submit" value="댓글쓰기">

@@ -7,6 +7,7 @@
 <title>Insert title here</title> 
 <link rel="stylesheet" href="style/style.css">
 <style>
+
 	div.p1{
 		float: left;
 	}
@@ -28,6 +29,6 @@
 	<div class="p3">
 		<p >주식회사 | Talk @copyright group4</p><br>
 	</div>
-<div>
+</div>
 </body>
 </html>
