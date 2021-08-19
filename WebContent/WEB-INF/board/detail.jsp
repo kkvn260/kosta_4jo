@@ -38,10 +38,12 @@ $(document).ready(function(){
 		}
 	 });
 	 
+	 
 	 /* 좋아요기능 */
-	 let likeCount = ${boarddto.likeno};
-	 $(function(){
-		$(".likeBtn").click(function(){
+	 
+
+	$(function(){	 
+		$(".likeUpdate").click(function(){
 			if(!"${id}"){
 				alert("회원만 추천할 수 있습니다");
 				location.href="login.do";
@@ -49,20 +51,29 @@ $(document).ready(function(){
 			else{
 				$.ajax({
 					url:'likeUpdate.do'
-				   ,data:{'no':likeCount}
+				   ,data:{'no':${boarddto.boardno}}
 				   ,type:'post'
 				   ,success: function(){
 					   likeCount();
 				   },
 				})
 			}	
-		});/* end .likeBtn */
-		
-		
-	 });
+		});
+	});
 	 
 	 
-	 
+	 function likeTotal(){
+		 $.ajax({
+			 url:"likeCount.do"
+			,data:{'no':${boarddto.boardno}}
+		    ,type:'post'
+		    ,success:function(data){
+		   
+		    }
+		    
+		 })
+		 
+	 }
 	 
 	 
 	 
@@ -95,8 +106,8 @@ $(document).ready(function(){
    	<!-- 좋아요! 기능 -->
 
      	<div class="likeCount">
-     		<button class="likeBtn" id="likeBtn">
-     		   <span class="like">"${boarddto.likeno }"</span>
+     		<button class="likeUpdate" id="likeUpdate">
+     		   <span class="likeTotal">${boarddto.likeno }</span>
      		</button>
      	</div>
 

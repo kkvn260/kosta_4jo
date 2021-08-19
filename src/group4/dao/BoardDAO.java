@@ -502,6 +502,104 @@ public class BoardDAO {
 		
 	}
 	
+	
+	
+	public int likeCount(Connection conn, int bno) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select count(*)   ");
+		sql.append(" from like_Group4  ");
+		sql.append(" where bno = ?     ");
+		
+		int count=0;
+		ResultSet rs= null;
+		try(PreparedStatement pstmt= conn.prepareStatement(sql.toString());
+		) { 
+			pstmt.setInt(1, bno);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+			count=rs.getInt("count(*)");
+			}
+			
+		}catch(SQLException e){
+			System.out.println(e);
+		}finally{
+			if(rs!=null)try{rs.close();}catch(SQLException e){}
+		}
+		
+		return count;
+	}//end likeCount
+	
+	public int likeCheck(Connection conn, int bno, String id) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select count(*)             ");
+		sql.append(" from like_Group4            ");
+		sql.append(" where bno =? and like_id=?  ");
+		int result=0;
+		ResultSet rs = null;
+		
+		try(PreparedStatement pstmt= conn.prepareStatement(sql.toString());
+		) { 
+			pstmt.setInt(1, bno);
+			pstmt.setString(2, id);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				result=rs.getInt("count(*)");
+			}			
+		}catch(SQLException e){
+			System.out.println(e);
+		}finally{
+			if(rs!=null)try{rs.close();}catch(SQLException e){}
+		}
+		return result;
+	}//end likeCheck
+	
+	public void likeUpdate(Connection conn, int bno, String id) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" insert into like_Group4(bno, like_id) values(?,?) ");			
+	
+		try(PreparedStatement pstmt= conn.prepareStatement(sql.toString());
+		) { 
+			pstmt.setInt(1, bno);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+			
+		}catch(SQLException e){
+			System.out.println(e);
+		}
+	}//likeUpdate
+	
+	public void likeCancel(Connection conn, int bno, String id) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" delete from like_Group4 ");
+		sql.append(" where like_id=? and bno=?  ");
+		
+		try(PreparedStatement pstmt= conn.prepareStatement(sql.toString());
+		) { 
+			pstmt.setString(1, id);
+			pstmt.setInt(2, bno);
+			pstmt.executeUpdate();
+			
+		}catch(SQLException e){
+			System.out.println(e);
+		}
+	}//end likeCancel
+	
+	public void modifyLike(Connection conn, int i, int bno) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" update Board_Group4 set likeno=? ");
+		sql.append(" where boardno=? ");
+		
+		try(PreparedStatement pstmt= conn.prepareStatement(sql.toString());
+		) { pstmt.setInt(1, i);
+		    pstmt.setInt(2, bno);
+		    pstmt.executeUpdate();
+					
+		}catch(SQLException e){
+			System.out.println(e);
+		}
+	}//end modifyLike
+	
 
 }
 

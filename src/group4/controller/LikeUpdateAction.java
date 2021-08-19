@@ -16,16 +16,28 @@ public class LikeUpdateAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		int likeCount = Integer.parseInt(request.getParameter("no"));
+		int num = Integer.parseInt(request.getParameter("no"));
 		String id = (String)request.getSession().getAttribute("id");
 		
+		
 		BoardService service = BoardService.getService();
-		//service.likeUpdate(no);
+	
+		int totalLike = service.likeCount(num);
+				
+		if(service.likeCheck(num,id)==0) {
+			service.likeUpdate(num,id);
+			service.modifyLike(totalLike+1,num);
+			
+		}else {
+			service.likeCancel(num,id);
+			service.modifyLike(totalLike-1,num);
+		}	
 		
+		Forward forward = new Forward();
+		forward.isForward();
+		forward.getPath();
 		
-		
-		
-		return null;
+		return forward;
 	}
 
 }

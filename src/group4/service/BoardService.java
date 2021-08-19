@@ -281,5 +281,100 @@ public class BoardService {
 			
 		}
 		
+		
+		public int likeCount(int num) {
+			// TODO Auto-generated method stub
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			int likecount=0;
+			try {
+				conn=dbconn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				likecount = dao.likeCount(conn, num);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			return likecount;
+		}//end likeCount
+		
+		
+		public int likeCheck(int num, String id) {
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			int check=1;
+			
+			try {
+				conn=dbconn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				check= dao.likeCheck(conn, num,id);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			return check;
+		}//end likeCheck
+		
+		
+		public void likeUpdate(int num, String id) {
+
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			
+			try {
+				conn=dbconn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.likeUpdate(conn, num,id);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			
+		}//end likeUpdate
+		
+		
+		public void likeCancel(int num, String id) {
+
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			
+			try {
+				conn=dbconn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.likeCancel(conn,num,id);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+			
+		}//end likeCancel
+		
+		
+		public void modifyLike(int i, int num) {
+			
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			
+			try {
+				conn=dbconn.getConnection();
+				BoardDAO dao = new BoardDAO();
+				dao.modifyLike(conn,i,num);
+				
+			}catch(SQLException| NamingException e) {
+				System.out.println(e);
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+		}//end modifyLike
+
+		
 	
 }
