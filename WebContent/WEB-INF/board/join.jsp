@@ -20,13 +20,14 @@
     .b{color:red;}
     .id2{margin-left:-70px;}
     .join{margin-top:30px; margin-bottom:50px; margin-left:15px;}
+    .joinfo{margin-left:20px;}
 </style>
 </head>
 <body>
 	<form method="post" action="idcheck.do">
 	<ul>
 	   <li><br>
-	   <h1>회원가입</h1><br>
+	   <h2 class="joinfo">회원가입</h2><br>
 	    <label class="id2">아이디 중복확인</label>
 		      <input type="text" placeholder="UserID"  name="id"> 
 		      <input type="submit" value="중복확인">

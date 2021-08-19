@@ -90,15 +90,11 @@ div.search {
 }
 p.p{
 	position:absolute;
-    left:310px;
     bottom:0;
     height:80px;
-    width:66%;
-    background-color:#ffffcc;
+    width:64%;
+    background-color:#F0F0F0;
 }
-h1{
-	margin-left:20px;
-	}
  div.header{
    text-align:right;
    margin-right:20px;
