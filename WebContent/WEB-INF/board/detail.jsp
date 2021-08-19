@@ -12,8 +12,8 @@
 
 /* 댓글조회 */
 $(document).ready(function(){
-	 let no = ${boarddto.boardno};
-    console.log(no);
+	
+	let no = ${boarddto.boardno};
 	 $.ajax({
 		url:'replydetail.do'
 		,data:{'num':no}
@@ -36,8 +36,36 @@ $(document).ready(function(){
 		,error:function(xhr){
 			console.log('error'+xhr);
 		}
-		 
 	 });
+	 
+	 /* 좋아요기능 */
+	 let likeCount = ${boarddto.likeno};
+	 $(function(){
+		$(".likeBtn").click(function(){
+			if(!"${id}"){
+				alert("회원만 추천할 수 있습니다");
+				location.href="login.do";
+			}
+			else{
+				$.ajax({
+					url:'likeUpdate.do'
+				   ,data:{'no':likeCount}
+				   ,type:'post'
+				   ,success: function(){
+					   likeCount();
+				   },
+				})
+			}	
+		});/* end .likeBtn */
+		
+		
+	 });
+	 
+	 
+	 
+	 
+	 
+	 
 });
 </script>
 
@@ -63,6 +91,16 @@ $(document).ready(function(){
    	<c:if test="${not empty boarddto.filename}">
    <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
    	</c:if>
+   	
+   	<!-- 좋아요! 기능 -->
+
+     	<div class="likeCount">
+     		<button class="likeBtn" id="likeBtn">
+     		   <span class="like">"${boarddto.likeno }"</span>
+     		</button>
+     	</div>
+
+   	
     <br>
     <label>댓글 내용</label><br>
 
