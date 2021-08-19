@@ -90,10 +90,9 @@ div.search {
 }
 p.p{
 	position:absolute;
-    left:310px;
     bottom:0;
     height:80px;
-    width:66%;
+    width:64%;
     background-color:#c0c0c0;
 }
  div.header{
