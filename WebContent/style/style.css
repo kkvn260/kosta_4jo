@@ -122,3 +122,15 @@ div#main{
 #content{
 	padding-left:30px;
 }
+ h2{
+      margin-top:50px;
+       margin-left:500px;
+   }
+  ul li{
+        list-style:none;
+        margin-left: 450px; 
+    }
+    .bg-info{margin-left:-20px;}
+    p.text-info{margin-left:450px; margin-top:20px; margin-bottom:50px;}
+    ul li p.id{margin-left:13px;}
+    ul li div.login{margin-left:70px; margin-bottom:30px;}
