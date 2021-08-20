@@ -11,6 +11,8 @@
 	font-size: 20px;
 	color: gray;
 	font-family: 'Jua', sans-serif;
+	border-radius: 10px;
+	background-color: #e8feff;
 }
 table,div,a,h1,h2,h3,span,p{
 	font-family: 'Jua', sans-serif;
@@ -18,7 +20,8 @@ table,div,a,h1,h2,h3,span,p{
 
 table, tr, td {
 	border-collapse: collapse;
-	width: 750px;
+	width: 900px;
+	font-size: 17px;
 }
 
 th {
@@ -98,9 +101,16 @@ div.search {
 	margin-left: 600px;
 	display: inline-block;
 }
+#select{
+	border-radius: 5px;
+}
+#searchtxt{
+	border-radius: 5px;
+}
 
 #searchbtn {
 	background-color: #faf4b8;
+	border-radius: 5px;
 }
 
 div.write {
@@ -110,7 +120,8 @@ div.write {
 	font-weight: bold;
 	font-size: 18px;
 	color: black;
-	background-color: white;
+	background-color: #faf4b8;
+	border-radius: 5px;
 }
 
 #main a {
@@ -143,7 +154,6 @@ h2 {
 
 ul li {
 	list-style: none;
-	margin-left: 280px;
 }
 
 .bg-info {
@@ -151,7 +161,7 @@ ul li {
 }
 
 ul li div.id {
-	margin-left: 13px;
+	margin-left: 11.5px;
 }
 
 ul li div.login {

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import group4.comm.Action;
 import group4.comm.Forward;
+import group4.dto.BoardDTO;
 import group4.service.BoardService;
 
 public class LikeUpdateAction implements Action {
@@ -27,15 +28,19 @@ public class LikeUpdateAction implements Action {
 		if(service.likeCheck(num,id)==0) {
 			service.likeUpdate(num,id);
 			service.modifyLike(totalLike+one,num);
-			
+			BoardDTO boarddto = service.detail(num);
+			request.setAttribute("boarddto", boarddto);
+
 		}else {
-			service.likeCancel(num,id);
 			service.modifyLike(totalLike-one,num);
+			service.likeCancel(num,id);
+			BoardDTO boarddto = service.detail(num);
+			request.setAttribute("boarddto", boarddto);
 		}	
 		
 		Forward f = new Forward();
-		f.setForward(false);
-		f.setPath("detail.do?boardno="+num);
+		f.setForward(true);
+		f.setPath("WEB-INF/board/main.jsp?page=detail.jsp");
 		
 		return f;
 	}

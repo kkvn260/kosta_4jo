@@ -21,8 +21,8 @@ public class DetailBoardAction implements Action {
 		int boardno = Integer.parseInt(request.getParameter("boardno"));
 		
 		BoardService service = BoardService.getService();
-		BoardDTO boarddto = service.detail(boardno);
 		service.viewUp(boardno);
+		BoardDTO boarddto = service.detail(boardno);
 		
 		request.setAttribute("boarddto", boarddto);
 		Forward f = new Forward();

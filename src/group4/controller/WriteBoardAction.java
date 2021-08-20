@@ -57,7 +57,7 @@ public class WriteBoardAction implements Action {
 		service.insertFile(dto2);
 
 		Forward f=new Forward();
-		f.setForward(true);
+		f.setForward(false);
 		f.setPath("list.do");
 		return f;
 	}

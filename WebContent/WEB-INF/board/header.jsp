@@ -21,7 +21,8 @@
 <h1 id="main"><strong><a href="main.do">Talk together!</a></strong></h1>
 <div class="header">
 <c:if test="${sessionScope.id==null}">
-           <a href="login.do">로그인 | </a>
+           <a href="login.do">로그인 </a>
+           <label>| </label>
            <a href="join.do">회원가입</a>
     </c:if>
     <c:if test="${sessionScope.id!=null }">

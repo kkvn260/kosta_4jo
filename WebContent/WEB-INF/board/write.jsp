@@ -8,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+	.t1{
+		font-size: 18px;
+	}
+</style>
 <body>
 <c:set var="category" value="${requestScope.category }"></c:set>
 	<form method="post" action="write.do" enctype="multipart/form-data">
@@ -22,17 +27,17 @@
 				<c:when test="${category eq '영화' }"><option value="영화">영화</option></c:when>
 				<c:when test="${category eq '공지사항' }"><option value="공지사항">공지사항</option></c:when>
 				<c:otherwise>
-				<option>게시판을 선택해주세요</option>
+				<option >게시판을 선택해주세요</option>
 				<option value="도서">도서</option>
 				<option value="여행">여행</option>
 				<option value="영화">영화</option>
 				</c:otherwise>
 				</c:choose>
 			</select>
-			<input type="text" name="write_title" placeholder="제목을 입력해주세요" style="width: 100%;">
+			<input class="t1" type="text" name="write_title" placeholder="제목을 입력해주세요" style="width: 100%;">
 		</div>
 		<div>
-			<textarea rows="15" cols="125" name="write_content" placeholder="내용을 입력해주세요"></textarea>
+			<textarea class="t1" rows="15" cols="100" name="write_content" placeholder="내용을 입력해주세요"></textarea>
 		</div>
 		<div>
 			<label>이미지 미리보기</label>

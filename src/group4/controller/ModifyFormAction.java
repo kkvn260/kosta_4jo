@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import group4.comm.Action;
 import group4.comm.Forward;
-import group4.dao.BoardDAO;
 import group4.dto.BoardDTO;
 import group4.service.BoardService;
 

@@ -15,17 +15,19 @@
 <style>
     .a{color:blue;}
     .b{color:red;}
-    .id2{margin-left:-70px;}
-    .join{margin-top:30px; margin-bottom:50px; margin-left:15px;}
-    .joinfo{margin-left:20px;}
+    .join{margin-top:30px; margin-bottom:50px; text-align:center;}
+    .joinfo{margin-left:1px;}
+    #joinform{border:3px solid black; width:450px; height:410px; padding-top:20px; padding-right:30px;text-align:center; position:relative; left:230px;}
+    #joinform2{text-align:center; margin-left:-20px;}
 </style>
 </head>
 <body>
 	<form method="post" action="idcheck.do">
+	<div id="joinform2">
 	<ul>
 	   <li><br>
 	   <h2 class="joinfo">회원가입</h2><br>
-	    <label class="id2">아이디 중복확인</label>
+	    <label>아이디 중복확인</label>
 		      <input type="text" placeholder="UserID"  name="id"> 
 		      <input type="submit" value="중복확인">
 		<span class="a">
@@ -34,11 +36,13 @@
 			<c:if test='${param.msg=="NotOK" }'>&nbsp;&nbsp;이미 존재하는 아이디</c:if></span><br>
 	    </li>
 	</ul>
+	</div>
 	</form>
 
 	<form method="post" action="joinresult.do">
+	    <div id="joinform">
 		<ul>
-			<li><label for="id">아이디</label><br> <%-- <input type="text" name="id" id="id" required="required">--%>
+			<li><label for="id">아이디</label><br>
 				<c:if test='${param.msg == "OK"}'>
                 ${param.id }<input type="hidden" name="id" value="${param.id }">
 				</c:if></li>
@@ -57,6 +61,7 @@
                    <a href="login.do">로그인</a>
             </li>      
 		</ul>
+		</div>
 	</form>
 
 
