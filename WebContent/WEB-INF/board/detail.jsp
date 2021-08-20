@@ -10,13 +10,12 @@
 <script src="js/detail.js"></script>
 <style>
 	#likeUpdate{
-		background-color: #FFF0DE;
+		background-color: #FFDFE0;
 		border: 0;
+		float: right;
 	}
-	.t1{
-		font-size: 18px;
-	}
-	label{
+	
+	label,textarea,.t1{
 		font-size:18px;
 	}
 </style>
@@ -100,22 +99,22 @@ $(document).ready(function(){
  		<span class="t1">좋아요수 : ${boarddto.likeno }</span>
  	</div>
  	
-   <label for="content">내용</label><br>
-   <textarea rows="15" cols="125" readonly="readonly">${boarddto.content }</textarea>
-   	<c:if test="${not empty boarddto.filename}">
-   <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
-   	</c:if>
-   	
-   	<!-- 좋아요! 기능 -->
+      	<!-- 좋아요! 기능 -->
 
      	<div>
+   			<label for="content">내용</label>
      		<button class="likeUpdate" id="likeUpdate">
      			<img src="file/11.png" width="30px">
      		   <span>${boarddto.likeno }</span>
      		</button>
      	</div>
+   <br>
+   <textarea rows="15" cols="100" readonly="readonly">${boarddto.content }</textarea>
+   	<c:if test="${not empty boarddto.filename}">
+   		<p>이미지 미리보기</p>
+   		<img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지">
+   	</c:if>
 
-   	
     <br>
     <label>댓글 내용</label><br>
 
