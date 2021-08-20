@@ -19,7 +19,7 @@
 
 	#mainjsp{
 		width: 1200px;
-		height: 1300px;
+		height: auto;
 		margin: 0 auto;
 		padding: 0 0;
 	}
@@ -43,7 +43,7 @@
 		<c:set var="page" value="${param.page }"></c:set>
 		<jsp:include page="${page }"></jsp:include>
 	</section>
-	
+	<br><br><br><br>
 	<footer id="footer">
 		<%@include file="footer.jsp"%>
 	</footer>
