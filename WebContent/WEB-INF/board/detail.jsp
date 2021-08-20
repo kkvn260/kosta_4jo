@@ -18,6 +18,10 @@
 	label,textarea,.t1{
 		font-size:18px;
 	}
+	.label1{
+		magin:0;
+		float:left;
+	}
 </style>
 <script>
 
@@ -102,7 +106,7 @@ $(document).ready(function(){
       	<!-- 좋아요! 기능 -->
 
      	<div>
-   			<label for="content">내용</label>
+   			<label for="content" class="label1">내용</label>
      		<button class="likeUpdate" id="likeUpdate">
      			<img src="file/11.png" width="30px">
      		   <span>${boarddto.likeno }</span>

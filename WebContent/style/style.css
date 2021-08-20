@@ -21,6 +21,7 @@ table,div,a,h1,h2,h3,span,p{
 table, tr, td {
 	border-collapse: collapse;
 	width: 750px;
+	font-size: 17px;
 }
 
 th {
