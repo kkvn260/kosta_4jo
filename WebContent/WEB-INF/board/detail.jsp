@@ -40,7 +40,7 @@ $(document).ready(function(){
                 reply="<span>";  
 				reply+=list.id+"</span><br>";
 				reply+="<span>"+list.reply_writedate+"</span><br>";
-				reply+="<span>"+list.replycontent+"</span>";
+				reply+="<span>"+list.replycontent+"</span><br>";
 				
 			    if(list.id == "${sessionScope.id}"){  
 				reply+="<span><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")></span><br>";
