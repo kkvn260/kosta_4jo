@@ -13,6 +13,12 @@
 		background-color: #FFF0DE;
 		border: 0;
 	}
+	.t1{
+		font-size: 18px;
+	}
+	label{
+		font-size:18px;
+	}
 </style>
 <script>
 
@@ -84,14 +90,14 @@ $(document).ready(function(){
 
 
  	<div><br>
- 		<span>[${boarddto.board_name }]</span><span>   ${boarddto.title }</span>
+ 		<span class="t1">[${boarddto.board_name }]</span><span class="t1">   ${boarddto.title }</span>
  	</div>
  	<div>
- 		<span>${boarddto.id }  |</span><span>  ${boarddto.writedate }</span>
+ 		<span class="t1">${boarddto.id }  |</span><span class="t1">  ${boarddto.writedate }</span>
  	</div>
  	<div>
- 		<span>조회수 : ${boarddto.viewno }</span>
- 		<span>좋아요수 : ${boarddto.likeno }</span>
+ 		<span class="t1">조회수 : ${boarddto.viewno }</span>
+ 		<span class="t1">좋아요수 : ${boarddto.likeno }</span>
  	</div>
  	
    <label for="content">내용</label><br>
