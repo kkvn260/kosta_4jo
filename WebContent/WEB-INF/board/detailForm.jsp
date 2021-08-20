@@ -9,8 +9,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="style/style.css">
 <style>
-	ul li{
-		margin: auto;
+	label,input,textarea,a{
+		font-size: 18px;
 	}
 </style>
 </head>
@@ -22,11 +22,10 @@
 <form method="post" action="modifyresult.do">
    <input type="hidden" name="cat" value="${boardto.board_name }">
  
-   <label for="bno">글번호</label>
-   <input type="text" name="bno" value="${boarddto.boardno }"  readonly="readonly">
+   <label for="bno">글번호 : ${boarddto.boardno }</label>
 	<br>
-    작성자 : ${boarddto.id } <br>
-  작성일 : ${boarddto.writedate } 
+    	<label>작성자 : ${boarddto.id }</label> <br>
+  		<label>작성일 : ${boarddto.writedate }</label> 
    <br>
    <label for="title">글제목</label><br>
    <input type="text" name="title" id="title" value="${boarddto.title }">
