@@ -168,7 +168,7 @@ public class BoardDAO {
 			
 		}else {
 			if(!category.equals("")) {
-				sql.append("	where board_name like ?  group by a1.boardno	");
+				sql.append("	where board_name like ?  	");
 				
 			}
 			sql.append("     group by a1.boardno        )b  ,   (select @rownum:=0) R    			 ");
