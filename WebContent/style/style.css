@@ -11,6 +11,8 @@
 	font-size: 20px;
 	color: gray;
 	font-family: 'Jua', sans-serif;
+	border-radius: 10px;
+	background-color: #e8feff;
 }
 table,div,a,h1,h2,h3,span,p{
 	font-family: 'Jua', sans-serif;
