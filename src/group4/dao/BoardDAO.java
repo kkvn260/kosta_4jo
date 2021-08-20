@@ -600,6 +600,32 @@ public class BoardDAO {
 			System.out.println(e);
 		}
 	}//end modifyLike
+	public ArrayList<ReplyDTO> getTotalCount(Connection conn) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select  count(a.replyno)  count     			 		");
+		sql.append("  from   reply_Group4 a right join Board_Group4 b   ");
+		sql.append("  			on a.boardno=b.boardno					");
+		sql.append("		group by b.boardno							");
+		
+		
+		ResultSet rs=null;
+		ArrayList<ReplyDTO> arr=new ArrayList<ReplyDTO>();
+		
+		try (PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{	
+				ReplyDTO dto=new ReplyDTO();
+				dto.setReplycount(rs.getInt("count"));
+				arr.add(dto);
+
+			}
+		}catch(SQLException e){
+			System.out.println(e);
+		}
+		return arr;
+	}
 	
 
 }

@@ -23,7 +23,7 @@
 	<c:set var="startrow" value="${requestScope.startrow }"></c:set>
 	<c:set var="category" value="${requestScope.category }"></c:set>
 	<c:set var="id" value="${requestScope.id }"></c:set>
-
+	<c:set var="recount" value="${requestScope.replyCount }"></c:set>
 
 
 	<div class="search">
@@ -58,7 +58,7 @@
 				<tr>
 					<td><c:out value="${no }" /></td>
 					<td><a href="detail.do?boardno=${item.boardno }"><c:out
-								value="${item.title }" /></a></td>
+								value="${item.title }" /></a>[]</td>
 					<td><c:out value="${item.id }"></c:out></td>
 					<td><c:out value="${item.viewno }"></c:out></td>
 					<td><c:out value="${item.writedate }"></c:out></td>
