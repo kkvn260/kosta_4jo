@@ -28,12 +28,12 @@
 
 	<div class="search">
 		<form method="get" action="list.do">
-			<input type="hidden" name="cat" value="${category }"> <select
+			<input type="hidden" name="cat" value="${category }"> <select id="select"
 				name="search">
 				<option value="title">제목</option>
 				<option value="content">내용</option>
 				<option value="id">작성자</option>
-			</select> <input type="text" name="searchtxt"> <input type="submit"
+			</select> <input type="text" id="searchtxt" name="searchtxt"> <input type="submit"
 			id="searchbtn"	value="검색">
 		</form>
 

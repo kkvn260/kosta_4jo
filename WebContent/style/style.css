@@ -98,9 +98,16 @@ div.search {
 	margin-left: 600px;
 	display: inline-block;
 }
+#select{
+	border-radius: 5px;
+}
+#searchtxt{
+	border-radius: 5px;
+}
 
 #searchbtn {
 	background-color: #faf4b8;
+	border-radius: 5px;
 }
 
 div.write {
@@ -110,7 +117,8 @@ div.write {
 	font-weight: bold;
 	font-size: 18px;
 	color: black;
-	background-color: white;
+	background-color: #faf4b8;
+	border-radius: 5px;
 }
 
 #main a {
