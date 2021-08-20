@@ -49,14 +49,18 @@ $(document).ready(function(){
 				location.href="login.do";
 			}
 			else{
+				let no = ${boarddto.boardno};
 				$.ajax({
 					url:'likeUpdate.do'
-				   ,data:{'no':${boarddto.boardno}}
-				   ,type:'post'
+				   ,data:{'no':no}
+				   ,method:'post'
 				   ,dataType:'json'
 				   ,success: function(){
 					   likeCount();
-				   },
+				   }
+				   ,error:function(xhr){
+						console.log('error'+xhr);
+					}
 				})
 			}	
 		});

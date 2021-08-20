@@ -22,7 +22,7 @@
 				<c:when test="${category eq '영화' }"><option value="영화">영화</option></c:when>
 				<c:when test="${category eq '공지사항' }"><option value="공지사항">공지사항</option></c:when>
 				<c:otherwise>
-				<option>게시판을 선택해주세요</option>
+				<option >게시판을 선택해주세요</option>
 				<option value="도서">도서</option>
 				<option value="여행">여행</option>
 				<option value="영화">영화</option>

@@ -25,12 +25,12 @@ public class LikeUpdateAction implements Action {
 		int one = 1;
 		
 		if(service.likeCheck(num,id)==0) {
-			service.likeUpdate(num,id);
 			service.modifyLike(totalLike+one,num);
+			service.likeUpdate(num,id);
 			
 		}else {
-			service.likeCancel(num,id);
 			service.modifyLike(totalLike-one,num);
+			service.likeCancel(num,id);
 		}	
 		
 		Forward f = new Forward();
