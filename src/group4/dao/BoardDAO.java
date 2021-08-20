@@ -600,6 +600,8 @@ public class BoardDAO {
 			System.out.println(e);
 		}
 	}//end modifyLike
+	
+	
 	public ArrayList<ReplyDTO> getTotalCount(Connection conn) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select  count(a.replyno)  count     			 		");
