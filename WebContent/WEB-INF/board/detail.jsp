@@ -8,6 +8,21 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/detail.js"></script>
+<style>
+	#likeUpdate{
+		background-color: #FFDFE0;
+		border: 0;
+		float: right;
+	}
+	
+	label,textarea,.t1{
+		font-size:18px;
+	}
+	.label1{
+		magin:0;
+		float:left;
+	}
+</style>
 <script>
 
 /* 댓글조회 */
@@ -51,12 +66,15 @@ $(document).ready(function(){
 			else{
 				$.ajax({
 					url:'likeUpdate.do'
-				   ,data:{'no':${boarddto.boardno}}
-				   ,type:'post'
+				   ,data:{'no':no}
+				   ,method:'post'
 				   ,dataType:'json'
 				   ,success: function(){
 					   likeCount();
-				   },
+				   }
+				   ,error:function(xhr){
+						console.log('error'+xhr);
+					}
 				})
 			}	
 		});
@@ -75,31 +93,32 @@ $(document).ready(function(){
 
 
  	<div><br>
- 		<span>[${boarddto.board_name }]</span><span>   ${boarddto.title }</span>
+ 		<span class="t1">[${boarddto.board_name }]</span><span class="t1">   ${boarddto.title }</span>
  	</div>
  	<div>
- 		<span>${boarddto.id }  |</span><span>  ${boarddto.writedate }</span>
+ 		<span class="t1">${boarddto.id }  |</span><span class="t1">  ${boarddto.writedate }</span>
  	</div>
  	<div>
- 		<span>조회수 : ${boarddto.viewno }</span>
- 		<span>좋아요수 : ${boarddto.likeno }</span>
+ 		<span class="t1">조회수 : ${boarddto.viewno }</span>
+ 		<span class="t1">좋아요수 : ${boarddto.likeno }</span>
  	</div>
  	
-   <label for="content">내용</label><br>
-   <textarea rows="15" cols="125" readonly="readonly">${boarddto.content }</textarea>
-   	<c:if test="${not empty boarddto.filename}">
-   <li><img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지"></li>
-   	</c:if>
-   	
-   	<!-- 좋아요! 기능 -->
+      	<!-- 좋아요! 기능 -->
 
      	<div>
+   			<label for="content" class="label1">내용</label>
      		<button class="likeUpdate" id="likeUpdate">
+     			<img src="file/11.png" width="30px">
      		   <span>${boarddto.likeno }</span>
      		</button>
      	</div>
+   <br>
+   <textarea rows="15" cols="100" readonly="readonly">${boarddto.content }</textarea>
+   	<c:if test="${not empty boarddto.filename}">
+   		<p>이미지 미리보기</p>
+   		<img class="fit-picture" src="file/${boarddto.filename }" alt="첨부이미지">
+   	</c:if>
 
-   	
     <br>
     <label>댓글 내용</label><br>
 
