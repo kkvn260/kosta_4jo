@@ -38,7 +38,7 @@
 
 	<form method="post" action="joinresult.do">
 		<ul>
-			<li><label for="id">아이디</label><br> <%-- <input type="text" name="id" id="id" required="required">--%>
+			<li><label for="id">아이디</label><br>
 				<c:if test='${param.msg == "OK"}'>
                 ${param.id }<input type="hidden" name="id" value="${param.id }">
 				</c:if></li>
