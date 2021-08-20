@@ -8,6 +8,12 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/detail.js"></script>
+<style>
+	#likeUpdate{
+		background-color: #FFF0DE;
+		border: 0;
+	}
+</style>
 <script>
 
 /* 댓글조회 */
@@ -49,7 +55,6 @@ $(document).ready(function(){
 				location.href="login.do";
 			}
 			else{
-				let no = ${boarddto.boardno};
 				$.ajax({
 					url:'likeUpdate.do'
 				   ,data:{'no':no}
@@ -99,6 +104,7 @@ $(document).ready(function(){
 
      	<div>
      		<button class="likeUpdate" id="likeUpdate">
+     			<img src="file/11.png" width="30px">
      		   <span>${boarddto.likeno }</span>
      		</button>
      	</div>

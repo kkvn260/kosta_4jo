@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import group4.comm.Action;
 import group4.comm.Forward;
+import group4.dto.BoardDTO;
 import group4.service.BoardService;
 
 public class ReplyDeleteAction implements Action {
@@ -21,10 +22,13 @@ public class ReplyDeleteAction implements Action {
 		
 		BoardService service = BoardService.getService();
 		service.replyDelete(rno);
+		BoardDTO boarddto = service.detail(bno);
+		request.setAttribute("boarddto", boarddto);
 		
 		Forward f = new Forward();
-		f.setForward(false);
-		f.setPath("detail.do?boardno="+bno);
+		
+		f.setForward(true);
+		f.setPath("WEB-INF/board/main.jsp?page=detail.jsp");
 			
 		return f;
 

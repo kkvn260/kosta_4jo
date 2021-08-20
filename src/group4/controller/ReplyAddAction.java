@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import group4.comm.Action;
 import group4.comm.Forward;
+import group4.dto.BoardDTO;
 import group4.dto.ReplyDTO;
 import group4.service.BoardService;
 
@@ -39,9 +40,11 @@ public class ReplyAddAction implements Action {
 		
 		BoardService service = BoardService.getService();
 		service.addReply(dto);
+		BoardDTO boarddto = service.detail(boardno);
+		request.setAttribute("boarddto", boarddto);
 		
-		f.setForward(false);
-		f.setPath("detail.do?boardno="+boardno);
+		f.setForward(true);
+		f.setPath("WEB-INF/board/main.jsp?page=detail.jsp");
 		}
 		else {
 			f.setForward(true);
