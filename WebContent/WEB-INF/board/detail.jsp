@@ -81,29 +81,12 @@ $(document).ready(function(){
 		});
 	});
 	 
-	 /* 변경된 좋아요 적용 */
-	 function likeCount(){
-	 $.ajax({
-		 url:'likeCount.do'
-		 ,data:{'no':no}
-		 ,method:'post'
-		 ,success:function(){
-			
-
-		 },error:function(xhr){
-		    console.log('error'+xhr);
-		 }
-	  })
-    }
-	 
-	 
 	 
 	 
 });
 </script>
 
 <c:set var="boarddto" value="${requestScope.boarddto }"></c:set>
-<c:set var="likeCount" value="${requestScope.total }"></c:set>
 </head>
 <body>
 
