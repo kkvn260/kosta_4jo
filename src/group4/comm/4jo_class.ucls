@@ -31,7 +31,7 @@
   </class>  
   <class id="4" language="java" name="group4.controller.DeleteBoardAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/DeleteBoardAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="997" y="400"/>    
+    <position height="-1" width="-1" x="997" y="279"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -47,154 +47,219 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="group4.controller.LikeUpdateAction" project="kosta_4jo" 
-    file="/kosta_4jo/src/group4/controller/LikeUpdateAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="991" y="664"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="group4.controller.MainBaordAction" project="kosta_4jo" 
+  <class id="6" language="java" name="group4.controller.MainBaordAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/MainBaordAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="989" y="1138"/>    
+    <position height="-1" width="-1" x="997" y="398"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="group4.controller.ModifyBoardAction" project="kosta_4jo" 
+  <class id="7" language="java" name="group4.controller.ModifyBoardAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/ModifyBoardAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="989" y="1254"/>    
+    <position height="-1" width="-1" x="995" y="515"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="group4.controller.ModifyFormAction" project="kosta_4jo" 
+  <class id="8" language="java" name="group4.controller.ModifyFormAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/ModifyFormAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="988" y="1376"/>    
+    <position height="-1" width="-1" x="994" y="629"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="group4.controller.ReplyAddAction" project="kosta_4jo" 
+  <class id="9" language="java" name="group4.controller.ReplyAddAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/ReplyAddAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="988" y="1494"/>    
+    <position height="-1" width="-1" x="993" y="744"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="group4.controller.ReplyDeleteAction" project="kosta_4jo" 
+  <class id="10" language="java" name="group4.controller.ReplyDeleteAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/ReplyDeleteAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="984" y="1615"/>    
+    <position height="-1" width="-1" x="994" y="861"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="group4.controller.ReplyDetailAction" project="kosta_4jo" 
+  <class id="11" language="java" name="group4.controller.ReplyDetailAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/ReplyDetailAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="358" x="805" y="1680"/>    
+    <position height="160" width="358" x="814" y="928"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="group4.controller.WriteBoardAction" project="kosta_4jo" 
+  <class id="12" language="java" name="group4.controller.WriteBoardAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/WriteBoardAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="987" y="1909"/>    
+    <position height="-1" width="-1" x="996" y="1150"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="group4.controller.WriteFormAction" project="kosta_4jo" 
+  <class id="13" language="java" name="group4.controller.WriteFormAction" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/controller/WriteFormAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="989" y="2026"/>    
+    <position height="-1" width="-1" x="993" y="1265"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="group4.dao.BoardDAO" project="kosta_4jo" 
+  <class id="14" language="java" name="group4.dao.BoardDAO" project="kosta_4jo" 
     file="/kosta_4jo/src/group4/dao/BoardDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="477" width="389" x="1234" y="56"/>    
+    <position height="504" width="389" x="1234" y="56"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="16">    
+  <class id="15" language="java" name="group4.service.BoardService" project="kosta_4jo" 
+    file="/kosta_4jo/src/group4/service/BoardService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="174" y="716"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="group4.dto.BoardDTO" project="kosta_4jo" 
+    file="/kosta_4jo/src/group4/dto/BoardDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1328" y="893"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="group4.dto.FileDTO" project="kosta_4jo" 
+    file="/kosta_4jo/src/group4/dto/FileDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1536" y="755"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="group4.dto.ReplyDTO" project="kosta_4jo" 
+    file="/kosta_4jo/src/group4/dto/ReplyDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1543" y="1112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="group4.comm.Forward" project="kosta_4jo" 
+    file="/kosta_4jo/src/group4/comm/Forward.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="422" y="120"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="group4.comm.DBConnection" project="kosta_4jo" 
+    file="/kosta_4jo/src/group4/comm/DBConnection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="163" y="80"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="21">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="22" name="instance"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="25" name="instance"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="27">    
+    <bendpoint x="719" y="621"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="28">    
+    <bendpoint x="710" y="738"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <association id="29">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="17" name="instance"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
+      <attribute id="30" name="instance"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="19">    
-    <end type="SOURCE" refId="9"/>    
+  <realization id="32">    
+    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="20">    
-    <end type="SOURCE" refId="10"/>    
+  <realization id="33">    
+    <bendpoint x="651" y="1146"/>    
+    <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="21">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <realization id="22">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <association id="23">    
+  <association id="34">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="24" name="hm"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
+      <attribute id="35" name="hm"/>      
+      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="26">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <realization id="27">    
+  <realization id="37">    
+    <bendpoint x="731" y="51"/>    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="28">    
+  <realization id="38">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="29">    
-    <end type="SOURCE" refId="14"/>    
+  <realization id="39">    
+    <bendpoint x="605" y="1260"/>    
+    <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="30">    
+  <realization id="40">    
+    <bendpoint x="750" y="171"/>    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="31">    
-    <end type="SOURCE" refId="8"/>    
+  <realization id="41">    
+    <bendpoint x="722" y="510"/>    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
-  <realization id="32">    
-    <end type="SOURCE" refId="11"/>    
+  <realization id="42">    
+    <bendpoint x="696" y="861"/>    
+    <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="2"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
