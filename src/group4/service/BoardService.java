@@ -378,6 +378,25 @@ public class BoardService {
 				if(conn!=null) try{conn.close();}catch(SQLException e) {}
 			}
 		}//end modifyLike
+		public ArrayList<ReplyDTO> getReplyCount() {
+			DBConnection dbconn=DBConnection.getDBConn();
+			Connection conn=null;
+			ArrayList<ReplyDTO> arr=new ArrayList<ReplyDTO>();
+			try {
+				conn=dbconn.getConnection();
+				conn.setAutoCommit(false);
+				BoardDAO dao=BoardDAO.getDAO();
+				arr=dao.getTotalCount(conn);
+
+				conn.commit();
+			}catch(SQLException|NamingException e)
+			{
+				try {conn.rollback();} catch(SQLException e2) {}
+			}finally {
+				if(conn!=null) try { conn.close();} catch(SQLException e) {}
+			}
+			return arr;
+		}
 
 		
 	

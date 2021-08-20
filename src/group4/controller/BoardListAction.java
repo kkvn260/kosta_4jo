@@ -1,6 +1,7 @@
 package group4.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -8,9 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import group4.comm.Action;
 import group4.comm.Forward;
 import group4.dto.BoardDTO;
+import group4.dto.ReplyDTO;
 import group4.service.BoardService;
 
 
@@ -70,6 +75,11 @@ public class BoardListAction implements Action {
 		request.setAttribute("startrow", startrow);
 		request.setAttribute("category", category);
 		request.setAttribute("endrow", endrow);
+		
+		ArrayList<ReplyDTO> replyConut=service.getReplyCount();
+		request.setAttribute("replyCount", replyConut);
+		
+		
 		HttpSession session=request.getSession();
 		String id=(String)session.getAttribute("id");
 		request.setAttribute("id", id);

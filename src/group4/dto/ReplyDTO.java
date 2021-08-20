@@ -7,7 +7,14 @@ public class ReplyDTO {
 	private String id;
 	private String reply_writedate;
 	private String replycontent;
+	private int replycount;
 	
+	public int getReplycount() {
+		return replycount;
+	}
+	public void setReplycount(int replycount) {
+		this.replycount = replycount;
+	}
 	public int getReplyno() {
 		return replyno;
 	}
