@@ -25,7 +25,6 @@
 	<c:set var="id" value="${requestScope.id }"></c:set>
 
 
-
 	<div class="search">
 		<form method="get" action="list.do">
 			<input type="hidden" name="cat" value="${category }"> <select id="select"
@@ -58,7 +57,7 @@
 				<tr>
 					<td><c:out value="${no }" /></td>
 					<td><a href="detail.do?boardno=${item.boardno }"><c:out
-								value="${item.title }" /></a></td>
+								value="${item.title }" /></a>[<c:out value="${item.replycount}"/>]</td>
 					<td><c:out value="${item.id }"></c:out></td>
 					<td><c:out value="${item.viewno }"></c:out></td>
 					<td><c:out value="${item.writedate }"></c:out></td>

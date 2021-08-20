@@ -141,37 +141,40 @@ public class BoardDAO {
 		sql.append("        select @rownum:=@rownum+1 as rnum, b.* 		 ");
 		sql.append("        from (                          	         ");
 		sql.append("               select                  		         ");
-		sql.append("                      boardno         		         ");
+		sql.append("                      a1.boardno         		         ");
 		sql.append("                     ,title            		         ");
-		sql.append("                     ,id               		         ");
+		sql.append("                     ,a1.id               		         ");
 		sql.append("                     ,viewno            	         ");
 		sql.append("                     ,content          		         ");
 		sql.append("                     ,date_format(writedate,'%y-%m-%d')as writedate1        		         ");
 		sql.append("                     ,likeno           		         ");
 		sql.append("                     ,writedate           		         ");
 		sql.append("                     ,board_name           		     ");
-		sql.append("        from Board_Group4                            ");
+		sql.append(" 					,count(a2.replyno)  count     			 		");
+		sql.append("        from Board_Group4  a1 left join reply_Group4 a2                          ");
+		sql.append(" 					on a1.boardno=a2.boardno     			 		");
+		
 
 		if(!search.equals("")&& !searchtxt.equals(""))
 		{
 			sql.append("where "+search+" like ?");
 			if(!category.equals("")) {
-				sql.append("	and board_name like ?	");
+				sql.append("	and board_name like ?	group by a1.boardno	");
 			}
 			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
-			sql.append("	order by writedate desc	");
 			sql.append("      )    c                                            					 ");
 			sql.append(" where rnum>=? and rnum<=?        	");
+			sql.append("	order by writedate desc	");
 			
 		}else {
 			if(!category.equals("")) {
-				sql.append("where board_name like ?");
+				sql.append("	where board_name like ?  	");
 				
 			}
-			sql.append("             )b  ,   (select @rownum:=0) R    			 ");
-			sql.append("	order by writedate desc	");
+			sql.append("     group by a1.boardno        )b  ,   (select @rownum:=0) R    			 ");
 			sql.append("      )    c                                            					 ");
 			sql.append(" where rnum>=? and rnum<=?                              ");
+			sql.append("	order by writedate desc	");
 
 			
 		}
@@ -221,6 +224,7 @@ public class BoardDAO {
 				dto.setWritedate(rs.getString("writedate1"));
 				dto.setLikeno(rs.getInt("likeno")); 
 				dto.setBoard_name(rs.getString("board_name"));
+				dto.setReplycount(rs.getInt("count"));
 				list.add(dto);
 			}
 		}catch(SQLException e)
@@ -600,6 +604,34 @@ public class BoardDAO {
 			System.out.println(e);
 		}
 	}//end modifyLike
+	
+	
+	public ArrayList<ReplyDTO> getTotalCount(Connection conn) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select  count(a.replyno)  count     			 		");
+		sql.append("  from   reply_Group4 a right join Board_Group4 b   ");
+		sql.append("  			on a.boardno=b.boardno					");
+		sql.append("		group by b.boardno							");
+		
+		
+		ResultSet rs=null;
+		ArrayList<ReplyDTO> arr=new ArrayList<ReplyDTO>();
+		
+		try (PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{	
+				ReplyDTO dto=new ReplyDTO();
+				dto.setReplycount(rs.getInt("count"));
+				arr.add(dto);
+
+			}
+		}catch(SQLException e){
+			System.out.println(e);
+		}
+		return arr;
+	}
 	
 
 }

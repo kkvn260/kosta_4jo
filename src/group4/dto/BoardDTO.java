@@ -9,7 +9,16 @@ public class BoardDTO {
 	private String writedate;
 	private String board_name;
 	private String filename;
+	private int replycount;
 	
+
+	
+	public int getReplycount() {
+		return replycount;
+	}
+	public void setReplycount(int replycount) {
+		this.replycount = replycount;
+	}
 	public String getFilename() {
 		return filename;
 	}

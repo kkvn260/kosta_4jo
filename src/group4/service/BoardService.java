@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.naming.NamingException;
 
+import org.apache.tomcat.dbcp.dbcp2.SQLExceptionList;
+
 import group4.comm.DBConnection;
 import group4.dao.BoardDAO;
 import group4.dto.BoardDTO;
@@ -294,7 +296,6 @@ public class BoardService {
 				BoardDAO dao = new BoardDAO();
 				dto = dao.likeCount(conn, num);
 				likecount = dto.getLikeno();
-				System.out.println(likecount);
 				
 			}catch(SQLException| NamingException e) {
 				System.out.println(e);
@@ -378,6 +379,70 @@ public class BoardService {
 				if(conn!=null) try{conn.close();}catch(SQLException e) {}
 			}
 		}//end modifyLike
+		
+		
+		public void likeUp(int likeNum, String id, int bno) {
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			
+			try {
+				conn=dbconn.getConnection();
+				conn.setAutoCommit(false);
+				BoardDAO dao = new BoardDAO();
+				dao.likeUpdate(conn, bno, id);
+				dao.modifyLike(conn,likeNum+1,bno);
+				conn.commit();	
+				
+			}catch(SQLException| NamingException e) {
+				try {conn.rollback();}catch(SQLException e2) {}
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+		}//end likeUp
+		
+		
+		public void likeDown(int likeNum, String id, int bno) {
+			DBConnection dbconn = DBConnection.getDBConn();
+			Connection conn = null;
+			
+			try {
+				conn=dbconn.getConnection();
+				conn.setAutoCommit(false);
+				BoardDAO dao = new BoardDAO();
+				dao.likeCancel(conn,bno, id);
+				dao.modifyLike(conn,likeNum-1,bno);
+				conn.commit();	
+			}catch(SQLException| NamingException e) {
+				try {conn.rollback();}catch(SQLException e2) {}
+			}finally {
+				if(conn!=null) try{conn.close();}catch(SQLException e) {}
+			}
+		}//end likeDown
+		
+			
+		
+		public ArrayList<ReplyDTO> getReplyCount() {
+			DBConnection dbconn=DBConnection.getDBConn();
+			Connection conn=null;
+			ArrayList<ReplyDTO> arr=new ArrayList<ReplyDTO>();
+			try {
+				conn=dbconn.getConnection();
+				conn.setAutoCommit(false);
+				BoardDAO dao=BoardDAO.getDAO();
+				arr=dao.getTotalCount(conn);
+
+				conn.commit();
+			}catch(SQLException|NamingException e)
+			{
+				try {conn.rollback();} catch(SQLException e2) {}
+			}finally {
+				if(conn!=null) try { conn.close();} catch(SQLException e) {}
+			}
+			return arr;
+		}
+		
+
+
 
 		
 	

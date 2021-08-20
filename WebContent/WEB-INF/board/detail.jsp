@@ -40,7 +40,7 @@ $(document).ready(function(){
                 reply="<span>";  
 				reply+=list.id+"</span><br>";
 				reply+="<span>"+list.reply_writedate+"</span><br>";
-				reply+="<span>"+list.replycontent+"</span>";
+				reply+="<span>"+list.replycontent+"</span><br>";
 				
 			    if(list.id == "${sessionScope.id}"){  
 				reply+="<span><input type='button' value='삭제' onclick=del("+list.replyno+","+list.boardno+")></span><br>";
@@ -54,23 +54,23 @@ $(document).ready(function(){
 	 });
 	 
 	 
-	 /* 좋아요기능 */
-	 
-
+	 /* 좋아요 증감 */
 	$(function(){	 
 		$(".likeUpdate").click(function(){
+			console.log('현재 좋아요 값:'+${boarddto.likeno });
 			if(!"${id}"){
 				alert("회원만 추천할 수 있습니다");
 				location.href="login.do";
-			}
-			else{
+			}else{
 				$.ajax({
-					url:'likeUpdate.do'
+					url:'like.group4'
 				   ,data:{'no':no}
 				   ,method:'post'
 				   ,dataType:'json'
-				   ,success: function(){
-					   likeCount();
+				   ,success: function(data){
+					   console.log(data);
+				      $("#likeUpdate span").text(data.total); 
+				      $(".t1").eq(-1).text(data.total);
 				   }
 				   ,error:function(xhr){
 						console.log('error'+xhr);
@@ -80,12 +80,10 @@ $(document).ready(function(){
 		});
 	});
 	 
-
 	 
 	 
 });
 </script>
-
 
 <c:set var="boarddto" value="${requestScope.boarddto }"></c:set>
 </head>
@@ -100,11 +98,11 @@ $(document).ready(function(){
  	</div>
  	<div>
  		<span class="t1">조회수 : ${boarddto.viewno }</span>
- 		<span class="t1">좋아요수 : ${boarddto.likeno }</span>
+ 		<span class="t1">좋아요수 : </span>
+ 		<span class="t1">${boarddto.likeno } </span>
  	</div>
  	
-      	<!-- 좋아요! 기능 -->
-
+      	<!-- 좋아요! -->
      	<div>
    			<label for="content" class="label1">내용</label>
      		<button class="likeUpdate" id="likeUpdate">
