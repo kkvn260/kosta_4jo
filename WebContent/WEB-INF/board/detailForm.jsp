@@ -8,7 +8,11 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="style/style.css">
-
+<style>
+	ul li{
+		margin: auto;
+	}
+</style>
 </head>
 <body>
 
@@ -17,32 +21,26 @@
 
 <form method="post" action="modifyresult.do">
    <input type="hidden" name="cat" value="${boardto.board_name }">
- <ul>
-   <li>
+ 
    <label for="bno">글번호</label>
    <input type="text" name="bno" value="${boarddto.boardno }"  readonly="readonly">
-   </li>
-   <li> 작성자 : ${boarddto.id } </li>
-   <li>
-   <label for="title">글제목</label>
+	<br>
+    작성자 : ${boarddto.id } <br>
+  작성일 : ${boarddto.writedate } 
+   <br>
+   <label for="title">글제목</label><br>
    <input type="text" name="title" id="title" value="${boarddto.title }">
-   </li>
-   <li>
-   <label for="content">글내용</label>
+  <br>
+
+   <label for="content">글내용</label><br>
    <textarea rows="15" cols="125" name="content" id="content">${boarddto.content }</textarea>
-   </li>
-   <li> 작성일 : ${boarddto.writedate } </li>
+   <br>
  
-   
-   <li>
+    <input type="submit" value="등록"><br>
    	<a href="list.do?cat=${boarddto.board_name}">목록으로</a>
-    <input type="submit" value="등록">
-   </li>
-   
+  
    </ul>
  </form>
 
-
-	
 </body>
 </html>
