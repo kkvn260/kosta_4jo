@@ -15,6 +15,7 @@
 	}
 	html{
 		position: relative;
+		min-height: 900px;
 	}
 
 	#mainjsp{
