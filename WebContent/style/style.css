@@ -154,7 +154,6 @@ h2 {
 
 ul li {
 	list-style: none;
-	margin-left: 280px;
 }
 
 .bg-info {
@@ -162,7 +161,7 @@ ul li {
 }
 
 ul li div.id {
-	margin-left: 13px;
+	margin-left: 11.5px;
 }
 
 ul li div.login {

@@ -12,6 +12,7 @@
 <style>
       h2.meet{margin-left:340px;}
       p.text-info{margin-left:300px; margin-top:20px; margin-bottom:50px;}
+      .login2{margin-left:280px;}
 </style>
 </head>
 <body>
@@ -19,8 +20,9 @@
 <form method="post" action="loginresult.do">
 <h2 class="meet">방문을 환영합니다</h2>
 <p class="text-info"><strong>로그인을 하시면 다양한 서비스를 이용하실 수 있습니다.</strong></p>
+   <div class="login2">
    <ul>
-   
+        
         <li ><div class="id">
              <label for="id" >아이디</label>
              <input type="text" name="id" id="id">
@@ -38,6 +40,7 @@
             <a href="join.do">회원가입</a>
       </li>      
    </ul>
+   </div>
 </form>
 </body>
 </html>
