@@ -17,14 +17,17 @@ public class DetailBoardAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		//boardno가 고유값을 가진 pk라고 가정
 		int boardno = Integer.parseInt(request.getParameter("boardno"));
+		String id = (String)request.getSession().getAttribute("id");
 		
 		BoardService service = BoardService.getService();
 		service.viewUp(boardno);
 		BoardDTO boarddto = service.detail(boardno);
+		int likeCheck = service.likeCheck(boardno, id);
 		
 		request.setAttribute("boarddto", boarddto);
+		request.setAttribute("likecheck", likeCheck);
+		
 		Forward f = new Forward();
 		f.setForward(true);
 		f.setPath("WEB-INF/board/main.jsp?page=detail.jsp");

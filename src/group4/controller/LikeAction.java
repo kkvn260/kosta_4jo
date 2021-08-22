@@ -53,18 +53,22 @@ public class LikeAction extends HttpServlet {
 		BoardService service = BoardService.getService();
 		int likeNum = service.likeCount(bno);	
 		System.out.println("현재like값: "+likeNum);
+		int likeCheck = service.likeCheck(bno, id);
+		System.out.println(likeCheck);
 		
-		if(service.likeCheck(bno,id)==0) {
+		if(likeCheck==0) {
 			service.likeUp(likeNum, id,bno);
 		}else {
 			service.likeDown(likeNum,id,bno);
 		}
 		
 		int totalLike =service.likeCount(bno);
+		
 		System.out.println("변경된like값: "+totalLike);
 
 		JSONObject obj = new JSONObject();
 		obj.put("total", totalLike);
+		obj.put("likeCheck", likeCheck);
 		out.print(obj);
 		
 		
