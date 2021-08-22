@@ -473,7 +473,7 @@ public class BoardDAO {
 	public void modifyBoard(Connection conn, BoardDTO dto) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("  update Board_Group4      ");
-	    sql.append(" set  title=?, content=?  ");
+	    sql.append("  set  title=?, content=?  ");
 		sql.append("  where boardno= ?         ");
 
 		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());	

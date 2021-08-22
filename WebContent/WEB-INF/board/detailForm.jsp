@@ -18,11 +18,10 @@
 
 <c:set var="boarddto" value="${requestScope.dto }"></c:set>
 
-
 <form method="post" action="modifyresult.do">
-   <input type="hidden" name="cat" value="${boardto.board_name }">
- 
+
    <label for="bno">글번호 : ${boarddto.boardno }</label>
+   <input type="hidden" name="bno" value="${boarddto.boardno }">
 	<br>
     	<label>작성자 : ${boarddto.id }</label> <br>
   		<label>작성일 : ${boarddto.writedate }</label> 
@@ -34,11 +33,9 @@
    <label for="content">글내용</label><br>
    <textarea rows="15" cols="125" name="content" id="content">${boarddto.content }</textarea>
    <br>
- 
+    <button type="button" class="btn btn-success" onclick ="location.href='/kosta_4jo/list.do?cat=${boarddto.board_name}'">목록으로</button>
     <input type="submit" value="등록"><br>
-   	<a href="list.do?cat=${boarddto.board_name}">목록으로</a>
-  
-   </ul>
+
  </form>
 
 </body>

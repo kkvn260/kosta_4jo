@@ -21,8 +21,8 @@ public class ModifyBoardAction implements Action {
 		BoardService service = BoardService.getService();
 		BoardDTO dto = service.detail(bno);
 		
-		request.setAttribute("dto", dto);
-				
+		request.setAttribute("dto", dto);		
+		
 		Forward forward = new Forward();
 		forward.setForward(true);
 		forward.setPath("WEB-INF/board/main.jsp?page=detailForm.jsp");

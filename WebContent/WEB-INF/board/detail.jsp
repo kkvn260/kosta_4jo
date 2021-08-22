@@ -153,12 +153,12 @@ $(document).ready(function(){
 
 	
 	<br>
-	<button type="button" class="btn btn-success" onclick ="location.href = list.do?cat=${boarddto.board_name}">목록으로</button>
+	<button type="button" class="btn btn-success" onclick ="location.href='/kosta_4jo/list.do?cat=${boarddto.board_name}'">목록으로</button>
 	
 
 	  <c:if test="${sessionScope.id==boarddto.id}">
-	     &nbsp;<button type="button" class="btn btn-default" onclick ="modify.do?boardno=${boarddto.boardno}&cat=${boarddto.board_name}">수정</button> 
-	     &nbsp;<button type="button" class="btn btn-default" onclick="del.do?boardno=${boarddto.boardno}&cat=${boarddto.board_name}">삭제</button>
+	     &nbsp;<button type="button" class="btn btn-default" onclick ="location.href='/kosta_4jo/modify.do?boardno=${boarddto.boardno}&cat=${boarddto.board_name}'">수정</button> 
+	     &nbsp;<button type="button" class="btn btn-default" onclick="location.href='/kosta_4jo/del.do?boardno=${boarddto.boardno}&cat=${boarddto.board_name}'">삭제</button>
 	  </c:if>
 	
 

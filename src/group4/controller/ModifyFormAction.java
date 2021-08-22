@@ -22,19 +22,19 @@ public class ModifyFormAction implements Action {
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String cat = request.getParameter("cat");
 		
 		BoardDTO dto = new BoardDTO();
 		dto.setBoardno(bno);
 		dto.setTitle(title);
 		dto.setContent(content);
+
 		
 		BoardService service = BoardService.getService();
 		service.modifyBoard(dto);
 		
 		Forward forward = new Forward();
 		forward.setForward(false);
-		forward.setPath("list.do?cat="+cat);
+		forward.setPath("detail.do?boardno="+bno);
 		
 		return forward;
 	}
