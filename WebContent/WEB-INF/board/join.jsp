@@ -17,7 +17,7 @@
     .b{color:red;}
     .join{margin-top:30px; margin-bottom:50px; text-align:center;}
     .joinfo{margin-left:1px;}
-    #joinform{border:3px solid black; width:450px; height:410px; padding-top:20px; padding-right:30px;text-align:center; position:relative; left:230px;}
+    #joinform{border:3px double black; width:450px; height:410px; padding-top:20px; padding-right:30px;text-align:center; position:relative; left:230px;}
     #joinform2{text-align:center; margin-left:-20px;}
 </style>
 </head>
